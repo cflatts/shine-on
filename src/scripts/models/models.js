@@ -69,4 +69,9 @@ const QuestionModel = Backbone.Model.extend ({
     idAttribute: '_id'
 })
 
+const Questionollection =  Backbone.Collection.extend ({
+    model: QuestionModel,
+    url: '/api/question'
+})
+
 export { User }
