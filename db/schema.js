@@ -28,7 +28,8 @@ const questionSchema = new Schema ({
 })
 
 module.exports = {
-  User: createModel('User', usersSchema)
+  User: createModel('User', usersSchema),
+  Question: createModel('Question', questionSchema)
 }
 
 //what do I need to do to allow people replying to display their credentials?
