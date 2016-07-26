@@ -9,6 +9,7 @@ const app = function() {
     var AppRouter = Backbone.Router.extend ({
         routes: {
             home: 'goHome',
+            login: 'goToLogin',
             dashboard: 'goToDashboard',
             myQuestions: 'goToMyQuestions',
             '*catchall': 'redirectDashboard'
@@ -16,6 +17,10 @@ const app = function() {
 
         gotHome: function() {
             ReactDOM.render(<HomeView />, document.querySelector('.container'))
+        },
+
+        goToLogin: function() {
+            ReactDOM.render(<LoginView />, document.querySelector('.container'))
         },
 
         goToDashboard: function() {
