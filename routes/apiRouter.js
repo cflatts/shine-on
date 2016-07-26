@@ -72,5 +72,18 @@ apiRouter.get('/question', function(request,response){
     })
 })
 
+//GETS POSTS BY SPECIFIC USER
+//this is an express router making a get request to a more specific route, it takes a path and callback as parameters
+apiRoute.get('/user/questions', function(request, response) {
+    Question.find({authorId:request.user._id, function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
+        }
+    })
+})
+
 
 module.exports = apiRouter
