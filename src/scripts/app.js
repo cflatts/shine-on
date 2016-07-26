@@ -11,7 +11,7 @@ const app = function() {
             home: 'goHome',
             dashboard: 'goToDashboard',
             myQuestions: 'goToMyQuestions',
-            *catchall: 'redirectDashboard'
+            '*catchall': 'redirectDashboard'
         },
 
         gotHome: function() {
