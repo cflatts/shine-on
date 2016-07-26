@@ -7,7 +7,12 @@ import init from './init'
 const app = function() {
 
     var AppRouter = Backbone.Router.extend ({
-
+        routes: {
+            home: 'goHome',
+            dashboard: 'goToDashboard',
+            myQuestions: 'goToMyQuestions',
+            *catchall: 'redirectDashboard'
+        }
     })
 }
 
