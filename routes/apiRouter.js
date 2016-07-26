@@ -43,8 +43,9 @@ let Question = require('../db/schema.js').Question
 
     // Routes for a Model(resource) should have this structure
 
-//this is an express router that takes a path and a callback as input, if the path matches the callback is fun
-apiRouter.get('/question', function(request, response) {
+//POST A QUESTION
+//this is an express router making a post request that takes a path and a callback as input, if the path matches the callback, the function is run
+apiRouter.post('/question', function(request, response) {
     let question = new QuestionModel(request.body) //creates a new instance of the mongoose model with the information we have on the body of the request
 
     question.save(function(error) { //we want to save the new model to the database using a built in '???? method'
@@ -56,6 +57,19 @@ apiRouter.get('/question', function(request, response) {
         }
     })
 
+})
+
+//GET ALL THE POSTS
+//this is an express router making a get request that takes a path and a callback as input
+apiRouter.get('/question', function(request,response){
+    Question.find(request.query, function(error, records) { //here we use a built in '??? method' that takes a search parameter and a callback function, these parameters are to return all instances at the given path
+        if(error) {
+            response.send(error)
+        }
+        else { //if the get function is successful it will return the records we wanted as json in the response
+            response.json(records)
+        }
+    })
 })
 
 
