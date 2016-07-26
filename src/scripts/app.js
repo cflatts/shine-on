@@ -6,6 +6,9 @@ import init from './init'
 
 const app = function() {
 
+    var AppRouter = Backbone.Router.extend ({
+
+    })
 }
 
 // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..
