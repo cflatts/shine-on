@@ -20,7 +20,11 @@ const app = function() {
 
         goToDashboard: function() {
             ReactDOM.render(<DashboardView />, document.querySelector('.container'))
-        }
+        },
+
+        goToMyQuestions: function() {
+            ReactDOM.render(<MyQuestionsView />, document.querySelector('.container'))
+        },
 
         initialize: function() {
             Backbone.history.start()
