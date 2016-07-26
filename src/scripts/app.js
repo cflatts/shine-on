@@ -16,6 +16,10 @@ const app = function() {
 
         gotHome: function() {
             ReactDOM.render(<HomeView />, document.querySelector('.container'))
+        },
+
+        goToDashboard: function() {
+            ReactDOM.render(<DashboardView />, document.querySelector('.container'))
         }
 
         initialize: function() {
