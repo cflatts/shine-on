@@ -14,6 +14,10 @@ const app = function() {
             *catchall: 'redirectDashboard'
         },
 
+        gotHome: function() {
+            ReactDOM.render(<HomeView />, document.querySelector('.container'))
+        }
+
         initialize: function() {
             Backbone.history.start()
         }
