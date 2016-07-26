@@ -26,6 +26,10 @@ const app = function() {
             ReactDOM.render(<MyQuestionsView />, document.querySelector('.container'))
         },
 
+        redirectDashboard: function() {
+            location.hash = 'dashboard'
+        },
+
         initialize: function() {
             Backbone.history.start()
         }
