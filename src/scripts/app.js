@@ -12,6 +12,10 @@ const app = function() {
             dashboard: 'goToDashboard',
             myQuestions: 'goToMyQuestions',
             *catchall: 'redirectDashboard'
+        },
+
+        initialize: function() {
+            Backbone.history.start()
         }
     })
     new AppRouter()
