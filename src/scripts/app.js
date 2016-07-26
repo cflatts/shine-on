@@ -14,6 +14,7 @@ const app = function() {
             *catchall: 'redirectDashboard'
         }
     })
+    new AppRouter()
 }
 
 // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..
