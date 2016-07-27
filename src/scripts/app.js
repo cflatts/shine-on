@@ -13,6 +13,7 @@ const app = function() {
             'login': 'goToLogin',
             'dashboard': 'goToDashboard',
             'myQuestions': 'goToMyQuestions',
+            'compose': 'goToCompose',
             '*catchall': 'redirectDashboard'
         },
 
@@ -30,6 +31,10 @@ const app = function() {
 
         goToMyQuestions: function() {
             ReactDOM.render(<MyQuestionsView />, document.querySelector('.container'))
+        },
+
+        goToCompose: function() {
+            ReactDOM.render(<ComposeView />, document.querySelector('.container'))
         },
 
         redirectDashboard: function() {
