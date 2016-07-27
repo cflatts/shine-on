@@ -1,9 +1,27 @@
+//General stylings
+
 * {
 	font-family: 'Ubuntu', sans-serif;
 	box-sizing: border-box;
     // color: #5c08f2;
 }
 
+*:focus {
+    outline: none;
+}
+
+button {
+    display: block;
+    border: 1px solid #5c08f2;
+    font-size: 18px;
+    color: #5c08f2;
+    margin: 5px auto;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+//Navigation Bar
 .navigation {
     background-color: #5c08f2;
     text-align: center;
@@ -14,5 +32,40 @@
         text-decoration: none;
         font-size: 30px;
         margin: 5%;
+    }
+}
+
+
+
+
+//Sign In View
+.signin-view {
+    text-align: center;
+
+    .signin {
+        display: inline-block;
+        width: 35%;
+        border: 3px solid #5c08f2;
+        text-align: center;
+        margin: 10% 3%;
+
+        h3 {
+            font-size: 60px;
+            color:#5c08f2;
+        }
+
+        input {
+            margin: 1%;
+        }
+
+        input[type=text] {
+            border: 1px solid #5c08f2;
+            font-size: 18px;
+        }
+
+        input[type=password] {
+            border: 1px solid #5c08f2;
+            font-size: 18px;
+        }
     }
 }
