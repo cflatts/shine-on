@@ -22,7 +22,7 @@ const app = function() {
             '*catchall': 'redirectDashboard'
         },
 
-        gotHome: function() {
+        goHome: function() {
             ReactDOM.render(<HomeView />, document.querySelector('.container'))
         },
 
