@@ -13,10 +13,30 @@ const LoginView = React.createClass ({
 })
 
 const SignIn = React.createClass ({
+
+    _handleLogin: function(evt) {
+        evt.preventDefault()
+
+
+    },
+
+    _handleRegister: function(evt) { //right now i am going to leave out anything to do with confirming the password, i'll add that in
+        evt.preventDefault()
+
+        ACTIONS.registerUser({
+            email: evt.target.register-email.value,
+            username: evt.target.register-username,
+            password: evt.target.register-password,
+            confirmPassword: evt.target.confirm-password
+        })
+
+
+    },
+
     render: function() {
         return (
             <div className = 'signin-view'>
-                <div className = 'signin' id = 'register'>
+                <form className = 'signin' id = 'register'>
                     <h3>Register</h3>
                         <div className = 'styling-hack'>
                             <input type = 'text' placeholder = 'email' name = 'register-email'/>
@@ -26,16 +46,14 @@ const SignIn = React.createClass ({
                             <input type = 'password' placeholder = 'password' name = 'register-password' />
                             <input type = 'password' placeholder = 'confirm password' name = 'confirm-password' />
                         </div>
-                    <button type = 'submit'>Submit</button>
-                </div>
-                <div className = 'signin' id = 'login'>
+                    <button type = 'submit' onSubmit = {this._handleRegister}>Submit</button>
+                </form>
+                <form className = 'signin' id = 'login'>
                     <h3>Login</h3>
-                    <div id = 'fix'>
-                        <input type = 'text' placeholder = 'username or email' name = 'login-identifier' />
-                        <input type = 'password' placeholder = 'password' name = 'login-password' />
-                    </div>
-                    <button type = 'submit'>Login</button>
-                </div>
+                    <input type = 'text' placeholder = 'username or email' name = 'login-identifier' />
+                    <input type = 'password' placeholder = 'password' name = 'login-password' />
+                    <button type = 'submit' onSubmit = {this._handleLogin}>Login</button>
+                </form>
             </div>
         )
     }
