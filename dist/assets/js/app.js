@@ -1,1 +1,1 @@
-console.error("SyntaxError: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/views/myQuestionsView.js: Unexpected token (14:16) while parsing file: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/views/myQuestionsView.js");
+console.error("SyntaxError: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/views/myQuestionsView.js: Unexpected token (15:18) while parsing file: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/views/myQuestionsView.js");

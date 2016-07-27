@@ -6,21 +6,24 @@ const MyQuestionsView = React.createClass ({
         return (
             <div className = 'my-question'>
                 <Header />
+                <MyQuestion />
             </div>
         )
     }
 })
 
-render: function() {
-    return (
-        <div className = 'dashboardBody'>
-            <h3>Question</h3>
-            <p>context:</p>
-            <p>posted by:</p>
-            <p>posted on:</p>
-            <hr />
-        </div>
-    )
+const MyQuestion: function() {
+    render: function() {
+        return (
+            <div className = 'dashboardBody'>
+                <h3>Question</h3>
+                <p>context:</p>
+                <p>posted by:</p>
+                <p>posted on:</p>
+                <hr />
+            </div>
+        )
+    }
 }
 
 export default MyQuestionsView
