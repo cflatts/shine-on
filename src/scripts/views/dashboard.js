@@ -10,3 +10,5 @@ const DashboardView = React.createClass ({
         )
     }
 })
+
+export default DashboardView
