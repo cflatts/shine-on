@@ -48,7 +48,7 @@ let Question = require('../db/schema.js').Question
 apiRouter.post('/question', function(request, response) {
     let question = new QuestionModel(request.body) //creates a new instance of the mongoose model with the information we have on the body of the request
 
-    question.save(function(error) { //we want to save the new model to the database using a built in '???? method'
+    question.save(function(error) { //we want to save the new model to the database using a built in Mongoose method
         if(error) {
             response.send(error) //if the save was NOT successful the response will send an error
         }
@@ -62,7 +62,7 @@ apiRouter.post('/question', function(request, response) {
 //GET ALL THE POSTS
 //this is an express router making a get request that takes a path and a callback as input
 apiRouter.get('/question', function(request,response){
-    Question.find(request.query, function(error, records) { //here we use a built in '??? method' that takes a search parameter and a callback function, these parameters are to return all instances at the given path
+    Question.find(request.query, function(error, records) { //here we use a built in Mongoose method that takes a search parameter and a callback function, these parameters are to return all instances at the given path
         if(error) {
             response.send(error)
         }
@@ -76,7 +76,7 @@ apiRouter.get('/question', function(request,response){
 //this is an express router making a get request to a more specific route, it takes a path and callback as parameters
 
 
-apiRouter.get('/user/questions', function(request, response) {
+apiRouter.get('/user/question', function(request, response) {
     Question.find({authorId:request.user._id}, function(error, records) {
         if(error) {
             response.send(error)

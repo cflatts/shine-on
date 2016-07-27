@@ -23,9 +23,11 @@ const questionSchema = new Schema ({
     //should i make this comments and then make answered nested inside of that? that way i can mark the comment i like the best as "the answer"?
     answered: {type: Boolean, default: false},
     tags: {type: [String], required: true},
-    // {timestamp: true} how does this work?
     authorId: {type: String, required: true},
-    username: {type: String} //do I put this here or on the user schema?
+    username: {type: String}
+},
+{
+    timestamp:true
 })
 
 module.exports = {

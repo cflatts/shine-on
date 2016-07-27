@@ -1,10 +1,10 @@
 import React from 'react'
-import {Header} from './header'
+import Header from './Header'
 
 const LoginView = React.createClass ({
     render: function() {
         return (
-            <div className = 'loginView'>
+            <div className='loginView'>
                 <Header />
             </div>
         )
