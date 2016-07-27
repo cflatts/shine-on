@@ -4,6 +4,7 @@ import Backbone from 'backbone'
 import init from './init'
 import LoginView from './views/loginView'
 import DashboardView from './views/DashboardView'
+import ComposeView from './views/ComposeView'
 
 
 
