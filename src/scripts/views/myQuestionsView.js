@@ -11,4 +11,16 @@ const MyQuestionsView = React.createClass ({
     }
 })
 
+render: function() {
+    return (
+        <div className = 'dashboardBody'>
+            <h3>Question</h3>
+            <p>context:</p>
+            <p>posted by:</p>
+            <p>posted on:</p>
+            <hr />
+        </div>
+    )
+}
+
 export default MyQuestionsView
