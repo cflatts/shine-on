@@ -18,13 +18,17 @@ const SignIn = React.createClass ({
             <div className = 'signin'>
                 <div className = 'register'>
                     <h3>Register</h3>
-                    <input type = 'text' placeholder = 'email' name = 'email'/>
-                    <input type = 'password' placeholder = 'password' name = 'password' />
+                    <input type = 'text' placeholder = 'email' name = 'register-email'/>
+                    <input type = 'text' placeholder = 'username' name = 'register-username' />
+                    <input type = 'password' placeholder = 'password' name = 'register-password' />
                     <input type = 'password' placeholder = 'confirm password' name = 'confirm-password' />
                     <button type = 'submit'>Submit</button>
                 </div>
                 <div className = 'login'>
-
+                    <h3>Login</h3>
+                    <input type = 'text' placeholder = 'username or email' name = 'login-identifier' />
+                    <input type = 'password' placeholder = 'password' name = 'login-password' />
+                    <button type = 'submit'>Login</button>
                 </div>
             </div>
         )
