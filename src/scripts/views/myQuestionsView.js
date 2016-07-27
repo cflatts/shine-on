@@ -1,14 +1,14 @@
 import React from 'react'
 import Header from './Header'
 
-const ComposeView = React.createClass ({
+const MyQuestionsView = React.createClass ({
     render: function() {
         return (
-            <div className = 'compose'>
+            <div className = 'my-question'>
                 <Header />
             </div>
         )
     }
 })
 
-export default ComposeView
+export default MyQuestionsView
