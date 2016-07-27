@@ -18,6 +18,7 @@ const Compose = React.createClass ({
             <form className = 'composeBody'>
                 <input type = 'text' placeholder = 'What is your question?' name = 'question' />
                 <textarea placeholder = 'Tell us a little about it.'></textarea>
+                <button type = 'submit'>Ask us!</button>
             </form>
         )
     }

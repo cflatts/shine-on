@@ -69,3 +69,21 @@ button {
         }
     }
 }
+
+//Compose View
+
+.composeBody {
+
+    input {
+        border: 3px solid #5c08f2;
+        width: 65%;
+        margin: 5% 0 2% 2%;
+    }
+
+    textarea {
+        display: block;
+        border: 3px solid #5c08f2;
+        width: 65%;
+        margin: 0 0 2% 2%;
+    }
+}
