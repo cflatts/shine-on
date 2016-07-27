@@ -3,3 +3,16 @@
 	box-sizing: border-box;
     // color: #5c08f2;
 }
+
+.navigation {
+    background-color: #5c08f2;
+    text-align: center;
+    padding: 1%;
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 30px;
+        margin: 5%;
+    }
+}

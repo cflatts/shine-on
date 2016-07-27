@@ -18,6 +18,7 @@ const Navigation = React.createClass ({
                 <a href = '#home'>Home</a>
                 <a href = '#dashboard'>Dash</a>
                 <a href = '#myQuestions'>My Questions</a>
+                <a href = '#login'>Login</a>
             </div>
         )
     }
