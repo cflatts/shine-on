@@ -9,10 +9,10 @@ const app = function() {
 
     var AppRouter = Backbone.Router.extend ({
         routes: {
-            home: 'goHome',
-            login: 'goToLogin',
-            dashboard: 'goToDashboard',
-            myQuestions: 'goToMyQuestions',
+            'home': 'goHome',
+            'login': 'goToLogin',
+            'dashboard': 'goToDashboard',
+            'myQuestions': 'goToMyQuestions',
             '*catchall': 'redirectDashboard'
         },
 
