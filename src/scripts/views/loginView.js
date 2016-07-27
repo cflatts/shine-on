@@ -18,12 +18,14 @@ const SignIn = React.createClass ({
         evt.preventDefault()
 
 
+
+
     },
 
-    _handleRegister: function(evt) { //right now i am going to leave out anything to do with confirming the password, i'll add that in
+    _handleRegister: function(evt) { //right now i am going to leave out anything to do with confirming the password, i'll add that in later
         evt.preventDefault()
 
-        ACTIONS.registerUser({
+        ACTIONS._registerUser({
             email: evt.target.register-email.value,
             username: evt.target.register-username,
             password: evt.target.register-password,
