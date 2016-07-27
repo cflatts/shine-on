@@ -12,7 +12,7 @@ const MyQuestionsView = React.createClass ({
     }
 })
 
-const MyQuestion: function() {
+const MyQuestion = React.createClass ({
     render: function() {
         return (
             <div className = 'dashboardBody'>
@@ -24,6 +24,6 @@ const MyQuestion: function() {
             </div>
         )
     }
-}
+})
 
 export default MyQuestionsView
