@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
 import LoginView from './views/loginView'
+import DashboardView from './views/DashboardView'
+
 
 
 const app = function() {

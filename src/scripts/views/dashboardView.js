@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '/dashboard'
+import Header from './Header'
 
 const DashboardView = React.createClass ({
     render: function() {
