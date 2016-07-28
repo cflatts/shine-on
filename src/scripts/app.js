@@ -19,6 +19,7 @@ const app = function() {
             'dashboard': 'goToDashboard',
             'myQuestions': 'goToMyQuestions',
             'compose': 'goToCompose',
+            'singleQuestion': 'goToSingleQuestion'
             '*catchall': 'redirectDashboard'
         },
 
@@ -41,6 +42,10 @@ const app = function() {
         goToCompose: function() {
             ReactDOM.render(<ComposeView />, document.querySelector('.container'))
         },
+
+        goToSingleQuestion: function() {
+            ReactDOM.render(<SingleQuestionView />, document.querySelector('.container'))
+        }
 
         redirectDashboard: function() {
             location.hash = 'dashboard'

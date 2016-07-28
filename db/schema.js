@@ -28,6 +28,7 @@ const questionSchema = new Schema ({
 },
 {
     timestamp:true
+
 })
 
 module.exports = {

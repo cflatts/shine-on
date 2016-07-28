@@ -47,7 +47,6 @@ let Question = require('../db/schema.js').Question
 //this is an express router making a post request that takes a path and a callback as input, if the path matches the callback, the function is run
 apiRouter.post('/question', function(request, response) {
     let question = new QuestionModel(request.body) //creates a new instance of the mongoose model with the information we have on the body of the request
-
     question.save(function(error) { //we want to save the new model to the database using a built in Mongoose method
         if(error) {
             response.send(error) //if the save was NOT successful the response will send an error
