@@ -1,1 +1,1 @@
-console.error("SyntaxError: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/app.js: Unexpected token (17:5) while parsing file: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/app.js");
+console.error("SyntaxError: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/app.js: Unexpected token (9:5) while parsing file: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/app.js");
