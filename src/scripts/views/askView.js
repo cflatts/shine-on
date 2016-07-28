@@ -14,9 +14,13 @@ const AskView = React.createClass ({
 
 const Ask = React.createClass ({
 
+    _handleSubmit:function(evt) {
+        evt.preventDefault()
+    },
+
     render: function() {
         return (
-            <form className = 'composeBody'>
+            <form className = 'composeBody' onSubmit = {this._handleSubmit}>
                 <input type = 'text' placeholder = 'What is your question?' name = 'question' />
                 <textarea placeholder = 'Tell us a little about it.' name = 'content' ></textarea>
                 <button type = 'submit'>Ask us!</button>
