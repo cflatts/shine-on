@@ -20,7 +20,8 @@ const Compose = React.createClass ({
 
         ACTIONS.saveQuestion({
             question: evt.target.question.value,
-            conte
+            content: evt.target.content.value,
+
         })
     },
 
