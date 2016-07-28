@@ -43,5 +43,18 @@ let Question = require('../db/schema.js').Question
 
     // Routes for a Model(resource) should have this structure
 
+//this route is to post and individual question
+
+apiRouter.post('/question', function(request, response) {
+    var question = new QuestionModel(request.body)
+    question.save(function(error) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(question)
+        }
+    })
+})
 
 module.exports = apiRouter
