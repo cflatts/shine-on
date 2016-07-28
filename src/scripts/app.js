@@ -7,6 +7,14 @@ const app = function() {
 
     var AppRouter = Backbone.Router.extend ({
 
+        routes: {
+            'home': 'goHome',
+            'dashboard': 'goToDashboard',
+            'myQuestions': 'goToMyQuestions',
+            'signIn': 'goToSignIn',
+            'answeredView': 'goToAnswer',
+            '*catchall': 'defaultDashboard'
+        }
 
         initialize: function() {
             Backbone.history.start()
