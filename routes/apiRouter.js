@@ -3,7 +3,7 @@ const apiRouter = Router()
 let helpers = require('../config/helpers.js')
 
 let User = require('../db/schema.js').User
-let Question = require('../db/schema.js').Question
+let QuestionModel = require('../db/schema.js').Question
 
 
   apiRouter

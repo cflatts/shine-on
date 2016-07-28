@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import ACTIONS from '../actions'
-import {User} from  '../models/models'
+import {User, QuestionModel} from  '../models/models'
 
 const AskView = React.createClass ({
     render: function() {
@@ -23,7 +23,7 @@ const Ask = React.createClass ({
             question: evt.target.question.value,
             content: evt.target.content.value,
             tags: evt.target.tags.value,
-            answered:User.getCurrentUser().answered,
+            // answered:null
             authorId: User.getCurrentUser()._id
         })
     },
