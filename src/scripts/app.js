@@ -7,6 +7,7 @@ import DashboardView from './views/DashboardView'
 import ComposeView from './views/ComposeView'
 import MyQuestionsView from './views/myQuestionsView'
 import HomeView from './views/homeView'
+import SingleQuestionView from './views/singleQuestionView'
 
 
 
