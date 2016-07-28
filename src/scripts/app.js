@@ -19,7 +19,7 @@ const app = function() {
             'dashboard': 'goToDashboard',
             'myQuestions': 'goToMyQuestions',
             'compose': 'goToCompose',
-            'singleQuestion': 'goToSingleQuestion'
+            'singleQuestion': 'goToSingleQuestion',
             '*catchall': 'redirectDashboard'
         },
 
@@ -45,7 +45,7 @@ const app = function() {
 
         goToSingleQuestion: function() {
             ReactDOM.render(<SingleQuestionView />, document.querySelector('.container'))
-        }
+        },
 
         redirectDashboard: function() {
             location.hash = 'dashboard'
