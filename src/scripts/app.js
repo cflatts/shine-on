@@ -16,6 +16,10 @@ const app = function() {
             '*catchall': 'defaultDashboard'
         },
 
+        goHome: function() {
+            ReactDOM.render(<HomeView />, querySelector('.container'))
+        },
+
         initialize: function() {
             Backbone.history.start()
         }
