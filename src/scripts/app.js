@@ -5,7 +5,12 @@ import init from './init'
 
 const app = function() {
 
+    var AppRouter = Backbone.Router.extend ({
 
+
+        initialize: function() {
+            Backbone.history.start()
+        }
     })
     new AppRouter()
 }
