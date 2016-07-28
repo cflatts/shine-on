@@ -6,12 +6,24 @@ import {User, QuestionModel} from './models/models'
 const ACTIONS = {
 
     _registerUser: function(userObj) {
-        User.register(userObj).then( () => ACTIONS._login(userObj.email, userObj.password),
+        User.register(userObj).then( () => ACTIONS._loginUser(userObj.email, userObj.password),
             (error) => {
                 console.log(error)
             }
         )
     },
+
+    _loginUser: function(email, password) {
+        User.login(email, password).then() (
+            (response) => {
+                console.log(response)
+                location.hash = '/dashboard'
+            },
+            (error) => {
+                console.log(error)
+            }
+        )
+    }
 }
 
 export default ACTIONS
