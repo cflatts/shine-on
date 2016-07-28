@@ -46,7 +46,7 @@ let Question = require('../db/schema.js').Question
 //this route is to post an individual question
 
 apiRouter.post('/question', function(request, response) {
-    var question = new QuestionModel(request.body)
+    const question = new QuestionModel(request.body)
     question.save(function(error) {
         if(error) {
             response.send(error)
