@@ -42,6 +42,10 @@ const app = function() {
             ReactDOM.render(<AnswerView />, document.querySelector('.container'))
         },
 
+        defaultDashboard: function() {
+            location.hash = '/dashboard'
+        },
+
         initialize: function() {
             Backbone.history.start()
         }
