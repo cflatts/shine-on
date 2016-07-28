@@ -14,7 +14,7 @@ const app = function() {
             'signIn': 'goToSignIn',
             'answeredView': 'goToAnswer',
             '*catchall': 'defaultDashboard'
-        }
+        },
 
         initialize: function() {
             Backbone.history.start()
