@@ -1,1 +1,1 @@
-console.error("SyntaxError: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/views/signInView.js: Adjacent JSX elements must be wrapped in an enclosing tag (38:20) while parsing file: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/views/signInView.js");
+console.error("SyntaxError: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/views/signInView.js: Unexpected token (22:4) while parsing file: /Users/caitlinflattery/Documents/TIY/shine-on/src/scripts/views/signInView.js");

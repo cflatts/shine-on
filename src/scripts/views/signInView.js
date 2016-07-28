@@ -15,6 +15,9 @@ const SignInView = React.createClass ({
 
 const SignIn = React.createClass ({
 
+    _handleRegister: function(evt) {
+        evt.preventDefault()
+    }
 
     render: function() {
         return (
@@ -33,7 +36,7 @@ const SignIn = React.createClass ({
                     <button type = 'submit'>Submit</button>
                 </form>
 
-                <form className = 'signin' id = 'login' onSubmit = {this._handleLogin>
+                <form className = 'signin' id = 'login' onSubmit = {this._handleLogin}>
                     <h3>Login</h3>
                     <input type = 'text' placeholder = 'username or email' name = 'loginIdentifier' />
                     <input type = 'password' placeholder = 'password' name = 'loginPassword' />
