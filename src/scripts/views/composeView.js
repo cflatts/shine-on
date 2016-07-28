@@ -15,16 +15,6 @@ const ComposeView = React.createClass ({
 
 const Compose = React.createClass ({
 
-    _handleSubmit: function(evt) {
-        evt.preventDefault()
-
-        ACTIONS.saveQuestion({
-            question: evt.target.question.value,
-            content: evt.target.content.value,
-
-        })
-    },
-
     render: function() {
         return (
             <form className = 'composeBody'>

@@ -17,7 +17,7 @@ const usersSchema = new Schema({
 
 })
 
-const questionSchema = new Schema ({
+const questionSchema = new Schema({
     title: {type: String, required: true},
     content: {type: String},
     //should i make this comments and then make answered nested inside of that? that way i can mark the comment i like the best as "the answer"?
