@@ -18,7 +18,7 @@ const usersSchema = new Schema({
 })
 
 const questionsSchema = new Schema({
-    title: {type: String, required: true},
+    question: {type: String, required: true},
     content: {type: String},
     authorId: {type: String, required: true},
     // answered: {type: Boolean, required: true, default: false}, //this is commented out because I don't know how to add it in the object in askview

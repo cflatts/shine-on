@@ -25,8 +25,8 @@ const ACTIONS = {
         var question = new QuestionModel(questionObj)
         question.save().then(
             (response) => {
-                location.hash = '/dashboard'
                 console.log(response)
+                location.hash = '/dashboard'
             },
             (error) => {
                 console.log(error)
