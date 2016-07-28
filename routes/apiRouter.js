@@ -43,7 +43,7 @@ let Question = require('../db/schema.js').Question
 
     // Routes for a Model(resource) should have this structure
 
-//this route is to post and individual question
+//this route is to post an individual question
 
 apiRouter.post('/question', function(request, response) {
     var question = new QuestionModel(request.body)
@@ -53,6 +53,19 @@ apiRouter.post('/question', function(request, response) {
         }
         else {
             response.json(question)
+        }
+    })
+})
+
+//this route is to display all posts from any user
+
+apiRouter.get('/question', function(request, response) {
+    Question.find({}, function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
         }
     })
 })
