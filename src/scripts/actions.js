@@ -19,6 +19,19 @@ const ACTIONS = {
                 console.log(error)
             }
         )
+    },
+
+    _submitQuestion: function(questionObj) {
+        var question = new QuestionModel(questionObj)
+        question.save().then(
+            (response) => {
+                location.hash = '/dashboard'
+                console.log(response)
+            },
+            (error) => {
+                console.log(error)
+            }
+        )
     }
 }
 

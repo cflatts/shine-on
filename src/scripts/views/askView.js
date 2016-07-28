@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header'
+import ACTIONS from '../actions'
 
 const AskView = React.createClass ({
     render: function() {
