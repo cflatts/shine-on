@@ -16,6 +16,11 @@ const Ask = React.createClass ({
 
     _handleSubmit:function(evt) {
         evt.preventDefault()
+
+        ACTIONS._submitQuestion({
+            question: evt.target.question.value,
+            content: evt.target.content.value
+        })
     },
 
     render: function() {
