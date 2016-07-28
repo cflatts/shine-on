@@ -20,7 +20,7 @@ const SignIn = React.createClass ({
         return (
             <div className = 'signin-view'>
 
-                <form className = 'signin' id = 'register' >
+                <form className = 'signin' id = 'register' onSubmit = {this._handleRegister} >
                     <h3>Register</h3>
                         <div className = 'styling-hack'>
                             <input type = 'text' placeholder = 'email' name = 'registerEmail'/>
@@ -33,7 +33,7 @@ const SignIn = React.createClass ({
                     <button type = 'submit'>Submit</button>
                 </form>
 
-                <form className = 'signin' id = 'login'>
+                <form className = 'signin' id = 'login' onSubmit = {this._handleLogin>
                     <h3>Login</h3>
                     <input type = 'text' placeholder = 'username or email' name = 'loginIdentifier' />
                     <input type = 'password' placeholder = 'password' name = 'loginPassword' />
