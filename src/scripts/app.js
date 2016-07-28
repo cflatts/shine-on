@@ -5,7 +5,7 @@ import init from './init'
 import HomeView from './views/homeView'
 import DashboardView from './views/dashboardView'
 import MyQuestionsView from './views/myQuestionsView'
-import SingInView from './views/signInView'
+import SignInView from './views/signInView'
 import AnswerView from './views/answerView'
 
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from './Header'
-import {ACTIONS} from '../actions'
 
 const ComposeView = React.createClass ({
     render: function() {

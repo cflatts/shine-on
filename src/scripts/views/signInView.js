@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './Header'
-import ACTIONS from '../actions'
+
 
 const SignInView = React.createClass ({
     render: function() {
