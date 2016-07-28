@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import ACTIONS from '../actions'
+import {User} from  '../models/models'
 
 const AskView = React.createClass ({
     render: function() {
