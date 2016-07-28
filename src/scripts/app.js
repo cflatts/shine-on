@@ -15,6 +15,7 @@ const app = function() {
 
         routes: {
             'home': 'goHome',
+            'ask': 'goToAsk',
             'dashboard': 'goToDashboard',
             'myQuestions': 'goToMyQuestions',
             'signIn': 'goToSignIn',
@@ -24,6 +25,10 @@ const app = function() {
 
         goHome: function() {
             ReactDOM.render(<HomeView />, document.querySelector('.container'))
+        },
+
+        goToAsk: function() {
+            ReactDOM.render(<AskView />, document.querySelector('.container'))
         },
 
         goToDashboard: function() {
