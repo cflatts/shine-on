@@ -30,6 +30,7 @@ const questionSchema = new Schema({
 
 module.exports = {
   User: createModel('User', usersSchema),
+  Question: createModel('Question', questionSchema)
 }
 
 
