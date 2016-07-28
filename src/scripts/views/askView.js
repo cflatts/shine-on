@@ -6,7 +6,7 @@ const AskView = React.createClass ({
         return (
             <div className = 'compose'>
                 <Header />
-                <Compose />
+                <Ask />
             </div>
         )
     }
@@ -19,7 +19,7 @@ const Ask = React.createClass ({
             <form className = 'composeBody'>
                 <input type = 'text' placeholder = 'What is your question?' name = 'question' />
                 <textarea placeholder = 'Tell us a little about it.' name = 'content' ></textarea>
-                <button type = 'submit' onSubmit = {this._handleSubmit}>Ask us!</button>
+                <button type = 'submit'>Ask us!</button>
             </form>
         )
     }
