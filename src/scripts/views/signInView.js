@@ -15,6 +15,10 @@ const SignInView = React.createClass ({
 
 const SignIn = React.createClass ({
 
+    _handleLogin: function(evt) {
+        evt.preventDefault()
+    },
+
     _handleRegister: function(evt) {
         evt.preventDefault()
 
