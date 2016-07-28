@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header'
+import ACTIONS from '../actions'
 
 
 const SignInView = React.createClass ({
@@ -17,6 +18,8 @@ const SignIn = React.createClass ({
 
     _handleLogin: function(evt) {
         evt.preventDefault()
+
+        ACTIONS.logUserIn(evt.target.loginIdentifier.value, evt.target.loginPassword.value)
     },
 
     _handleRegister: function(evt) {
