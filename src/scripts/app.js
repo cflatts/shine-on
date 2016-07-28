@@ -17,15 +17,19 @@ const app = function() {
         },
 
         goHome: function() {
-            ReactDOM.render(<HomeView />, querySelector('.container'))
+            ReactDOM.render(<HomeView />, document.querySelector('.container'))
         },
 
         goToDashboard: function() {
-            ReactDOM.render(<DashboardView />, querySelector('.container'))
+            ReactDOM.render(<DashboardView />, document.querySelector('.container'))
         },
 
         goToMyQuestions: function() {
-            ReactDOM.render(<MyQuestionView />, querySelector('.container'))
+            ReactDOM.render(<MyQuestionView />, document.querySelector('.container'))
+        },
+
+        goToSignIn: function() {
+            ReactDOM.render(<MyQuestionsView />, document.querySelector('.container'))
         },
 
         initialize: function() {
