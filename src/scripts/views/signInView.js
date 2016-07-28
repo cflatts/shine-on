@@ -19,7 +19,7 @@ const SignIn = React.createClass ({
     _handleLogin: function(evt) {
         evt.preventDefault()
 
-        ACTIONS.logUserIn(evt.target.loginIdentifier.value, evt.target.loginPassword.value)
+        ACTIONS._logIn(evt.target.loginIdentifier.value, evt.target.loginPassword.value)
     },
 
     _handleRegister: function(evt) {
