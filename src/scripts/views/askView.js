@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 
-const ComposeView = React.createClass ({
+const AskView = React.createClass ({
     render: function() {
         return (
             <div className = 'compose'>
@@ -12,7 +12,7 @@ const ComposeView = React.createClass ({
     }
 })
 
-const Compose = React.createClass ({
+const Ask = React.createClass ({
 
     render: function() {
         return (
@@ -25,4 +25,4 @@ const Compose = React.createClass ({
     }
 })
 
-export default ComposeView
+export default AskView
