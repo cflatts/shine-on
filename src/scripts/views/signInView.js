@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import ACTIONS from '../actions'
 
-const LoginView = React.createClass ({
+const SignInView = React.createClass ({
     render: function() {
         return (
             <div className='loginView'>
@@ -44,4 +44,4 @@ const SignIn = React.createClass ({
     }
 })
 
-export default LoginView
+export default SignInView

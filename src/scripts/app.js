@@ -2,6 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
+import HomeView from './views/homeView'
+import DashboardView from './views/dashboardView'
+import MyQuestionsView from './views/myQuestionsView'
+import SingInView from './views/signInView'
+import AnswerView from './views/answerView'
+
 
 const app = function() {
 
@@ -12,7 +18,7 @@ const app = function() {
             'dashboard': 'goToDashboard',
             'myQuestions': 'goToMyQuestions',
             'signIn': 'goToSignIn',
-            'answeredView': 'goToAnswer',
+            'answerView': 'goToAnswer',
             '*catchall': 'defaultDashboard'
         },
 
@@ -29,7 +35,7 @@ const app = function() {
         },
 
         goToSignIn: function() {
-            ReactDOM.render(<MyQuestionsView />, document.querySelector('.container'))
+            ReactDOM.render(<SignInView />, document.querySelector('.container'))
         },
 
         goToAnswer: function() {
