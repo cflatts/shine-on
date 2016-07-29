@@ -35,9 +35,9 @@ const ACTIONS = {
         )
     },
 
-    _fetchQuestions: function() {
-        STORE
-    }
+    _fetchQuestions: function(inputQuery) {
+        STORE.data.collection.fetch(inputQuery)
+    },
 }
 
 export default ACTIONS
