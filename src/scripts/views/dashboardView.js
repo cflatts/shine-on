@@ -1,11 +1,16 @@
 import React from 'react'
 import Header from './Header'
 import STORE from '../store'
+import ACTIONS from '../actions'
 
 const DashboardView = React.createClass ({
 
     getInitialState: function() {
         return STORE._getData()
+    },
+
+    componentWillMount: function() {
+
     },
 
     componentWillUnmount: function() {
