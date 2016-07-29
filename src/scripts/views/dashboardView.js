@@ -8,6 +8,10 @@ const DashboardView = React.createClass ({
         return STORE._getData()
     },
 
+    componentWillUnmount: function() {
+        STORE.off('updateContent')
+    },
+
     render: function() {
         console.log(this.props)
         return (
