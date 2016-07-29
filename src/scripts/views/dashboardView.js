@@ -5,10 +5,11 @@ import STORE from '../store'
 const DashboardView = React.createClass ({
 
     getInitialState: function() {
-
-    }
+        return STORE._getData()
+    },
 
     render: function() {
+        console.log(this.props)
         return (
             <div className = 'dashboard'>
                 <Header />
@@ -19,6 +20,7 @@ const DashboardView = React.createClass ({
 })
 
 const Dashboard = React.createClass ({
+    // console.log(this.props)
     render: function() {
         return (
             <div className = 'dashboardBody'>
