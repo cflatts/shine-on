@@ -37,7 +37,7 @@ const app = function() {
         },
 
         goToMyQuestions: function() {
-            ReactDOM.render(<MyQuestionView />, document.querySelector('.container'))
+            ReactDOM.render(<MyQuestionsView />, document.querySelector('.container'))
         },
 
         goToSignIn: function() {
