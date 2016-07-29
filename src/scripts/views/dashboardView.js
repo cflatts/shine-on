@@ -25,7 +25,7 @@ const DashboardView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <Dashboard />
+                <Dashboard coll = {this.state.collection}/>
             </div>
         )
     }
