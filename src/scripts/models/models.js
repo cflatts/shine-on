@@ -65,13 +65,14 @@ export const User = UserAuthModel.extend({
 })
 
 export const QuestionModel = Backbone.Model.extend ({
-    urlRoot: '/api/question',
-    idAttribute: '_id'
+    idAttribute: '_id',
+    urlRoot: '/api/question'
 })
 
-export const QuestionCollection =  Backbone.Collection.extend ({
+export const QuestionCollection = Backbone.Collection.extend ({
     model: QuestionModel,
     url: '/api/question'
 })
+
 
 export { User, QuestionModel, QuestionCollection }

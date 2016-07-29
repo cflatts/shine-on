@@ -17,9 +17,9 @@ const Navigation = React.createClass ({
             <div className = 'navigation'>
                 <a href = '#home'>Home</a>
                 <a href = '#dashboard'>Dash</a>
-                <a href = '#compose'>Ask!</a>
+                <a href = '#ask'>Ask!</a>
                 <a href = '#myQuestions'>My Questions</a>
-                <a href = '#login'>Login</a>
+                <a href = '#signIn'>Sign In</a>
             </div>
         )
     }

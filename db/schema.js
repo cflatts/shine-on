@@ -17,23 +17,20 @@ const usersSchema = new Schema({
 
 })
 
-const questionSchema = new Schema ({
-    title: {type: String, required: true},
+const questionsSchema = new Schema({
+    question: {type: String, required: true},
     content: {type: String},
-    //should i make this comments and then make answered nested inside of that? that way i can mark the comment i like the best as "the answer"?
-    answered: {type: Boolean, default: false},
-    tags: {type: [String], required: true},
     authorId: {type: String, required: true},
-    username: {type: String}
+    // answered: {type: Boolean, required: true, default: false}, //this is commented out because I don't know how to add it in the object in askview
+    tags: {type: [String], required: true}
 },
 {
-    timestamp:true
-
+    timestamp: true
 })
 
 module.exports = {
   User: createModel('User', usersSchema),
-  Question: createModel('Question', questionSchema)
+  Question: createModel('Question', questionsSchema)
 }
 
-//what do I need to do to allow people replying to display their credentials?
+

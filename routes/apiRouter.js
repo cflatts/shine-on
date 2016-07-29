@@ -3,7 +3,7 @@ const apiRouter = Router()
 let helpers = require('../config/helpers.js')
 
 let User = require('../db/schema.js').User
-let Question = require('../db/schema.js').Question
+let QuestionModel = require('../db/schema.js').Question
 
 
   apiRouter
@@ -43,40 +43,37 @@ let Question = require('../db/schema.js').Question
 
     // Routes for a Model(resource) should have this structure
 
-//POST A QUESTION
-//this is an express router making a post request that takes a path and a callback as input, if the path matches the callback, the function is run
+//this route is to post an individual question
+
 apiRouter.post('/question', function(request, response) {
-    let question = new QuestionModel(request.body) //creates a new instance of the mongoose model with the information we have on the body of the request
-    question.save(function(error) { //we want to save the new model to the database using a built in Mongoose method
-        if(error) {
-            response.send(error) //if the save was NOT successful the response will send an error
-        }
-        else {
-            response.json(question) // if the save is successful if will send a json response with the question as the data
-        }
-    })
-
-})
-
-//GET ALL THE POSTS
-//this is an express router making a get request that takes a path and a callback as input
-apiRouter.get('/question', function(request,response){
-    Question.find(request.query, function(error, records) { //here we use a built in Mongoose method that takes a search parameter and a callback function, these parameters are to return all instances at the given path
+    const question = new QuestionModel(request.body)
+    question.save(function(error) {
         if(error) {
             response.send(error)
         }
-        else { //if the get function is successful it will return the records we wanted as json in the response
+        else {
+            response.json(question)
+        }
+    })
+})
+
+//this route is to display all posts from any user
+
+apiRouter.get('/question', function(request, response) {
+    Question.find({}, function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
             response.json(records)
         }
     })
 })
 
-//GETS POSTS BY SPECIFIC USER
-//this is an express router making a get request to a more specific route, it takes a path and callback as parameters
-
+//this route is to display all posts from a single specific user
 
 apiRouter.get('/user/question', function(request, response) {
-    Question.find({authorId:request.user._id}, function(error, records) {
+    Question.find({authorId: request.user._id}, function (error, records) {
         if(error) {
             response.send(error)
         }
@@ -85,6 +82,5 @@ apiRouter.get('/user/question', function(request, response) {
         }
     })
 })
-
 
 module.exports = apiRouter

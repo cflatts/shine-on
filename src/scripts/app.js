@@ -2,34 +2,34 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
-import LoginView from './views/loginView'
-import DashboardView from './views/DashboardView'
-import ComposeView from './views/ComposeView'
-import MyQuestionsView from './views/myQuestionsView'
 import HomeView from './views/homeView'
-import SingleQuestionView from './views/singleQuestionView'
-
+import AskView from './views/askView'
+import DashboardView from './views/dashboardView'
+import MyQuestionsView from './views/myQuestionsView'
+import SignInView from './views/signInView'
+import AnswerView from './views/answerView'
 
 
 const app = function() {
 
     var AppRouter = Backbone.Router.extend ({
+
         routes: {
             'home': 'goHome',
-            'login': 'goToLogin',
+            'ask': 'goToAsk',
             'dashboard': 'goToDashboard',
             'myQuestions': 'goToMyQuestions',
-            'compose': 'goToCompose',
-            'singleQuestion': 'goToSingleQuestion',
-            '*catchall': 'redirectDashboard'
+            'signIn': 'goToSignIn',
+            'answerView': 'goToAnswer',
+            '*catchall': 'defaultDashboard'
         },
 
         goHome: function() {
             ReactDOM.render(<HomeView />, document.querySelector('.container'))
         },
 
-        goToLogin: function() {
-            ReactDOM.render(<LoginView />, document.querySelector('.container'))
+        goToAsk: function() {
+            ReactDOM.render(<AskView />, document.querySelector('.container'))
         },
 
         goToDashboard: function() {
@@ -37,19 +37,19 @@ const app = function() {
         },
 
         goToMyQuestions: function() {
-            ReactDOM.render(<MyQuestionsView />, document.querySelector('.container'))
+            ReactDOM.render(<MyQuestionView />, document.querySelector('.container'))
         },
 
-        goToCompose: function() {
-            ReactDOM.render(<ComposeView />, document.querySelector('.container'))
+        goToSignIn: function() {
+            ReactDOM.render(<SignInView />, document.querySelector('.container'))
         },
 
-        goToSingleQuestion: function() {
-            ReactDOM.render(<SingleQuestionView />, document.querySelector('.container'))
+        goToAnswer: function() {
+            ReactDOM.render(<AnswerView />, document.querySelector('.container'))
         },
 
-        redirectDashboard: function() {
-            location.hash = 'dashboard'
+        defaultDashboard: function() {
+            location.hash = '/dashboard'
         },
 
         initialize: function() {
