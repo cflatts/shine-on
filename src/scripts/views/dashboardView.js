@@ -23,7 +23,6 @@ const DashboardView = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props)
         return (
             <div className = 'dashboard'>
                 <Header />
@@ -33,7 +32,24 @@ const DashboardView = React.createClass ({
     }
 })
 
+const Question = function() {
+
+    _createQuestion: function(model) {
+        return <Dashboard model = {model} />
+    },
+
+    render: function() {
+        return(
+            <div>
+                {this.props.coll.map(this._createQuestion)}
+            </div>)
+    }
+}
+
 const Dashboard = React.createClass ({
+
+
+
     render: function() {
         console.log(this.props)
         return (
