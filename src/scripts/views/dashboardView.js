@@ -10,6 +10,9 @@ const DashboardView = React.createClass ({
     },
 
     componentWillMount: function() {
+        STORE.on('updateContent', () => {
+            this.setState(STORE._getData())
+        })
 
     },
 
