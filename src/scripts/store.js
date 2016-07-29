@@ -8,8 +8,16 @@ const STORE = _.extend( Backbone.Events, {
         collection: new QuestionCollection()
     },
 
+    _getData: function() {
+        return _.clone(this.data)
+    },
+
+    _broadcastChange: function() {
+        this.trigger('updateContent')
+    },
+
     _initialize: function() {
-        this.data.collection.on('sync unpdate', this._broadcastChange.bind(this))
+        this.data.collection.on('sync update', this._broadcastChange.bind(this))
     }
 })
 
