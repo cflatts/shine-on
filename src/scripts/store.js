@@ -4,7 +4,9 @@ import {QuestionCollection} from './models/models'
 
 const STORE = _.extend( Backbone.Events, {
 
-
+    data: {
+        collection: new QuestionCollection()
+    }
 })
 
 export default STORE
