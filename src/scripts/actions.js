@@ -3,6 +3,7 @@ import STORE from './store'
 
 const ACTIONS = {
 
+    //USER ACTIONS
     _registerUser: function(userObj) {
         User.register(userObj).then( () => this._logIn(userObj.email, userObj.password),
             (error) => {
@@ -22,6 +23,7 @@ const ACTIONS = {
         )
     },
 
+    //QUESTION ACTIONS
     _submitQuestion: function(questionObj) {
         var question = new QuestionModel(questionObj)
         question.save().then(
@@ -36,8 +38,10 @@ const ACTIONS = {
     },
 
     _fetchQuestions: function(inputQuery) {
-        STORE.data.collection.fetch(inputQuery)
-    },
+        STORE.data.collection.fetch({
+            data: inputQuery
+        })
+    }
 }
 
 export default ACTIONS

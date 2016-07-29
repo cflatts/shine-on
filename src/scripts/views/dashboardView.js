@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import STORE from '../store'
 import ACTIONS from '../actions'
+import {User, QuestionModel, QuestionCollection} from '../models/models'
 
 const DashboardView = React.createClass ({
 
@@ -10,6 +11,7 @@ const DashboardView = React.createClass ({
     },
 
     componentWillMount: function() {
+        ACTIONS._fetchQuestions()
         STORE.on('updateContent', () => {
             this.setState(STORE._getData())
         })
@@ -21,7 +23,7 @@ const DashboardView = React.createClass ({
     },
 
     render: function() {
-        console.log(this.state)
+        console.log(this.props)
         return (
             <div className = 'dashboard'>
                 <Header />

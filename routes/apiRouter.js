@@ -60,7 +60,7 @@ apiRouter.post('/question', function(request, response) {
 //this route is to display all posts from any user
 
 apiRouter.get('/question', function(request, response) {
-    Question.find({}, function(error, records) {
+    QuestionModel.find(request.query, function(error, records) {
         if(error) {
             response.send(error)
         }
