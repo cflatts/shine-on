@@ -21,7 +21,7 @@ const DashboardView = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props)
+        console.log(this.state)
         return (
             <div className = 'dashboard'>
                 <Header />
@@ -32,14 +32,15 @@ const DashboardView = React.createClass ({
 })
 
 const Dashboard = React.createClass ({
-    // console.log(this.props)
     render: function() {
+        console.log(this.props)
         return (
             <div className = 'dashboardBody'>
                 <h3>Question</h3>
                 <p>context:</p>
                 <p>posted by:</p>
                 <p>posted on:</p>
+                <p>tags:</p>
                 <hr />
             </div>
         )

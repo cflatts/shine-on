@@ -1,4 +1,5 @@
 import {User, QuestionCollection, QuestionModel} from './models/models'
+import STORE from './store'
 
 const ACTIONS = {
 
@@ -32,6 +33,10 @@ const ACTIONS = {
                 console.log(error)
             }
         )
+    },
+
+    _fetchQuestions: function() {
+        STORE
     }
 }
 
