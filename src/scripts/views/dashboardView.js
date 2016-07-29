@@ -26,16 +26,20 @@ const DashboardView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <Dashboard coll = {this.state.collection}/>
+                <Question coll = {this.state.collection}/>
             </div>
         )
     }
 })
 
-const Question = function() {
+const Question = React.createClass({
 
     _createQuestion: function(model) {
-        return <Dashboard model = {model} />
+        return (
+            <div>
+                <Dashboard model = {model} />
+            </div>
+            )
     },
 
     render: function() {
@@ -44,18 +48,16 @@ const Question = function() {
                 {this.props.coll.map(this._createQuestion)}
             </div>)
     }
-}
+})
 
 const Dashboard = React.createClass ({
-
-
 
     render: function() {
         console.log(this.props)
         return (
             <div className = 'dashboardBody'>
-                <h3>Question</h3>
-                <p>context:</p>
+                <h3>question: {this.props.model.get('question')}</h3>
+                <p>content: {this.props.model.get('content')}</p>
                 <p>posted by:</p>
                 <p>posted on:</p>
                 <p>tags:</p>
