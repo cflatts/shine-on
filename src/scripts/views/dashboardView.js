@@ -1,7 +1,13 @@
 import React from 'react'
 import Header from './Header'
+import STORE from '../store'
 
 const DashboardView = React.createClass ({
+
+    getInitialState: function() {
+
+    }
+
     render: function() {
         return (
             <div className = 'dashboard'>
