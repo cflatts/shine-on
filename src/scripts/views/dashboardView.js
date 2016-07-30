@@ -37,7 +37,7 @@ const Question = React.createClass({
     _createQuestion: function(model) {
         return (
             <div>
-                <Dashboard model = {model} />
+                <Dashboard model = {model} key = {model.cid} />
             </div>
             )
     },

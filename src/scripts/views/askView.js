@@ -23,7 +23,7 @@ const Ask = React.createClass ({
             question: evt.target.question.value,
             content: evt.target.content.value,
             tags: evt.target.tags.value,
-            // answered:null
+            answered:false,
             authorId: User.getCurrentUser()._id
         })
     },
