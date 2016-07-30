@@ -73,7 +73,20 @@ apiRouter.get('/question', function(request, response) {
 //this route is to display all posts from a single specific user
 
 apiRouter.get('/user/question', function(request, response) {
-    Question.find({authorId: request.user._id}, function (error, records) {
+    QuestionModel.find({authorId: request.user._id}, function (error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
+        }
+    })
+})
+
+//this route is to display a single post from any user
+
+apiRouter.get('/question/:_id', function(request, response) {
+    QuestionModel.findById(request.params._id, function(error, records) {
         if(error) {
             response.send(error)
         }
