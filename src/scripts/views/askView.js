@@ -24,7 +24,8 @@ const Ask = React.createClass ({
             content: evt.target.content.value,
             tags: evt.target.tags.value,
             answered:false,
-            authorId: User.getCurrentUser()._id
+            authorId: User.getCurrentUser()._id,
+            username: User.getCurrentUser().username
         })
     },
 
