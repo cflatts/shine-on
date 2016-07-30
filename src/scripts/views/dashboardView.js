@@ -52,6 +52,15 @@ const Question = React.createClass({
 
 const Dashboard = React.createClass ({
 
+    _getAnsweredStatus: function() {
+        if(this.props.model.get('answered') === false) {
+            return 'NO'
+        }
+        else {
+            return 'YES'
+        }
+    },
+
     render: function() {
         console.log(this.props)
         return (
@@ -61,6 +70,7 @@ const Dashboard = React.createClass ({
                 <p>posted by: {this.props.model.get('username')}</p>
                 <p>posted on: </p>
                 <p>tags: {this.props.model.get('tags')[0]}</p>
+                <p>answered: {this._getAnsweredStatus()}</p>
                 <hr />
             </div>
         )
