@@ -58,7 +58,7 @@ const Dashboard = React.createClass ({
             <div className = 'dashboardBody'>
                 <h3>question: {this.props.model.get('question')}</h3>
                 <p>content: {this.props.model.get('content')}</p>
-                <p>posted by:</p>
+                <p>posted by: {this.props.model.get('username')}</p>
                 <p>posted on:</p>
                 <p>tags:</p>
                 <hr />
