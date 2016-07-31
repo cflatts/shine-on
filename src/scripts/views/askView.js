@@ -22,7 +22,7 @@ const Ask = React.createClass ({
         ACTIONS._submitQuestion({
             question: evt.target.question.value,
             content: evt.target.content.value,
-            tags: evt.options[evt.selectedIndex].value, //dont really know why this works, it just does
+            tags: '',
             answered:false,
             answers: [],
             authorId: User.getCurrentUser()._id,

@@ -15,7 +15,7 @@ const ACTIONS = {
     _logIn: function(email, password) {
         User.login(email, password).then(
             (response) => {
-                location.hash = '/dashboard'
+                location.hash = 'dashboard'
             },
             (error) =>{
                 console.log(error)
@@ -49,6 +49,7 @@ const ACTIONS = {
         var answerArray = this.props.get('answers')
         console.log(answerArray)
         answerArray.push(answerObj)
+        location.hash = 'answer'
     }
 }
 
