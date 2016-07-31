@@ -61,12 +61,6 @@ const Dashboard = React.createClass ({
         }
     },
 
-    // _goToAnswerView: function(evt) {
-    //     var questionId = this.props.model.get('_id')
-    //     console.log(questionId)
-    //     location.hash = 'question/' + questionId
-    // },
-
     render: function() {
         console.log(this.props)
         return (
