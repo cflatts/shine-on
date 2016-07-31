@@ -20,11 +20,20 @@ const AnswerView = React.createClass ({
 
 const Answers = React.createClass ({
 
+    _handleAnswerSubmit: function(evt) {
+        evt.preventDefault()
+    },
+
     render: function() {
         return (
             <div className = 'responseView'>
-                <textarea name = 'answer'>I have an answer for that!</textarea>
-                <label><input type = 'checkbox' name = 'answer' />This is the answer</label>
+                <div className = 'topAnswer'></div>
+                    <form>
+                    <textarea name = 'answer'>I have an answer for that!</textarea>
+                    <label><input type = 'checkbox' name = 'answer' />This is the answer</label>
+                    <button onSubmit = {this._handleAnswerSubmit}>Submit</button>
+                    <hr />
+                </form>
             </div>
         )
     }
