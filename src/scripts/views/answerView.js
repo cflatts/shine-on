@@ -18,6 +18,16 @@ const AnswerView = React.createClass ({
 
     },
 
+    componentWillReceiveProps: function(newProps) {
+        console.log('this.props: ', this.props)
+        console.log('newProps: ', newProps)
+
+        ACTIONS._fetchQuestions()
+        STORE.on('updateContent', () => {
+            this.setState(STORE._getData())
+        })
+    },
+
     componentWillUnmount: function() {
         STORE.off('updateContent')
     },
@@ -62,7 +72,16 @@ const Answer = React.createClass ({
     },
 
     _handleAnswerSubmit: function(evt) {
+        console.log(evt.target)
+        console.log(evt.target.value)
+
         evt.preventDefault()
+
+        ACTIONS._submitAnswer({
+            answer: evt.target.answer.value,
+            authorId: User.getCurrentUser()._id,
+            username: User.getCurrentUser().username
+        })
     },
 
     render: function() {
@@ -77,6 +96,8 @@ const Answer = React.createClass ({
                 <p>answered: {this._getAnsweredStatus()}</p>
                 <p> # of answers: {this.props.model.get('answers').length}</p>
                 <hr />
+
+
                 <div className = 'responseView'>
                     <div className = 'topAnswer'>
                         <label><input type = 'checkbox' name = 'answer' />This is the answer</label>

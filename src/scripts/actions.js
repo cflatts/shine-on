@@ -29,7 +29,7 @@ const ACTIONS = {
         question.save().then(
             (response) => {
                 console.log(response)
-                location.hash = '/dashboard'
+                location.hash = 'dashboard'
             },
             (error) => {
                 console.log(error)
@@ -47,7 +47,7 @@ const ACTIONS = {
 
     _submitAnswer: function(answerObj) {
         var answerArray = this.props.get('answers')
-
+        console.log(answerArray)
         answerArray.push(answerObj)
     }
 }
