@@ -41,6 +41,14 @@ const ACTIONS = {
         STORE.data.collection.fetch({
             data: inputQuery
         })
+    },
+
+    //ANSWER ACTIONS
+
+    _submitAnswer: function(answerObj) {
+        var answerArray = this.props.get('answers')
+
+        answerArray.push(answerObj)
     }
 }
 
