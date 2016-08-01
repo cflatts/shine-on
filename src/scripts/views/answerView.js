@@ -61,7 +61,7 @@ const Answer = React.createClass ({
             questionId: this.props.model.get('_id'),
             isAnswer: false
         })
-    }
+    },
 
     render: function() {
         console.log(this.props)
