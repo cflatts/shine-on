@@ -4,6 +4,7 @@ let helpers = require('../config/helpers.js')
 
 let User = require('../db/schema.js').User
 let QuestionModel = require('../db/schema.js').Question
+let AnswerModel = require('../db/schema.js').Answer
 
 
   apiRouter
@@ -41,7 +42,8 @@ let QuestionModel = require('../db/schema.js').Question
       })
     })
 
-    // Routes for a Model(resource) should have this structure
+
+//QUESTION ROUTES
 
 //this route is to post an individual question
 
@@ -95,5 +97,8 @@ apiRouter.get('/question/:_id', function(request, response) {
         }
     })
 })
+
+//ANSWER ROUTES
+
 
 module.exports = apiRouter
