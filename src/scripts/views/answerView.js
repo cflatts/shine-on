@@ -18,16 +18,6 @@ const AnswerView = React.createClass ({
 
     },
 
-    componentWillReceiveProps: function(newProps) {
-        console.log('this.props: ', this.props)
-        console.log('newProps: ', newProps)
-
-        ACTIONS._fetchQuestions()
-        STORE.on('updateContent', () => {
-            this.setState(STORE._getData())
-        })
-    },
-
     componentWillUnmount: function() {
         STORE.off('updateContent')
     },
@@ -71,19 +61,6 @@ const Answer = React.createClass ({
         }
     },
 
-    _handleAnswerSubmit: function(evt) {
-        console.log(evt.target)
-        console.log(evt.target.value)
-
-        evt.preventDefault()
-
-        ACTIONS._submitAnswer({
-            answer: evt.target.answer.value,
-            authorId: User.getCurrentUser()._id,
-            username: User.getCurrentUser().username
-        })
-    },
-
     render: function() {
         console.log(this.props)
         return (
@@ -104,7 +81,7 @@ const Answer = React.createClass ({
                     </div>
                     <form>
                         <textarea name = 'answer' placeholder = 'I have an answer for that!'></textarea>
-                        <button onSubmit = {this._handleAnswerSubmit}>Submit</button>
+                        <button>Submit</button>
                         <hr />
                     </form>
                 </div>
