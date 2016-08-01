@@ -21,7 +21,7 @@ const app = function() {
             'question/dashboard': 'goToDashboard',
             'question/myQuestions': 'goToMyQuestions',
             'signIn': 'goToSignIn',
-            'question/answer/:questionId': 'goToAnswer',
+            'question/:questionId': 'goToAnswer',
             '*catchall': 'defaultDashboard'
         },
 

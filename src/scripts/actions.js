@@ -61,7 +61,7 @@ const ACTIONS = {
         var answerArray = this.props.get('answers')
         console.log(answerArray)
         answerArray.push(answerObj)
-        location.hash = 'question/answer'
+        location.hash = 'question/dashboard'
     },
 
     // _deleteQuestion: function(questionId) {
