@@ -72,10 +72,10 @@ const Answer = React.createClass ({
     },
 
     _handleAnswerSubmit: function(evt) {
-        // console.log(evt.target)
-        // console.log(evt.target.value)
+        console.log(evt.target)
+        console.log(evt.target.value)
 
-        // evt.preventDefault()
+        evt.preventDefault()
 
         ACTIONS._submitAnswer({
             answer: evt.target.answer.value,

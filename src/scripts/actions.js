@@ -49,7 +49,7 @@ const ACTIONS = {
         var answerArray = this.props.get('answers')
         console.log(answerArray)
         answerArray.push(answerObj)
-        location.hash = 'answer'
+        location.hash = '/answer'
     }
 }
 

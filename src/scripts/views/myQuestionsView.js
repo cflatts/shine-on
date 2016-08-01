@@ -52,15 +52,26 @@ const Question = React.createClass({
 
 const Dashboard = React.createClass ({
 
+    _getAnsweredStatus: function() {
+        if(this.props.model.get('answered') === false) {
+            return 'NO'
+        }
+        else {
+            return 'YES'
+        }
+    },
+
     render: function() {
         console.log(this.props)
         return (
             <div className = 'dashboardBody'>
-                <h3>question: {this.props.model.get('question')}</h3>
+                <a href = '#answer'>question: {this.props.model.get('question')}</a>
                 <p>content: {this.props.model.get('content')}</p>
                 <p>posted by: {this.props.model.get('username')}</p>
-                <p>posted on: </p>
+                <p>posted on: </p> {/*I don't know how to use this property*/}
                 <p>tags: {this.props.model.get('tags')[0]}</p>
+                <p>answered: {this._getAnsweredStatus()}</p>
+                <p> # of answers: {this.props.model.get('answers').length}</p>
                 <hr />
             </div>
         )
