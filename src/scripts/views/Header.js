@@ -1,10 +1,12 @@
 import React from 'react'
+import ACTIONS from '../actions'
 
 const Header = React.createClass({
     render: function() {
         return (
             <div className = 'header'>
                 <h1>Shine On!</h1>
+                <button onClick = {ACTIONS._logOut}>Log out</button>
                 <Navigation />
             </div>
             )
