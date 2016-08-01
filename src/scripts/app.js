@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
+import {QuestionModel, QuestionCollection} from './models/models'
 import HomeView from './views/homeView'
 import AskView from './views/askView'
 import DashboardView from './views/dashboardView'
@@ -20,7 +21,7 @@ const app = function() {
             'question/dashboard': 'goToDashboard',
             'question/myQuestions': 'goToMyQuestions',
             'signIn': 'goToSignIn',
-            'question/answer': 'goToAnswer',
+            'question/answer/:questionId': 'goToAnswer',
             '*catchall': 'defaultDashboard'
         },
 
@@ -33,11 +34,11 @@ const app = function() {
         },
 
         goToDashboard: function() {
-            ReactDOM.render(<DashboardView />, document.querySelector('.container'))
+            ReactDOM.render(<DashboardView/>, document.querySelector('.container'))
         },
 
         goToMyQuestions: function() {
-            ReactDOM.render(<MyQuestionsView />, document.querySelector('.container'))
+            ReactDOM.render(<MyQuestionsView/>, document.querySelector('.container'))
         },
 
         goToSignIn: function() {
@@ -45,7 +46,7 @@ const app = function() {
         },
 
         goToAnswer: function() {
-            ReactDOM.render(<AnswerView />, document.querySelector('.container'))
+            ReactDOM.render(<AnswerView/>, document.querySelector('.container'))
         },
 
         defaultDashboard: function() {

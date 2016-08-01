@@ -40,7 +40,6 @@ const MyQuestionView = React.createClass ({
 const Question = React.createClass({
 
     _createQuestion: function(model) {
-        // if(model.get('authorId') === User.getCurrentUser()._id) {
             return (
                 <div>
                     <Dashboard model = {model} key = {model.cid} />
@@ -71,7 +70,7 @@ const Dashboard = React.createClass ({
         console.log(this.props)
         return (
             <div className = 'dashboardBody'>
-                <a href = '#question/answer'>question: {this.props.model.get('question')}</a>
+                <a href = {`#question/answer/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
                 <p>content: {this.props.model.get('content')}</p>
                 <p>posted by: {this.props.model.get('username')}</p>
                 <p>posted on: </p> {/*I don't know how to use this property*/}

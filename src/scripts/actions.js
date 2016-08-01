@@ -49,6 +49,12 @@ const ACTIONS = {
         })
     },
 
+    _fetchSingleQuestion: function(inputQuery) {
+        STORE.data.model.fetch({
+            url: 'api/question/' + inputQuery.questionId
+        })
+    },
+
     //ANSWER ACTIONS
 
     _submitAnswer: function(answerObj) {
@@ -58,10 +64,10 @@ const ACTIONS = {
         location.hash = 'question/answer'
     },
 
-    _deleteQuestion: function(questionId) {
-        let question = STORE.data.collection.get(questionId)
-        question.destroy()
-    }
+    // _deleteQuestion: function(questionId) {
+    //     let question = STORE.data.collection.get(questionId)
+    //     question.destroy()
+    // }
 }
 
 export default ACTIONS
