@@ -1,4 +1,4 @@
-import {User, QuestionCollection, QuestionModel} from './models/models'
+import {User, QuestionCollection, QuestionModel, AnswerModel, AnswerCollection} from './models/models'
 import STORE from './store'
 
 const ACTIONS = {
@@ -58,12 +58,15 @@ const ACTIONS = {
     //ANSWER ACTIONS
 
     _submitAnswer: function(answerObj) {
-        var answerArray = this.props.get('answers')
-        console.log(answerArray)
-        answerArray.push(answerObj)
-        location.hash = 'question/dashboard'
-    },
-
+        var answer = new AnswerModel(answerObj)
+        answer.save().then(
+            (response) => {
+                location.hash = 'question/dashboard'
+            },
+            (error) => {
+                console.log(error)
+            })
+    }
     // _deleteQuestion: function(questionId) {
     //     let question = STORE.data.collection.get(questionId)
     //     question.destroy()
