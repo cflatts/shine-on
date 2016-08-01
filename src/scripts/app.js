@@ -17,8 +17,8 @@ const app = function() {
         routes: {
             'home': 'goHome',
             'ask': 'goToAsk',
-            'dashboard': 'goToDashboard',
-            'myQuestions': 'goToMyQuestions',
+            'question/dashboard': 'goToDashboard',
+            'question/myQuestions': 'goToMyQuestions',
             'signIn': 'goToSignIn',
             'answer': 'goToAnswer',
             '*catchall': 'defaultDashboard'
