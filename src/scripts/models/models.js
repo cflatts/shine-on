@@ -85,4 +85,4 @@ export const AnswerCollection = Backbone.Collection.extend ({
 })
 
 
-export { User, QuestionModel, QuestionCollection }
+export { User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection }
