@@ -34,27 +34,9 @@ const AnswerView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <Question coll = {this.state.collection}/>
+                <Answer model = {this.state.model} />
             </div>
         )
-    }
-})
-
-const Question = React.createClass({
-
-    _createQuestion: function(model) {
-        return (
-            <div>
-                <Answer model = {model} key = {model.cid} />
-            </div>
-            )
-    },
-
-    render: function() {
-        return(
-            <div>
-                {this.props.coll.map(this._createQuestion)}
-            </div>)
     }
 })
 
@@ -73,13 +55,13 @@ const Answer = React.createClass ({
         console.log(this.props)
         return (
             <div className = 'dashboardBody'>
-                <a href = '#question/answer'>question: {this.props.model.get('question')}</a>
+                <a href = {`#question/answer/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
                 <p>content: {this.props.model.get('content')}</p>
                 <p>posted by: {this.props.model.get('username')}</p>
                 <p>posted on: </p> {/*I don't know how to use this property*/}
-                <p>tags: {this.props.model.get('tags')[0]}</p>
+                <p>tags:</p>
                 <p>answered: {this._getAnsweredStatus()}</p>
-                <p> # of answers: {this.props.model.get('answers').length}</p>
+                <p># of answers: 0</p>
                 <hr />
 
 

@@ -45,8 +45,8 @@ const app = function() {
             ReactDOM.render(<SignInView />, document.querySelector('.container'))
         },
 
-        goToAnswer: function() {
-            ReactDOM.render(<AnswerView/>, document.querySelector('.container'))
+        goToAnswer: function(questionId) {
+            ReactDOM.render(<AnswerView questionId = {questionId}/>, document.querySelector('.container'))
         },
 
         defaultDashboard: function() {
