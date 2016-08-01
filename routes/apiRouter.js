@@ -100,5 +100,16 @@ apiRouter.get('/question/:_id', function(request, response) {
 
 //ANSWER ROUTES
 
-
+//this route is to create an individual answer
+apiRouter.post('/answer', function(request, response) {
+    let answer = new AnswerModel(request.body)
+    answer.save(function(error) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(answer)
+        }
+    })
+})
 module.exports = apiRouter
