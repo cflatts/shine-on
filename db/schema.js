@@ -27,6 +27,15 @@ const questionsSchema = new Schema({
     timestamp: true
 })
 
+const answerSchema = new Schema ({
+    answer: {type: String, required: true},
+    username: {type: String, required: true},
+    isAnswer: {type: Boolean, required: true, default: false}
+},
+{
+    timestamp:true
+})
+
 module.exports = {
   User: createModel('User', usersSchema),
   Question: createModel('Question', questionsSchema)
