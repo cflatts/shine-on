@@ -56,6 +56,15 @@ const ACTIONS = {
         console.log(answerArray)
         answerArray.push(answerObj)
         location.hash = 'answer'
+    },
+
+    updateView: function(viewString) {
+        STORE.set('viewType', viewString)
+    },
+
+    deletePost: function(questionId) {
+        let question = STORE.data.collection.get(questionId)
+        question.destroy()
     }
 }
 
