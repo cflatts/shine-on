@@ -58,10 +58,6 @@ const ACTIONS = {
         location.hash = 'question/answer'
     },
 
-    _updateView: function(viewString) {
-        STORE.set('viewType', viewString)
-    },
-
     _deleteQuestion: function(questionId) {
         let question = STORE.data.collection.get(questionId)
         question.destroy()

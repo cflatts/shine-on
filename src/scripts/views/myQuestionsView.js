@@ -67,17 +67,11 @@ const Dashboard = React.createClass ({
         }
     },
 
-    _sendId: function(evt) {
-        var questionId = this.props.model.get('_id')
-        console.log(questionId)
-        return questionId
-    },
-
     render: function() {
         console.log(this.props)
         return (
             <div className = 'dashboardBody'>
-                <a href = '#question/answer' onClick = {this._sendId} >question: {this.props.model.get('question')}</a>
+                <a href = '#question/answer'>question: {this.props.model.get('question')}</a>
                 <p>content: {this.props.model.get('content')}</p>
                 <p>posted by: {this.props.model.get('username')}</p>
                 <p>posted on: </p> {/*I don't know how to use this property*/}

@@ -1,11 +1,12 @@
 import _ from 'underscore'
 import Backbone from 'backbone'
-import {QuestionCollection} from './models/models'
+import {QuestionCollection, QuestionModel} from './models/models'
 
 const STORE = _.extend( Backbone.Events, {
 
     data: {
-        collection: new QuestionCollection()
+        collection: new QuestionCollection(),
+        model: new QuestionModel()
     },
 
     _getData: function() {

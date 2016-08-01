@@ -11,12 +11,12 @@ const AnswerView = React.createClass ({
     },
 
     componentWillMount: function() {
-        // console.log(this.props.model)
-        // var queryForQuestions = {
-        //     questionId: this.props.model.get('_id')
-        // }
 
-        ACTIONS._fetchQuestions()
+        var queryForQuestions = {
+            questionId: this.props._id
+        }
+
+        ACTIONS._fetchQuestions(queryForQuestions)
         STORE.on('updateContent', () => {
             this.setState(STORE._getData())
         })
