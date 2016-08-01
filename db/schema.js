@@ -22,7 +22,6 @@ const questionsSchema = new Schema({
     answered: {type: Boolean, required: true, default: false},
     tags: {type: [String], required: true},
     username: {type: String, required: true},
-    answers: {type: [String]}
 },
 {
     timestamp: true
