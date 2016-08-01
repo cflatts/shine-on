@@ -35,22 +35,24 @@ const MyQuestionView = React.createClass ({
 const Question = React.createClass({
 
     _createQuestion: function(model) {
-        return (
-            <div>
-                <Dashboard model = {model} key = {model.cid} />
-            </div>
-            )
+        var modelsArray = this.props.coll.models
+        console.log(modelsArray)
+        for(var i = 0, i < modelsArray.length; i++) {
+            if(modelsArray[i].get('authorId') === User.getCurrenUser()._id) {
+                return (
+                    <div>
+                        <Dashboard model = {model} key = {model.cid} />
+                    </div>
+                )
+            }
+        }
     },
 
     render: function() {
-
-        if(this.props.model.get('authorId') === User.getCurrentUser()._id) {
-
         return(
             <div>
                 {this.props.coll.map(this._createQuestion)}
-            </div>
-        )}
+            </div>)
     }
 })
 
