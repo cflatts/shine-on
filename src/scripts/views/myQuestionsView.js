@@ -43,10 +43,14 @@ const Question = React.createClass({
     },
 
     render: function() {
+
+        if(this.props.model.get('authorId') === User.getCurrentUser()._id) {
+
         return(
             <div>
                 {this.props.coll.map(this._createQuestion)}
-            </div>)
+            </div>
+        })
     }
 })
 
