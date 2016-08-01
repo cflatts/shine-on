@@ -101,6 +101,7 @@ apiRouter.get('/question/:_id', function(request, response) {
 //ANSWER ROUTES
 
 //this route is to create an individual answer
+
 apiRouter.post('/answer', function(request, response) {
     let answer = new AnswerModel(request.body)
     answer.save(function(error) {
@@ -109,6 +110,19 @@ apiRouter.post('/answer', function(request, response) {
         }
         else {
             response.json(answer)
+        }
+    })
+})
+
+//this route is to get all the answers
+
+apiRouter.get('/answer', function(request, response) {
+    AnswerModel.find(request.query, function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
         }
     })
 })
