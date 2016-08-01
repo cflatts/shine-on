@@ -6,7 +6,7 @@ const STORE = _.extend( Backbone.Events, {
 
     data: {
         collection: new QuestionCollection(),
-        model: new QuestionModel()
+        model: new QuestionModel(),
         answerCollection: new AnswerCollection(),
         answerModel: new AnswerModel()
     },
