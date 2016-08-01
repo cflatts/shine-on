@@ -51,6 +51,18 @@ const Answer = React.createClass ({
         }
     },
 
+    _submitAnswerSubmit: function(evt) {
+        evt.preventDefault()
+
+        ACTIONS._submitAnswer ({
+            answer: evt.target.answer.value,
+            username: User.getCurrentUser().username,
+            authorId: User.getCurrentUser()._id,
+            questionId: this.props.model.get('_id'),
+            isAnswer: false
+        })
+    }
+
     render: function() {
         console.log(this.props)
         return (
@@ -71,7 +83,7 @@ const Answer = React.createClass ({
                     </div>
                     <form>
                         <textarea name = 'answer' placeholder = 'I have an answer for that!'></textarea>
-                        <button>Submit</button>
+                        <button onSubmit = {this._submitAnswer}>Submit</button>
                         <hr />
                     </form>
                 </div>
