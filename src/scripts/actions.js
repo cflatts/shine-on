@@ -66,6 +66,12 @@ const ACTIONS = {
             (error) => {
                 console.log(error)
             })
+    },
+
+    _fetchAnswers: function(inputQuery) {
+        STORE.data.answerCollection.fetch({
+            data: inputQuery
+        })
     }
     // _deleteQuestion: function(questionId) {
     //     let question = STORE.data.collection.get(questionId)
