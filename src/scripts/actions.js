@@ -23,10 +23,10 @@ const ACTIONS = {
         )
     },
 
-    logUserOut: function() {
+    _logOut: function() {
         User.logout().then(
             () => location.hash = 'home'
-
+        )
     },
 
     //QUESTION ACTIONS
