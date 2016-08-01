@@ -20,7 +20,7 @@ const app = function() {
             'question/dashboard': 'goToDashboard',
             'question/myQuestions': 'goToMyQuestions',
             'signIn': 'goToSignIn',
-            'answer': 'goToAnswer',
+            'question/answer': 'goToAnswer',
             '*catchall': 'defaultDashboard'
         },
 
