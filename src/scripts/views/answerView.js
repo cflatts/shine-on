@@ -11,6 +11,11 @@ const AnswerView = React.createClass ({
     },
 
     componentWillMount: function() {
+        // console.log(this.props.model)
+        // var queryForQuestions = {
+        //     questionId: this.props.model.get('_id')
+        // }
+
         ACTIONS._fetchQuestions()
         STORE.on('updateContent', () => {
             this.setState(STORE._getData())
@@ -65,7 +70,7 @@ const Answer = React.createClass ({
         console.log(this.props)
         return (
             <div className = 'dashboardBody'>
-                <a href = '#answer'>question: {this.props.model.get('question')}</a>
+                <a href = '#question/answer'>question: {this.props.model.get('question')}</a>
                 <p>content: {this.props.model.get('content')}</p>
                 <p>posted by: {this.props.model.get('username')}</p>
                 <p>posted on: </p> {/*I don't know how to use this property*/}
