@@ -50,7 +50,7 @@ const Question = React.createClass({
             <div>
                 {this.props.coll.map(this._createQuestion)}
             </div>
-        })
+        )}
     }
 })
 
