@@ -23,6 +23,12 @@ const ACTIONS = {
         )
     },
 
+    logUserOut: function() {
+        User.logout().then(
+            () => location.hash = 'home'
+
+    },
+
     //QUESTION ACTIONS
     _submitQuestion: function(questionObj) {
         var question = new QuestionModel(questionObj)
@@ -49,7 +55,7 @@ const ACTIONS = {
         var answerArray = this.props.get('answers')
         console.log(answerArray)
         answerArray.push(answerObj)
-        location.hash = '/answer'
+        location.hash = 'answer'
     }
 }
 
