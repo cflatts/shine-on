@@ -11,7 +11,12 @@ const MyQuestionView = React.createClass ({
     },
 
     componentWillMount: function() {
-        ACTIONS._fetchQuestions()
+
+        var queryForQuestions = {
+            authorId: User.getCurrentUser()._id
+        }
+
+        ACTIONS._fetchQuestions(queryForQuestions)
         STORE.on('updateContent', () => {
             this.setState(STORE._getData())
         })
