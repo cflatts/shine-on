@@ -115,7 +115,6 @@ apiRouter.post('/answer', function(request, response) {
 })
 
 //this route is to get all the answers
-
 apiRouter.get('/answer', function(request, response) {
     AnswerModel.find(request.query, function(error, records) {
         if(error) {
