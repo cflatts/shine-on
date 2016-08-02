@@ -11,14 +11,12 @@ const AnswerView = React.createClass ({
     },
 
     componentWillMount: function() {
-        console.log(this.state.model)
-        console.log(this.props.questionId)
 
         var queryForSingleQuestion = {
             questionId: this.props.questionId
         }
 
-        console.log(queryForSingleQuestion)
+
         ACTIONS._fetchSingleQuestion(queryForSingleQuestion)
         STORE.on('updateContent', () => {
             this.setState(STORE._getData())
@@ -34,7 +32,7 @@ const AnswerView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <QuestionBody answerColl = {this.state.answerColl} model = {this.state.model} />
+                <QuestionBody model = {this.state.model} />
             </div>
         )
     }
@@ -51,6 +49,11 @@ const QuestionBody = React.createClass ({
         }
     },
 
+    _getPostedOn: function() {
+        var dateString = this.props.model.get('createdAt')
+        return dateString
+    },
+
     _submitAnswerSubmit: function(evt) {
         evt.preventDefault()
 
@@ -63,26 +66,18 @@ const QuestionBody = React.createClass ({
         })
     },
 
-    _getPostedOn: function() {
-        var dateString = this.props.model.get('createdAt')
-        return dateString
-    },
-
     render: function() {
-        console.log(this.props)
+        console.log(this.props.model)
         return (
             <div className = 'dashboardBody'>
-                <a href = {`#question/answer/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
+                <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
                 <p>content: {this.props.model.get('content')}</p>
                 <p>posted by: {this.props.model.get('username')}</p>
-                <p>posted on: {this._getPostedOn()}</p>
-                <p>tags:{this.props.model.get('tags')[0]}</p>
+                <p>posted on: {this._getPostedOn()} </p>
+                <p>tags: {this.props.model.get('tags')}</p>
                 <p>answered: {this._getAnsweredStatus()}</p>
-                <p># of answers: 0</p>
-                <textarea name = 'answer' placeholder = 'I have an answer for that!'></textarea>
-                <button onSubmit = {this._submitAnswer}>Submit</button>
+                <p> # of answers: 0</p>
                 <hr />
-                <Answer />
             </div>
         )
     }
