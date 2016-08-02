@@ -71,8 +71,12 @@ const Dashboard = React.createClass ({
         return dateString
     },
 
+    _handleDelete: function() {
+        ACTIONS._deleteQuestion(this.props.model.get('_id'))
+    },
+
     render: function() {
-        console.log(this.props)
+        console.log(this.props.model._id)
         return (
             <div className = 'dashboardBody'>
                 <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
@@ -82,7 +86,7 @@ const Dashboard = React.createClass ({
                 <p>tags: {this.props.model.get('tags')[0]}</p>
                 <p>answered: {this._getAnsweredStatus()}</p>
                 <p> # of answers:</p>
-                <button type = 'button'>Remove</button>
+                <button type = 'button' onClick = {this._handleDelete}>Remove</button>
                 <hr />
             </div>
         )

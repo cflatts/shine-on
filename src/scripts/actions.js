@@ -55,6 +55,11 @@ const ACTIONS = {
         })
     },
 
+    _deleteQuestion: function(questionId) {
+        let question = STORE.data.collection.get(questionId)
+        question.destroy()
+    },
+
     //ANSWER ACTIONS
 
     _submitAnswer: function(answerObj) {
@@ -73,10 +78,8 @@ const ACTIONS = {
             data: inputQuery
         })
     }
-    // _deleteQuestion: function(questionId) {
-    //     let question = STORE.data.collection.get(questionId)
-    //     question.destroy()
-    // }
+
+
 }
 
 export default ACTIONS
