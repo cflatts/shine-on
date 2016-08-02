@@ -61,7 +61,7 @@ const ACTIONS = {
         var answer = new AnswerModel(answerObj)
         answer.save().then(
             (response) => {
-                location.hash = 'question/dashboard'
+                location.hash = 'question/' + answerObj.questionId
             },
             (error) => {
                 console.log(error)

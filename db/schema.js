@@ -31,7 +31,8 @@ const answerSchema = new Schema ({
     answer: {type: String, required: true},
     username: {type: String, required: true},
     isAnswer: {type: Boolean, required: true, default: false},
-    questionId: {type: String, required: true}
+    questionId: {type: String, required: true},
+    authorId: {type: String, required: true}
 },
 {
     timestamps:true

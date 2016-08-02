@@ -95,11 +95,20 @@ const Answer = React.createClass({
 })
 
 const AnswerBody = React.createClass ({
+
+    _getPostedOn: function() {
+        var dateString = this.props.answerModel.get('createdAt')
+        return dateString
+    },
+
     render: function() {
         console.log('rendering', this.props)
         return (
             <div className = 'answers'>
-                <p>Are you even rendering?</p>
+                <p>Answer: {this.props.answerModel.get('answer')}</p>
+                <p>Posted By:{this.props.answerModel.get('username')}</p>
+                <p>Posted On: {this._getPostedOn()}</p>
+                <label><input type = 'checkbox' name = 'answerCheck' className = 'answerCheck' />This is the answer</label>
                 <hr />
             </div>
         )
