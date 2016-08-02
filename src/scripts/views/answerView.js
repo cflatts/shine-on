@@ -38,7 +38,7 @@ const AnswerView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <QuestionBody  model = {this.state.model} />
+                <QuestionBody answerColl = {this.state.answerCollection}  model = {this.state.model} />
                 <ResponseView model = {this.state.model}/>
                 <Answer answerColl = {this.state.answerCollection} />
             </div>
@@ -72,7 +72,7 @@ const QuestionBody = React.createClass ({
                 <p>posted on: {this._getPostedOn()} </p>
                 <p>tags: {this.props.model.get('tags')}</p>
                 <p>answered: {this._getAnsweredStatus()}</p>
-                <p> # of answers: 0</p>
+                <p> # of answers: {this.props.answerColl.models.length}</p>
                 <hr />
             </div>
         )
