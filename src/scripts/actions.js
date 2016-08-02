@@ -77,6 +77,11 @@ const ACTIONS = {
         STORE.data.answerCollection.fetch({
             data: inputQuery
         })
+    },
+
+    _deleteAnswer: function(answerId) {
+        let answer = STORE.data.answerCollection.get(answerId)
+        answer.destroy()
     }
 
 
