@@ -106,7 +106,7 @@ const AnswerBody = React.createClass ({
     },
 
     _handleAnswerDelete: function() {
-
+        ACTIONS._deleteAnswer(this.props.answerModel.get('_id'))
     },
 
     render: function() {
