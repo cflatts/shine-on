@@ -1,6 +1,8 @@
 import Backbone from 'backbone'
 import React from 'react'
 import AnswerView from './answerView'
+import ACTIONS from '../actions'
+import {User} from '../models/models'
 
 const ResponseView = React.createClass ({
     render: function() {

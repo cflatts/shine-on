@@ -43,7 +43,7 @@ const Question = React.createClass({
     },
 
     render: function() {
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <div>
                 {this.props.coll.map(this._createQuestion)}

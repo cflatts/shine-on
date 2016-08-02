@@ -34,8 +34,8 @@ const AnswerView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <ResponseView model = {this.state.model}/>
                 <QuestionBody  model = {this.state.model} />
+                <ResponseView model = {this.state.model}/>
                 <Answer answerColl = {this.state.answerCollection} />
             </div>
         )
