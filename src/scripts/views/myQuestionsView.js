@@ -76,7 +76,7 @@ const Dashboard = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props.model._id)
+        console.log(this.props.model.get('_id'))
         return (
             <div className = 'dashboardBody'>
                 <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
