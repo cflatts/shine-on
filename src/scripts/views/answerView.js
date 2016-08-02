@@ -16,8 +16,12 @@ const AnswerView = React.createClass ({
         var queryForSingleQuestion = {
             questionId: this.props.questionId
         }
+
+        var queryForAnswers = {
+            questionId: this.props.questionId
+        }
         ACTIONS._fetchSingleQuestion(queryForSingleQuestion)
-        ACTIONS._fetchAnswers()
+        ACTIONS._fetchAnswers(queryForAnswers)
 
 
         STORE.on('updateContent', () => {
