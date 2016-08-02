@@ -63,6 +63,11 @@ const QuestionBody = React.createClass ({
         })
     },
 
+    _getPostedOn: function() {
+        var dateString = this.props.model.get('createdAt')
+        return dateString
+    },
+
     render: function() {
         console.log(this.props)
         return (
@@ -70,7 +75,7 @@ const QuestionBody = React.createClass ({
                 <a href = {`#question/answer/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
                 <p>content: {this.props.model.get('content')}</p>
                 <p>posted by: {this.props.model.get('username')}</p>
-                <p>posted on: </p> {/*I don't know how to use this property*/}
+                <p>posted on: {this._getPostedOn()}</p> {/*I don't know how to use this property*/}
                 <p>tags:</p>
                 <p>answered: {this._getAnsweredStatus()}</p>
                 <p># of answers: 0</p>
