@@ -24,7 +24,7 @@ const questionsSchema = new Schema({
     username: {type: String, required: true},
 },
 {
-    timestamp: true
+    timestamps: true
 })
 
 const answerSchema = new Schema ({
@@ -33,7 +33,7 @@ const answerSchema = new Schema ({
     isAnswer: {type: Boolean, required: true, default: false}
 },
 {
-    timestamp:true
+    timestamps:true
 })
 
 module.exports = {

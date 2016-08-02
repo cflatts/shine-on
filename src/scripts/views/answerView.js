@@ -34,7 +34,7 @@ const AnswerView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <QuestionBody model = {this.state.model} />
+                <QuestionBody answerColl = {this.state.answerColl} model = {this.state.model} />
             </div>
         )
     }
@@ -74,20 +74,24 @@ const QuestionBody = React.createClass ({
                 <p>tags:</p>
                 <p>answered: {this._getAnsweredStatus()}</p>
                 <p># of answers: 0</p>
+                <textarea name = 'answer' placeholder = 'I have an answer for that!'></textarea>
+                <button onSubmit = {this._submitAnswer}>Submit</button>
                 <hr />
+                <Answer />
+            </div>
+        )
+    }
+})
 
-
-                <div className = 'responseView'>
-                    <div className = 'topAnswer'>
-                        <label><input type = 'checkbox' name = 'answer' />This is the answer</label>
-                        <div className = 'answerContent'
-                    </div>
-                    <form>
-                        <textarea name = 'answer' placeholder = 'I have an answer for that!'></textarea>
-                        <button onSubmit = {this._submitAnswer}>Submit</button>
-                        <hr />
-                    </form>
-                </div>
+const Answer = React.createClass ({
+    render: function() {
+        return (
+            <div className = 'responseView'>
+                <form>
+                    <label><input type = 'checkbox' name = 'answer' />This is the answer</label>
+                    <p></p>
+                    <hr />
+                </form>
             </div>
         )
     }
