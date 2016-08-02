@@ -98,6 +98,22 @@ apiRouter.get('/question/:_id', function(request, response) {
     })
 })
 
+apiRouter.delete('/question/:_id',function(request,response){
+  let questionId = request.params._id
+  QuestionModel.remove({_id:questionId},function(error) {
+    if (error) {
+      response.json({
+        error: error
+      })
+    }
+    else {
+      response.status(200).json({
+        msg: 'Question successfully deleted!'
+      })
+    }
+  })
+})
+
 //ANSWER ROUTES
 
 //this route is to create an individual answer
