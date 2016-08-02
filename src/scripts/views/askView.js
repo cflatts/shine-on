@@ -22,9 +22,8 @@ const Ask = React.createClass ({
         ACTIONS._submitQuestion({
             question: evt.target.question.value,
             content: evt.target.content.value,
-            tags: '',
+            tags: document.getElementById('tags').value,
             answered:false,
-            answers: [],
             authorId: User.getCurrentUser()._id,
             username: User.getCurrentUser().username,
 
@@ -36,7 +35,7 @@ const Ask = React.createClass ({
             <form className = 'composeBody' onSubmit = {this._handleSubmit}>
                 <input type = 'text' placeholder = 'What is your question?' name = 'question' />
                 <textarea placeholder = 'Tell us a little about it.' name = 'content' ></textarea>
-                <select className = 'tags' name = 'tags'>
+                <select id = 'tags' name = 'tags'>
                     <option>---</option>
                     <option>Science</option>
                     <option>Technology</option>
