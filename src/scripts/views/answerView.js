@@ -15,9 +15,13 @@ const AnswerView = React.createClass ({
         var queryForSingleQuestion = {
             questionId: this.props.questionId
         }
-
-
         ACTIONS._fetchSingleQuestion(queryForSingleQuestion)
+
+        var queryForAnswers = {
+            questionId: this.props.questionId
+        }
+        ACTIONS._fetchAnswers(queryForAnswers)
+
         STORE.on('updateContent', () => {
             this.setState(STORE._getData())
         })
@@ -32,7 +36,7 @@ const AnswerView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <QuestionBody model = {this.state.model} />
+                <QuestionBody answerColl = {this.state.answerCollection} model = {this.state.model} />
             </div>
         )
     }
@@ -54,7 +58,27 @@ const QuestionBody = React.createClass ({
         return dateString
     },
 
-    _submitAnswerSubmit: function(evt) {
+    render: function() {
+        console.log(this.props)
+        return (
+            <div className = 'dashboardBody'>
+                <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
+                <p>content: {this.props.model.get('content')}</p>
+                <p>posted by: {this.props.model.get('username')}</p>
+                <p>posted on: {this._getPostedOn()} </p>
+                <p>tags: {this.props.model.get('tags')}</p>
+                <p>answered: {this._getAnsweredStatus()}</p>
+                <p> # of answers: 0</p>
+                <hr />
+                <AnswerBody model = {this.props.model} />
+            </div>
+        )
+    }
+})
+
+const AnswerBody = React.createClass ({
+
+    _handleAnswerSubmit: function(evt) {
         evt.preventDefault()
 
         ACTIONS._submitAnswer ({
@@ -67,17 +91,14 @@ const QuestionBody = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props.model)
+        console.log(this.props)
         return (
-            <div className = 'dashboardBody'>
-                <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
-                <p>content: {this.props.model.get('content')}</p>
-                <p>posted by: {this.props.model.get('username')}</p>
-                <p>posted on: {this._getPostedOn()} </p>
-                <p>tags: {this.props.model.get('tags')}</p>
-                <p>answered: {this._getAnsweredStatus()}</p>
-                <p> # of answers: 0</p>
-                <hr />
+            <div className = 'answerBody'>
+                <form>
+                    <textarea className = 'giveAnswer' name = 'answer' placeholder = 'I have an answer for that!'></textarea>
+                    <button className = 'handleAnswerSubmit' onSubmit = {this._handleAnswerSubmit}>Submit</button>
+                </form>
+                <Answer />
             </div>
         )
     }
@@ -86,12 +107,9 @@ const QuestionBody = React.createClass ({
 const Answer = React.createClass ({
     render: function() {
         return (
-            <div className = 'responseView'>
-                <form>
-                    <label><input type = 'checkbox' name = 'answer' />This is the answer</label>
-                    <p></p>
-                    <hr />
-                </form>
+            <div className = 'answers'>
+                <p></p>
+                <hr />
             </div>
         )
     }
