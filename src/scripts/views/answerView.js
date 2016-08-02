@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import STORE from '../store'
 import ACTIONS from '../actions'
+import ResponseView from './Answer'
 import {User, QuestionModel, QuestionCollection, AnswerCollection, AnswerModel} from '../models/models'
 
 const AnswerView = React.createClass ({
@@ -36,7 +37,8 @@ const AnswerView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <QuestionBody answerColl = {this.state.answerCollection} model = {this.state.model} />
+                <QuestionBody model = {this.state.model} />
+                <ResponseView answerColl = {this.state.answerCollection} />
             </div>
         )
     }
@@ -70,42 +72,34 @@ const QuestionBody = React.createClass ({
                 <p>answered: {this._getAnsweredStatus()}</p>
                 <p> # of answers: 0</p>
                 <hr />
-                <AnswerBody model = {this.props.model} />
+                <AnswerBody answerColl = {this.props.answerColl} model = {this.props.model} />
             </div>
         )
     }
 })
 
-const AnswerBody = React.createClass ({
 
-    _handleAnswerSubmit: function(evt) {
-        evt.preventDefault()
+const GetAnswer = React.createClass({
 
-        ACTIONS._submitAnswer ({
-            answer: evt.target.answer.value,
-            username: User.getCurrentUser().username,
-            authorId: User.getCurrentUser()._id,
-            questionId: this.props.model.get('_id'),
-            isAnswer: false
-        })
+    _createAnswer: function(model) {
+        return (
+            <div>
+                <Answer model = {model} />
+            </div>
+        )
     },
 
     render: function() {
-        console.log(this.props)
-        return (
-            <div className = 'answerBody'>
-                <form>
-                    <textarea className = 'giveAnswer' name = 'answer' placeholder = 'I have an answer for that!'></textarea>
-                    <button className = 'handleAnswerSubmit' onSubmit = {this._handleAnswerSubmit}>Submit</button>
-                </form>
-                <Answer />
-            </div>
-        )
+        return(
+            <div>
+                {this.props.answerColl.model.map(this._createAnswer)}
+            </div>)
     }
 })
 
 const Answer = React.createClass ({
     render: function() {
+        console.log(this.props)
         return (
             <div className = 'answers'>
                 <p></p>
