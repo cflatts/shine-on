@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import STORE from '../store'
 import ACTIONS from '../actions'
-import {User, QuestionModel, QuestionCollection} from '../models/models'
+import {User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection} from '../models/models'
 
 const DashboardView = React.createClass ({
 

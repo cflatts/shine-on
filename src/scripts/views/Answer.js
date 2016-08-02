@@ -31,9 +31,9 @@ const Respond = React.createClass ({
         console.log(this.props.model.get('_id'))
         return (
             <div className = 'answerBody'>
-                <form>
+                <form className = 'submitAnswer' onSubmit = {this._handleAnswerSubmit}>
                     <textarea className = 'giveAnswer' name = 'answer' placeholder = 'I have an answer for that!'></textarea>
-                    <button className = 'handleAnswerSubmit' onSubmit = {this._handleAnswerSubmit}>Submit</button>
+                    <button type = 'submit' className = 'handleAnswerSubmit'>Submit</button>
                 </form>
             </div>
         )
