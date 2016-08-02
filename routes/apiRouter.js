@@ -98,6 +98,8 @@ apiRouter.get('/question/:_id', function(request, response) {
     })
 })
 
+//this route is to delete a single post
+
 apiRouter.delete('/question/:_id',function(request,response){
   let questionId = request.params._id
   QuestionModel.remove({_id:questionId},function(error) {
@@ -140,5 +142,23 @@ apiRouter.get('/answer', function(request, response) {
             response.json(records)
         }
     })
+})
+
+//this route is to delete a single question
+
+apiRouter.delete('/answer/:_id',function(request,response){
+  let answerId = request.params._id
+  AnswerModel.remove({_id:answerId},function(error) {
+    if (error) {
+      response.json({
+        error: error
+      })
+    }
+    else {
+      response.status(200).json({
+        msg: 'Question successfully deleted!'
+      })
+    }
+  })
 })
 module.exports = apiRouter

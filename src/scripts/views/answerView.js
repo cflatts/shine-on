@@ -105,6 +105,10 @@ const AnswerBody = React.createClass ({
         return dateString
     },
 
+    _handleAnswerDelete: function() {
+
+    },
+
     render: function() {
         console.log('rendering', this.props)
         return (
@@ -113,6 +117,7 @@ const AnswerBody = React.createClass ({
                 <p>Posted By:{this.props.answerModel.get('username')}</p>
                 <p>Posted On: {this._getPostedOn()}</p>
                 <label><input type = 'checkbox' name = 'answerCheck' className = 'answerCheck' />This is the answer</label>
+                <button type = 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                 <hr />
             </div>
         )
