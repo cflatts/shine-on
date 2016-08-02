@@ -17,11 +17,8 @@ const AnswerView = React.createClass ({
             questionId: this.props.questionId
         }
         ACTIONS._fetchSingleQuestion(queryForSingleQuestion)
+        ACTIONS._fetchAnswers()
 
-        var queryForAnswers = {
-            questionId: this.props.questionId
-        }
-        ACTIONS._fetchAnswers(queryForAnswers)
 
         STORE.on('updateContent', () => {
             this.setState(STORE._getData())
@@ -37,8 +34,9 @@ const AnswerView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <QuestionBody model = {this.state.model} />
-                <ResponseView answerColl = {this.state.answerCollection} />
+                <ResponseView model = {this.state.model}/>
+                <QuestionBody  model = {this.state.model} />
+                <Answer answerColl = {this.state.answerCollection} />
             </div>
         )
     }
@@ -72,37 +70,36 @@ const QuestionBody = React.createClass ({
                 <p>answered: {this._getAnsweredStatus()}</p>
                 <p> # of answers: 0</p>
                 <hr />
-                <AnswerBody answerColl = {this.props.answerColl} model = {this.props.model} />
             </div>
         )
     }
 })
 
 
-const GetAnswer = React.createClass({
+const Answer = React.createClass({
 
     _createAnswer: function(model) {
-        return (
-            <div>
-                <Answer model = {model} />
-            </div>
-        )
-    },
+        return <AnswerBody answerModel = {model} />
+       },
 
     render: function() {
+        console.log(this.props)
+        var answers = this.props.answerColl.map(this._createAnswer)
+        console.log(answers)
         return(
             <div>
-                {this.props.answerColl.model.map(this._createAnswer)}
-            </div>)
+                {answers}
+            </div>
+        )
     }
 })
 
-const Answer = React.createClass ({
+const AnswerBody = React.createClass ({
     render: function() {
-        console.log(this.props)
+        console.log('rendering', this.props)
         return (
             <div className = 'answers'>
-                <p></p>
+                <p>Are you even rendering?</p>
                 <hr />
             </div>
         )

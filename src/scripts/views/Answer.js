@@ -1,11 +1,12 @@
 import Backbone from 'backbone'
 import React from 'react'
+import AnswerView from './answerView'
 
 const ResponseView = React.createClass ({
     render: function() {
         return (
             <div className = 'answerView'>
-                <Respond />
+                <Respond model = {this.props.model}/>
             </div>
         )
     }
@@ -17,7 +18,7 @@ const Respond = React.createClass ({
         evt.preventDefault()
 
 
-        ACTIONS._submitAnswer ({
+        ACTIONS._submitAnswer({
             answer: evt.target.answer.value,
             username: User.getCurrentUser().username,
             authorId: User.getCurrentUser()._id,
@@ -27,7 +28,7 @@ const Respond = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props)
+        console.log(this.props.model.get('_id'))
         return (
             <div className = 'answerBody'>
                 <form>
@@ -39,4 +40,4 @@ const Respond = React.createClass ({
     }
 })
 
-export default AnswerView
+export default ResponseView

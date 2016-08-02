@@ -12,6 +12,7 @@ const STORE = _.extend( Backbone.Events, {
     },
 
     _getData: function() {
+        console.log(this.data)
         return _.clone(this.data)
     },
 
