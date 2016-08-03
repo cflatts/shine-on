@@ -64,9 +64,14 @@ const ACTIONS = {
 
     _submitAnswer: function(answerObj) {
         var answer = new AnswerModel(answerObj)
-        answer.save().then({
-
-        })
+        answer.save().then(
+            (response) => {
+                STORE._addAnswer(response)
+            },
+            (error) => {
+                console.log(error)
+            }
+        )
     },
 
     _fetchAnswers: function(inputQuery) {
