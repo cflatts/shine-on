@@ -30,11 +30,12 @@ const Respond = React.createClass ({
 
     render: function() {
         return (
-            <div className = 'answerBody'>
+            <div className = 'answerSubmit'>
                 <form className = 'submitAnswer' onSubmit = {this._handleAnswerSubmit}>
                     <textarea className = 'giveAnswer' name = 'answer' placeholder = 'I have an answer for that!'></textarea>
                     <button type = 'submit' className = 'handleAnswerSubmit'>Submit</button>
                 </form>
+                <hr />
             </div>
         )
     }

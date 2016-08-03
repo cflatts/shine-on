@@ -63,16 +63,19 @@ const QuestionBody = React.createClass ({
     },
 
     render: function() {
-        // console.log(this.props)
         return (
             <div className = 'dashboardBody'>
-                <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
-                <p>content: {this.props.model.get('content')}</p>
-                <p>posted by: {this.props.model.get('username')}</p>
-                <p>posted on: {this._getPostedOn()} </p>
-                <p>tags: {this.props.model.get('tags')}</p>
-                <p>answered: {this._getAnsweredStatus()}</p>
-                <p> # of answers: {this.props.answerColl.models.length}</p>
+                <div className = 'left'>
+                    <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
+                    <p>content: {this.props.model.get('content')}</p>
+                </div>
+                <div className = 'right'>
+                    <p>posted by: {this.props.model.get('username')}</p>
+                    <p>posted on: {this._getPostedOn()} </p>
+                    <p>tags: {this.props.model.get('tags')}</p>
+                    <p>answered: {this._getAnsweredStatus()}</p>
+                    <p> # of answers: {this.props.answerColl.models.length}</p>
+                </div>
                 <hr />
             </div>
         )

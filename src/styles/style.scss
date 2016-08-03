@@ -39,7 +39,10 @@ button {
     }
 }
 
-
+img {
+    width: 100%;
+    height: 80%;
+}
 
 
 //Sign In View
@@ -90,4 +93,46 @@ button {
         width: 65%;
         margin: 0 0 2% 2%;
     }
+}
+
+//All Questions and My Questions view and Question body of answer view
+
+
+.dashboardBody {
+    margin: 3% auto 0 auto;
+    width: 80%;
+
+    a {
+        font-size: 24px;
+    }
+
+    .right {
+
+        p {
+            display: inline-block;
+            font-size: 12px;
+            width: 20%;
+            margin-top: 3%;
+            margin:auto;
+        }
+    }
+}
+
+//Response Area
+
+.answerSubmit {
+    margin: 3% auto 0 auto;
+    width: 80%;
+    text-align: center;
+
+    form {
+
+        textarea {
+            width: 50%;
+            margin: auto;
+            font-size: 12px;
+            height: 100px;
+        }
+    }
+
 }
