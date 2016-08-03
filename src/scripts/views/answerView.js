@@ -40,7 +40,7 @@ const AnswerView = React.createClass ({
                 <Header />
                 <QuestionBody answerColl = {this.state.answerCollection}  model = {this.state.model} />
                 <ResponseView model = {this.state.model}/>
-                <Answer answerColl = {this.state.answerCollection} />
+                <Answer model = {this.state.model} answerColl = {this.state.answerCollection} />
             </div>
         )
     }
@@ -83,11 +83,11 @@ const QuestionBody = React.createClass ({
 const Answer = React.createClass({
 
     _createAnswer: function(model) {
-        return <AnswerBody answerModel = {model} />
+        return <AnswerBody model = {this.props.model} answerModel = {model} />
        },
 
     render: function() {
-        // console.log(this.props)
+        console.log(this.props.model)
         var answers = this.props.answerColl.map(this._createAnswer)
         // console.log(answers)
         return(
@@ -120,14 +120,25 @@ const AnswerBody = React.createClass ({
         return buttonClass
     },
 
+    _handleCheckClass: function() {
+        var checkClass
+        if(User.getCurrentUser()._id === this.props.model.get('authorId')) {
+            checkClass = 'active'
+        }
+        else {
+            checkClass = 'inactive'
+        }
+        return checkClass
+    },
+
     render: function() {
-        console.log('rendering', this.props)
+        console.log(this.props.model)
         return (
             <div className = 'answers'>
                 <p>Answer: {this.props.answerModel.get('answer')}</p>
                 <p>Posted By:{this.props.answerModel.get('username')}</p>
                 <p>Posted On: {this._getPostedOn()}</p>
-                <label><input type = 'checkbox' name = 'answerCheck' className = 'answerCheck' />This is the answer</label>
+                <label className = {this._handleCheckClass()}><input type = 'checkbox' name = 'answerCheck' className = 'answerCheck' />This is the answer</label>
                 <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                 <hr />
             </div>
