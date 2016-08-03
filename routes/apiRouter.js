@@ -47,6 +47,7 @@ let AnswerModel = require('../db/schema.js').Answer
 
 //this route is to post an individual question
 
+
 apiRouter.post('/question', function(request, response) {
     const question = new QuestionModel(request.body)
     question.save(function(error) {
@@ -97,6 +98,24 @@ apiRouter.get('/question/:_id', function(request, response) {
         }
     })
 })
+
+apiRouter.put('/question/:_id', function(request, response){
+    var questionId = request.params._id
+    QuestionModel.findByIdAndUpdate(questionId, request.body, {new: true}, function(error, record){
+        if (error) {
+          response.json({
+            error: error
+          })
+        }
+        else {
+
+          response.json(record)
+        }
+    })
+})
+// .put(«route», function(){
+//     Model.updateById(«id», «request.body», {new: true}, function(err, rec){...})
+// })
 
 //this route is to delete a single post
 
