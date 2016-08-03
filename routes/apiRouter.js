@@ -163,6 +163,20 @@ apiRouter.get('/answer', function(request, response) {
     })
 })
 
+apiRouter.put('/answer/:_id', function(request, response){
+    var answerId = request.params._id
+    AnswerModel.findByIdAndUpdate(answerId, request.body, function(error, record){
+        if (error) {
+          response.json({
+            error: error
+          })
+        }
+        else {
+          response.json(record)
+        }
+      })
+})
+
 apiRouter.delete('/answer/:_id', function(request, response) {
     let answerId = request.params._id
     AnswerModel.remove({_id:answerId}, function(error) {
