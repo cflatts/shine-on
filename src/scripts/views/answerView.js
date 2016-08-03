@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import STORE from '../store'
 import ACTIONS from '../actions'
-import ResponseView from './Answer'
+import ResponseView from './Response'
 import {User, QuestionModel, QuestionCollection, AnswerCollection, AnswerModel} from '../models/models'
 
 const AnswerView = React.createClass ({
@@ -63,7 +63,7 @@ const QuestionBody = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div className = 'dashboardBody'>
                 <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
@@ -87,9 +87,9 @@ const Answer = React.createClass({
        },
 
     render: function() {
-        console.log(this.props)
+        // console.log(this.props)
         var answers = this.props.answerColl.map(this._createAnswer)
-        console.log(answers)
+        // console.log(answers)
         return(
             <div>
                 {answers}
@@ -105,19 +105,14 @@ const AnswerBody = React.createClass ({
         return dateString
     },
 
-    _handleAnswerDelete: function() {
-        ACTIONS._deleteAnswer(this.props.answerModel.get('_id'))
-    },
-
     render: function() {
-        console.log('rendering', this.props)
+        // console.log('rendering', this.props)
         return (
             <div className = 'answers'>
                 <p>Answer: {this.props.answerModel.get('answer')}</p>
                 <p>Posted By:{this.props.answerModel.get('username')}</p>
                 <p>Posted On: {this._getPostedOn()}</p>
                 <label><input type = 'checkbox' name = 'answerCheck' className = 'answerCheck' />This is the answer</label>
-                <button type = 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                 <hr />
             </div>
         )

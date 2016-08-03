@@ -25,6 +25,10 @@ const STORE = _.extend( Backbone.Events, {
         this.data.model.on('sync update', this._broadcastChange.bind(this)),
         this.data.answerCollection.on('sync update', this._broadcastChange.bind(this)),
         this.data.answerModel.on('sync update', this._broadcastChange.bind(this))
+    },
+
+    _addAnswer: function(answerModel) {
+        this.data.answerCollection.add(answerModel)
     }
 })
 

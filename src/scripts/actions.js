@@ -64,13 +64,9 @@ const ACTIONS = {
 
     _submitAnswer: function(answerObj) {
         var answer = new AnswerModel(answerObj)
-        answer.save().then(
-            (response) => {
-                location.hash = 'question/' + answerObj.questionId
-            },
-            (error) => {
-                console.log(error)
-            })
+        answer.save().then({
+
+        })
     },
 
     _fetchAnswers: function(inputQuery) {
@@ -78,11 +74,6 @@ const ACTIONS = {
             data: inputQuery
         })
     },
-
-    _deleteAnswer: function(answerId) {
-        let answer = STORE.data.answerCollection.get(answerId)
-        answer.destroy()
-    }
 
 
 }

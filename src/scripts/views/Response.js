@@ -19,7 +19,6 @@ const Respond = React.createClass ({
     _handleAnswerSubmit: function(evt) {
         evt.preventDefault()
 
-
         ACTIONS._submitAnswer({
             answer: evt.target.answer.value,
             username: User.getCurrentUser().username,
@@ -30,7 +29,6 @@ const Respond = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props.model.get('_id'))
         return (
             <div className = 'answerBody'>
                 <form className = 'submitAnswer' onSubmit = {this._handleAnswerSubmit}>
