@@ -77,7 +77,7 @@ const Dashboard = React.createClass ({
 
     _handleButtonClass: function() {
         var buttonClass
-        if(User.getCurrentUser._id === this.props.model.get('_id')) {
+        if(User.getCurrentUser._id === this.props.model.get('authorId')) {
             buttonClass = 'active'
         }
         else {
