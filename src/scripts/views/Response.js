@@ -18,7 +18,7 @@ const Respond = React.createClass ({
 
     _handleAnswerSubmit: function(evt) {
         evt.preventDefault()
-
+        evt.target.value = ''
         ACTIONS._submitAnswer({
             answer: evt.target.answer.value,
             username: User.getCurrentUser().username,

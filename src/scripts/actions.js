@@ -99,6 +99,7 @@ const ACTIONS = {
         answer.save().then(function(response) {
             console.log(response)
         })
+        STORE.trigger('updateContent')
     }
 
 }

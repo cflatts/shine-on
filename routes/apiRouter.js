@@ -165,7 +165,7 @@ apiRouter.get('/answer', function(request, response) {
 
 apiRouter.put('/answer/:_id', function(request, response){
     var answerId = request.params._id
-    AnswerModel.findByIdAndUpdate(answerId, request.body, function(error, record){
+    AnswerModel.findByIdAndUpdate(answerId, request.body, {new: true}, function(error, record){
         if (error) {
           response.json({
             error: error
