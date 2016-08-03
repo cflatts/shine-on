@@ -44,6 +44,19 @@ img {
     height: 80%;
 }
 
+.header {
+
+    h1 {
+        color: #5c08f2;
+        width: 50%;
+        display: inline-block;
+    }
+
+    button {
+        display: inline-block;
+        margin-left: 35%;
+    }
+}
 
 //Sign In View
 .signin-view {
@@ -81,21 +94,34 @@ img {
 
 .composeBody {
 
+    text-align: center;
+
     input {
         border: 3px solid #5c08f2;
         width: 65%;
         margin: 5% 0 2% 2%;
+        height: 50px;
     }
 
     textarea {
-        display: block;
         border: 3px solid #5c08f2;
         width: 65%;
         margin: 0 0 2% 2%;
+        height: 100px;
+    }
+
+    select {
+        display: block;
+        border: 1px solid #5c08f2;
+        font-size: 18px;
+        color: #5c08f2;
+        margin: 5px auto;
+        background-color: white;
+        cursor: pointer;
     }
 }
 
-//All Questions and My Questions view and Question body of answer view
+//All Questions and My Questions and Answer
 
 
 .dashboardBody {
@@ -104,6 +130,7 @@ img {
 
     a {
         font-size: 24px;
+        text-decoration: none;
     }
 
     .right {
@@ -134,5 +161,21 @@ img {
             height: 100px;
         }
     }
+}
 
+//Answer Area
+
+.answers {
+    margin: 3% auto 0 auto;
+    width: 80%;
+
+    #answer {
+        font-size: 24px;
+    }
+
+    .right * {
+        display: inline-block;
+        width: 20%;
+        margin: 0 5%;
+    }
 }

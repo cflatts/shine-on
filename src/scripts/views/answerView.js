@@ -137,13 +137,17 @@ const AnswerBody = React.createClass ({
     render: function() {
         console.log(this.props.model)
         return (
-            <div className = 'answers'>
-                <p>Answer: {this.props.answerModel.get('answer')}</p>
-                <p>Posted By:{this.props.answerModel.get('username')}</p>
-                <p>Posted On: {this._getPostedOn()}</p>
-                <label className = {this._handleCheckClass()}><input type = 'checkbox' name = 'answerCheck' />This is the answer</label>
-                <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
-                <hr />
+            <div className = 'dashboardBody answers'>
+                <div className = 'left'>
+                    <p id = 'answer'>Answer: {this.props.answerModel.get('answer')}</p>
+                </div>
+                <div className = 'right'>
+                    <p>Posted By:{this.props.answerModel.get('username')}</p>
+                    <p>Posted On: {this._getPostedOn()}</p>
+                    <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
+                    <label className = {this._handleCheckClass()}><input type = 'checkbox' name = 'answerCheck' />This is the answer</label>
+                </div>
+                <hr/>
             </div>
         )
     }

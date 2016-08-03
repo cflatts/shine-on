@@ -36,7 +36,7 @@ const Ask = React.createClass ({
                 <input type = 'text' placeholder = 'What is your question?' name = 'question' />
                 <textarea placeholder = 'Tell us a little about it.' name = 'content' ></textarea>
                 <select id = 'tags' name = 'tags'>
-                    <option>---</option>
+                    <option>Tags</option>
                     <option>Science</option>
                     <option>Technology</option>
                     <option>Engineering</option>
