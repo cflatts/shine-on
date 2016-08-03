@@ -83,6 +83,22 @@ const ACTIONS = {
     _deleteAnswer: function(answerId) {
         let answer = STORE.data.answerCollection.get(answerId)
         answer.destroy()
+    },
+
+    _answerCheck: function(questionId, answerId) {
+        let question = STORE.data.collection.get(questionId)
+        let answer = STORE.data.answerCollection.get(answerId)
+
+        question.set('answered', question.get('answered') ? false : true)
+        answer.set('isAnswer', question.get('isAnswer') ? false : true)
+
+        question.save().then(function(response) {
+            console.log(response)
+        })
+
+        answer.save().then(function(response) {
+            console.log(response)
+        })
     }
 
 }

@@ -134,8 +134,12 @@ const AnswerBody = React.createClass ({
         return checkClass
     },
 
+    _handleAnswerCheck:function() {
+        ACTIONS._answerCheck(this.props.model.get('_id'), this.props.answerModel.get('_id'))
+    },
+
     render: function() {
-        console.log(this.props.model)
+        console.log(this.props.model.get('_id'), this.props.answerModel.get('_id'))
         return (
             <div className = 'dashboardBody answers'>
                 <div className = 'left'>
@@ -145,7 +149,7 @@ const AnswerBody = React.createClass ({
                     <p>Posted By:{this.props.answerModel.get('username')}</p>
                     <p>Posted On: {this._getPostedOn()}</p>
                     <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
-                    <label className = {this._handleCheckClass()}><input type = 'checkbox' name = 'answerCheck' />This is the answer</label>
+                    <label className = {this._handleCheckClass()}><input onChange = {this._handleAnswerCheck} type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
                 </div>
                 <hr/>
             </div>
