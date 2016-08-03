@@ -75,17 +75,6 @@ const Dashboard = React.createClass ({
         ACTIONS._deleteQuestion(this.props.model.get('_id'))
     },
 
-    _handleButtonClass: function() {
-        var buttonClass
-        if(User.getCurrentUser._id === this.props.model.get('authorId')) {
-            buttonClass = 'active'
-        }
-        else {
-            buttonClass = 'inactive'
-        }
-        return buttonClass
-    },
-
     render: function() {
         return (
             <div className = 'dashboardBody'>
@@ -96,7 +85,7 @@ const Dashboard = React.createClass ({
                 <p>tags: {this.props.model.get('tags')[0]}</p>
                 <p>answered: {this._getAnsweredStatus()}</p>
                 <p> # of answers:</p>
-                <button className = {this._handleButtonClass} onClick = {this._handleDelete}>Remove</button>
+                <button onClick = {this._handleDelete}>Remove</button>
                 <hr />
             </div>
         )

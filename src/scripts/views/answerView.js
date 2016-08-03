@@ -109,15 +109,26 @@ const AnswerBody = React.createClass ({
         ACTIONS._deleteAnswer(this.props.answerModel.get('_id'))
     },
 
+    _handleButtonClass: function() {
+        var buttonClass
+        if(User.getCurrentUser()._id === this.props.answerModel.get('authorId')) {
+            buttonClass = 'active'
+        }
+        else {
+            buttonClass = 'inactive'
+        }
+        return buttonClass
+    },
+
     render: function() {
-        // console.log('rendering', this.props)
+        console.log('rendering', this.props)
         return (
             <div className = 'answers'>
                 <p>Answer: {this.props.answerModel.get('answer')}</p>
                 <p>Posted By:{this.props.answerModel.get('username')}</p>
                 <p>Posted On: {this._getPostedOn()}</p>
                 <label><input type = 'checkbox' name = 'answerCheck' className = 'answerCheck' />This is the answer</label>
-                <button type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
+                <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                 <hr />
             </div>
         )
