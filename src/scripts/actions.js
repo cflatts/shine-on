@@ -80,6 +80,10 @@ const ACTIONS = {
         })
     },
 
+    _deleteAnswer: function(answerId) {
+        let answer = STORE.data.answerCollection.get(answerId)
+        answer.destroy()
+    }
 
 }
 
