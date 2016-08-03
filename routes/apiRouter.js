@@ -144,5 +144,21 @@ apiRouter.get('/answer', function(request, response) {
     })
 })
 
+apiRouter.delete('/answer/:_id', function(request, response) {
+    let answerId = request.params._id
+    AnswerModel.remove({_id:answerId}, function(error) {
+        if(error) {
+            response.json({
+                error:error
+            })
+        }
+        else {
+            response.status(200).json ({
+                msg: 'Answer successfully deleted!'
+            })
+        }
+    })
+})
+
 
 module.exports = apiRouter
