@@ -64,7 +64,8 @@ const Dashboard = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.model.get('createdAt')
-        return dateString
+
+        return dateString.substr(0,10)
     },
 
     render: function() {

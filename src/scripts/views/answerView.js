@@ -138,8 +138,18 @@ const AnswerBody = React.createClass ({
         ACTIONS._answerCheck(this.props.model.get('_id'), this.props.answerModel.get('_id'))
     },
 
+    _handleAnswerMarkerClass: function() {
+        var answerMarkerClass
+        if(this.props.answerModel.get('isAnswer') === true) {
+            answerMarkerClass = 'active'
+        }
+        else {
+            answerMarkerClass = 'inactive'
+        }
+    },
+
     render: function() {
-        console.log(this.props.model.get('_id'), this.props.answerModel.get('_id'))
+        console.log(this.props.answerModel)
         return (
             <div className = 'dashboardBody answers'>
                 <div className = 'left'>
@@ -150,6 +160,9 @@ const AnswerBody = React.createClass ({
                     <p>Posted On: {this._getPostedOn()}</p>
                     <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                     <label className = {this._handleCheckClass()}><input onChange = {this._handleAnswerCheck} type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
+                </div>
+                <div className ={this._handleAnswerMarkerClass}>
+                    <p>Answer!</p>
                 </div>
                 <hr/>
             </div>
