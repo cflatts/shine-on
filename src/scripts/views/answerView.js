@@ -106,7 +106,7 @@ const AnswerBody = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.answerModel.get('createdAt')
-        return dateString
+        return dateString.substr(0,10)
     },
 
     _handleAnswerDelete: function() {
