@@ -124,6 +124,17 @@ const AnswerBody = React.createClass ({
         return buttonClass
     },
 
+    _handleCheckboxClass: function() {
+        var checkboxClass
+        if(User.getCurrentUser()._id === this.props.model.get('authorId')) {
+            checkboxClass = 'active'
+        }
+        else {
+            checkboxClass = 'inactive'
+        }
+        return checkboxClass
+    },
+
     render: function() {
         console.log(this.props.answerModel)
         return (
@@ -135,7 +146,7 @@ const AnswerBody = React.createClass ({
                     <p>Posted By:{this.props.answerModel.get('username')}</p>
                     <p>Posted On: {this._getPostedOn()}</p>
                     <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
-                    <label><input type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
+                    <label className = {this._handleCheckboxClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
                 </div>
                 <div>
                     <p>Answer!</p>
