@@ -146,7 +146,7 @@ const AnswerBody = React.createClass ({
                     <p>Posted By:{this.props.answerModel.get('username')}</p>
                     <p>Posted On: {this._getPostedOn()}</p>
                     <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
-                    <label className = {this._handleCheckClass()}><input onChange = {this._handleAnswerCheck} type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
+                    <label className = {this._handleCheckClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
                 </div>
                 <div>
                     <p className = {this._handleAnswerMarkerClass()}>Answer!</p>
