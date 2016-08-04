@@ -113,10 +113,6 @@ const AnswerBody = React.createClass ({
         ACTIONS._deleteAnswer(this.props.answerModel.get('_id'))
     },
 
-    _handleAnswerCheck:function() {
-        ACTIONS._answerCheck(this.props.model.get('_id'), this.props.answerModel.get('_id'))
-    },
-
     _handleButtonClass: function() {
         var buttonClass
         if(User.getCurrentUser()._id === this.props.answerModel.get('authorId')) {
