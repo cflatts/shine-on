@@ -19,7 +19,7 @@ const questionsSchema = new Schema({
     question: {type: String, required: true},
     content: {type: String},
     authorId: {type: String, required: true},
-    answered: {type: Boolean, required: true, default: false},
+    answered: {type: String, default: null},
     tags: {type: [String], required: true},
     username: {type: String, required: true},
 },
@@ -30,7 +30,7 @@ const questionsSchema = new Schema({
 const answerSchema = new Schema ({
     answer: {type: String, required: true},
     username: {type: String, required: true},
-    isAnswer: {type: Boolean, required: true, default: false},
+    isAnswer: {type: Boolean},
     questionId: {type: String, required: true},
     authorId: {type: String, required: true}
 },
