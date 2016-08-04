@@ -59,6 +59,7 @@ const QuestionBody = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.model.get('createdAt')
+
         return dateString
     },
 
@@ -112,6 +113,10 @@ const AnswerBody = React.createClass ({
         ACTIONS._deleteAnswer(this.props.answerModel.get('_id'))
     },
 
+    _handleAnswerCheck:function() {
+        ACTIONS._answerCheck(this.props.model.get('_id'), this.props.answerModel.get('_id'))
+    },
+
     _handleButtonClass: function() {
         var buttonClass
         if(User.getCurrentUser()._id === this.props.answerModel.get('authorId')) {
@@ -134,17 +139,13 @@ const AnswerBody = React.createClass ({
         return checkClass
     },
 
-    _handleAnswerCheck:function() {
-        ACTIONS._answerCheck(this.props.model.get('_id'), this.props.answerModel.get('_id'))
-    },
-
     _handleAnswerMarkerClass: function() {
         var answerMarkerClass
-        if(this.props.answerModel.get('isAnswer') === true) {
-            answerMarkerClass = 'active'
+        if(this.props.answerModel.get('isAnswer') === false) {
+            answerMarkerClass = 'inactive'
         }
         else {
-            answerMarkerClass = 'inactive'
+            answerMarkerClass = 'active'
         }
     },
 
@@ -161,8 +162,8 @@ const AnswerBody = React.createClass ({
                     <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                     <label className = {this._handleCheckClass()}><input onChange = {this._handleAnswerCheck} type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
                 </div>
-                <div className ={this._handleAnswerMarkerClass}>
-                    <p>Answer!</p>
+                <div>
+                    <p className = {this._handleAnswerMarkerClass()}>Answer!</p>
                 </div>
                 <hr/>
             </div>

@@ -28,6 +28,7 @@ const MyQuestionView = React.createClass ({
     },
 
     render: function() {
+        console.log(this.props)
         return (
             <div className = 'dashboard'>
                 <Header />
@@ -68,7 +69,8 @@ const Dashboard = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.model.get('createdAt')
-        return dateString
+
+        return dateString.substr(0,10)
     },
 
     _handleDelete: function() {
