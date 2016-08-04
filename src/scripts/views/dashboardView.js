@@ -54,7 +54,7 @@ const Question = React.createClass({
 const Dashboard = React.createClass ({
 
     _getAnsweredStatus: function() {
-        if(this.props.model.get('answered') === false) {
+        if(this.props.model.get('isAnswered') === null) {
             return 'NO'
         }
         else {

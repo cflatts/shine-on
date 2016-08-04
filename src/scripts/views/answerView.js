@@ -49,12 +49,6 @@ const AnswerView = React.createClass ({
 const QuestionBody = React.createClass ({
 
     _getAnsweredStatus: function() {
-        if(this.props.model.get('answered') === false) {
-            return 'NO'
-        }
-        else {
-            return 'YES'
-        }
     },
 
     _getPostedOn: function() {
