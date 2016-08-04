@@ -135,8 +135,19 @@ const AnswerBody = React.createClass ({
         return checkboxClass
     },
 
+    _handleAnswerMarkerClass: function() {
+        var answerMarkerClass
+        if(this.props.answerModel.get('isAnswer') === false) {
+            answerMarkerClass = 'inactive'
+        }
+        else {
+            answerMarkerClass = 'active'
+        }
+        return answerMarkerClass
+    },
+
     render: function() {
-        console.log(this.props.answerModel)
+        console.log(this.props.answerModel.get('isAnswer'))
         return (
             <div className = 'dashboardBody answers'>
                 <div className = 'left'>
@@ -148,7 +159,7 @@ const AnswerBody = React.createClass ({
                     <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                     <label className = {this._handleCheckboxClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
                 </div>
-                <div>
+                <div className = {this._handleAnswerMarkerClass()}>
                     <p>Answer!</p>
                 </div>
                 <hr/>
