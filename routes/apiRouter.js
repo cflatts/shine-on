@@ -99,6 +99,17 @@ apiRouter.get('/question/:_id', function(request, response) {
     })
 })
 
+apiRouter.put('/question/:_id', function(request, response) {
+    let questionId = request.params._id
+    QuestionModel.findByIdAndUpdate({_id: questionId}, request.body, {new: true}, function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
+        }
+    })
+})
 // .put(«route», function(){
 //     Model.updateById(«id», «request.body», {new: true}, function(err, rec){...})
 // })
