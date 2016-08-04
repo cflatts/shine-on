@@ -20,11 +20,6 @@ button {
     cursor: pointer;
 }
 
-.inactive {
-    display: none;
-}
-
-
 //Navigation Bar
 .navigation {
     background-color: #5c08f2;
@@ -178,4 +173,8 @@ img {
         width: 20%;
         margin: 0 5%;
     }
+}
+
+.inactive {
+    display: none;
 }
