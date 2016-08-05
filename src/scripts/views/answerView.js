@@ -142,7 +142,7 @@ const AnswerBody = React.createClass ({
 
     _handleAnswerMarkerClass: function() {
         var answerMarkerClass
-        if(this.props.answerModel.get('isAnswer') === false) {
+        if(this.props.model.get('isAnswered') === null) {
             answerMarkerClass = 'inactive'
         }
         else {
