@@ -106,11 +106,16 @@ const AnswerBody = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.answerModel.get('createdAt')
+
         return dateString.substr(0,10)
     },
 
     _handleAnswerDelete: function() {
         ACTIONS._deleteAnswer(this.props.answerModel.get('_id'))
+    },
+
+    _handleAnswerSelect: function() {
+        ACTIONS._selectAnswer(this.props.model.get('_id'), this.props.answerModel.get('_id'))
     },
 
     _handleButtonClass: function() {
@@ -157,7 +162,7 @@ const AnswerBody = React.createClass ({
                     <p>Posted By:{this.props.answerModel.get('username')}</p>
                     <p>Posted On: {this._getPostedOn()}</p>
                     <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
-                    <label className = {this._handleCheckboxClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' />This is the answer</label>
+                    <label className = {this._handleCheckboxClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' onChange = {this._handleAnswerSelect}/>This is the answer</label>
                 </div>
                 <div className = {this._handleAnswerMarkerClass()}>
                     <p>Answer!</p>
