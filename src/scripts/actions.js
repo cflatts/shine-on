@@ -85,15 +85,16 @@ const ACTIONS = {
         answer.destroy()
     },
 
-    _selectAnswer: function(questionId, answerId) {
-        let question = STORE.data.collection.get(questionId)
-        console.log(question)
+    _selectAnswer: function(answerId) {
+        let question = STORE.data.model
+        // console.log(STORE.data.collection)
+        // console.log(question)
         question.set('isAnswered', question.get('isAnswered') ? null: answerId)
 
         question.save().then(function(response) {
             console.log(response)
         })
-        STORE.data.collection.trigger('updateContent')
+        STORE._broadcastChange()
     }
 
 }

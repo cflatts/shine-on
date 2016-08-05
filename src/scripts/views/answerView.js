@@ -152,6 +152,7 @@ const AnswerBody = React.createClass ({
     },
 
     render: function() {
+        console.log(this.props.model.get('_id'), this.props.answerModel.get('_id'))
         return (
             <div className = 'dashboardBody answers'>
                 <div className = 'left'>

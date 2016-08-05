@@ -30,7 +30,6 @@ const questionsSchema = new Schema({
 const answerSchema = new Schema ({
     answer: {type: String, required: true},
     username: {type: String, required: true},
-    isAnswer: {type: Boolean},
     questionId: {type: String, required: true},
     authorId: {type: String, required: true}
 },
