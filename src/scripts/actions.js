@@ -85,6 +85,16 @@ const ACTIONS = {
         answer.destroy()
     },
 
+    _selectAnswer: function(questionId, answerId) {
+        let question = STORE.data.collection.get(questionId)
+
+        question.set('isAnswered', question.get('isAnswered') ? null: answerId)
+
+        question.save().then(function(response) {
+            console.log(response)
+        })
+    }
+
 }
 
 export default ACTIONS
