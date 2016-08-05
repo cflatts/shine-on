@@ -142,17 +142,16 @@ const AnswerBody = React.createClass ({
 
     _handleAnswerMarkerClass: function() {
         var answerMarkerClass
-        if(this.props.model.get('isAnswered') === null) {
-            answerMarkerClass = 'inactive'
+        if(this.props.model.get('isAnswered') === this.props.answerModel.get('_id')) {
+            answerMarkerClass = 'active'
         }
         else {
-            answerMarkerClass = 'active'
+            answerMarkerClass = 'inactive'
         }
         return answerMarkerClass
     },
 
     render: function() {
-        console.log(this.props.answerModel.get('isAnswer'))
         return (
             <div className = 'dashboardBody answers'>
                 <div className = 'left'>
