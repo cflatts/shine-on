@@ -131,11 +131,11 @@ const AnswerBody = React.createClass ({
 
     _handleCheckboxClass: function() {
         var checkboxClass
-        if(User.getCurrentUser()._id === this.props.model.get('authorId')) {
-            checkboxClass = 'active'
+        if(User.getCurrentUser()._id !== this.props.model.get('authorId') || (this.props.model.get('isAnswered') !== null)) {
+            checkboxClass = 'inactive'
         }
         else {
-            checkboxClass = 'inactive'
+            checkboxClass = 'active'
         }
         return checkboxClass
     },

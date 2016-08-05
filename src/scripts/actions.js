@@ -93,6 +93,7 @@ const ACTIONS = {
         question.save().then(function(response) {
             console.log(response)
         })
+        STORE.data.collection.trigger('update')
     }
 
 }
