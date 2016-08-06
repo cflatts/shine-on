@@ -3,6 +3,7 @@ import Header from './Header'
 import STORE from '../store'
 import ACTIONS from '../actions'
 import {User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection} from '../models/models'
+import FilterBar from './Filter'
 
 const DashboardView = React.createClass ({
 
@@ -26,6 +27,7 @@ const DashboardView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
+                <FilterBar coll = {this.state.collection}/>
                 <Question coll = {this.state.collection}/>
             </div>
         )
