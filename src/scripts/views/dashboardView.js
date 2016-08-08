@@ -4,6 +4,7 @@ import STORE from '../store'
 import ACTIONS from '../actions'
 import {User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection} from '../models/models'
 import FilterBar from './Filter'
+import Moment from 'moment'
 
 const DashboardView = React.createClass ({
 
@@ -82,9 +83,9 @@ const Dashboard = React.createClass ({
     },
 
     _getPostedOn: function() {
-        var dateString = this.props.model.get('createdAt')
+        var dateString = new Date(this.props.model.get('createdAt'))
 
-        return dateString.substr(0,10)
+        return dateString.toDateString()
     },
 
     render: function() {
