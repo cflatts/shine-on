@@ -15,7 +15,7 @@ const MyQuestionView = React.createClass ({
         var queryForQuestions = {
             authorId: User.getCurrentUser()._id
         }
-        console.log(typeof queryForQuestions)
+        // console.log(typeof queryForQuestions)
         ACTIONS._fetchQuestions(queryForQuestions)
         STORE.on('updateContent', () => {
             this.setState(STORE._getData())
@@ -28,7 +28,7 @@ const MyQuestionView = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div className = 'dashboard'>
                 <Header />
@@ -69,7 +69,7 @@ const Dashboard = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.model.get('createdAt')
-
+        console.log(dateString)
         return dateString.substr(0,10)
     },
 
@@ -78,7 +78,7 @@ const Dashboard = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props.model)
+        // console.log(this.props.model)
         return (
             <div className = 'dashboardBody'>
                 <div className = 'left'>

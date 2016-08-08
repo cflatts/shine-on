@@ -59,11 +59,12 @@ const QuestionBody = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.model.get('createdAt')
-
         return dateString
     },
 
     render: function() {
+        console.log(this._getPostedOn())
+        console.log(this._getAnsweredStatus())
         return (
             <div className = 'dashboardBody'>
                 <div className = 'left'>
@@ -91,7 +92,7 @@ const Answer = React.createClass({
        },
 
     render: function() {
-        console.log(this.props.model)
+        // console.log(this.props.model)
         var answers = this.props.answerColl.map(this._createAnswer)
         // console.log(answers)
         return(
@@ -152,7 +153,7 @@ const AnswerBody = React.createClass ({
     },
 
     render: function() {
-        console.log('question>>', this.props.model.get('isAnswered'), 'answer >>', this.props.answerModel.get('_id'))
+        // console.log('question>>', this.props.model.get('isAnswered'), 'answer >>', this.props.answerModel.get('_id'))
         return (
             <div className = 'dashboardBody answers'>
                 <div className = 'left'>
@@ -163,9 +164,7 @@ const AnswerBody = React.createClass ({
                     <p>Posted On: {this._getPostedOn()}</p>
                     <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                     <label className = {this._handleCheckboxClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' onChange = {this._handleAnswerSelect}/>This is the answer</label>
-                </div>
-                <div className = {this._handleAnswerMarkerClass()}>
-                    <p>Answer!</p>
+                    <p className = {this._handleAnswerMarkerClass()}>Answer!</p>
                 </div>
                 <hr/>
             </div>
