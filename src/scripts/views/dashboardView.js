@@ -24,11 +24,28 @@ const DashboardView = React.createClass ({
     },
 
     render: function() {
+
+        let coll = this.state.collection
+
+        switch(this.state.viewType) {
+            case 'Science':
+                coll = this.state.collection.where({tags: 'Science'})
+                break
+            case 'Technology':
+                coll = this.state.collection.where({tags: 'Technology'})
+                break
+            case 'Engineering':
+                coll = this.state.collection.where({tags: 'Engineering'})
+                break
+            case 'Math':
+                coll = this.state.collection.where({tags: 'Math'})
+        }
+        console.log(coll)
         return (
             <div className = 'dashboard'>
                 <Header />
-                <FilterBar coll = {this.state.collection}/>
-                <Question coll = {this.state.collection}/>
+                <FilterBar />
+                <Question coll = {coll}/>
             </div>
         )
     }

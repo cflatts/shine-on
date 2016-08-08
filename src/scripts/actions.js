@@ -60,6 +60,12 @@ const ACTIONS = {
         question.destroy()
     },
 
+    _filterQuestions:function(tagValue) {
+        console.log(tagValue)
+
+        STORE.set('viewType', tagValue)
+    },
+
     //ANSWER ACTIONS
 
     _submitAnswer: function(answerObj) {
