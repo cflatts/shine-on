@@ -115,7 +115,7 @@ const AnswerBody = React.createClass ({
     },
 
     _handleAnswerSelect: function() {
-        ACTIONS._selectAnswer(this.props.model.get('_id'), this.props.answerModel.get('_id'))
+        ACTIONS._selectAnswer(this.props.answerModel.get('_id'))
     },
 
     _handleButtonClass: function() {
@@ -152,7 +152,7 @@ const AnswerBody = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props.model.get('_id'), this.props.answerModel.get('_id'))
+        console.log('question>>', this.props.model.get('isAnswered'), 'answer >>', this.props.answerModel.get('_id'))
         return (
             <div className = 'dashboardBody answers'>
                 <div className = 'left'>
