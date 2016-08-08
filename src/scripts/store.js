@@ -29,6 +29,15 @@ const STORE = _.extend( Backbone.Events, {
 
     _addAnswer: function(answerModel) {
         this.data.answerCollection.add(answerModel)
+    },
+
+    _set: function(prop, value) {
+        console.log(prop, value)
+        if(this.data[prop] === undefined) {
+            console.log('does not exist')
+        }
+        this.data[prop] = value
+        this._broadcastChange()
     }
 })
 

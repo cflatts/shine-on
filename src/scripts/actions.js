@@ -63,7 +63,7 @@ const ACTIONS = {
     _filterQuestions:function(tagValue) {
         console.log(tagValue)
 
-        STORE.set('viewType', tagValue)
+        STORE._set('viewType', tagValue)
     },
 
     //ANSWER ACTIONS

@@ -20,7 +20,7 @@ const questionsSchema = new Schema({
     content: {type: String},
     authorId: {type: String, required: true},
     isAnswered: {type: String, default: null},
-    tags: {type: [String], required: true},
+    tags: {type: String, required: true},
     username: {type: String, required: true},
 },
 {
