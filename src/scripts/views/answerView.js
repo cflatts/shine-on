@@ -67,8 +67,8 @@ const QuestionBody = React.createClass ({
         return (
             <div className = 'dashboardBody'>
                 <div className = 'left'>
-                    <a href = {`#question/${this.props.model.get('_id')}`}>question: {this.props.model.get('question')}</a>
-                    <p>content: {this.props.model.get('content')}</p>
+                    <a href = {`#question/${this.props.model.get('_id')}`}>{this.props.model.get('question')}</a>
+                    <p>{this.props.model.get('content')}</p>
                 </div>
                 <div className = 'right'>
                     <p>posted by: {this.props.model.get('username')}</p>
