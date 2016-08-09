@@ -3,7 +3,7 @@
 * {
 	font-family: 'Ubuntu', sans-serif;
 	box-sizing: border-box;
-    // color: #5c08f2;
+    color: #5c08f2;
 }
 
 *:focus {
@@ -25,6 +25,22 @@ button {
     display: none;
 }
 
+//Header
+
+.home {
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+}
 
 //Navigation Bar
 .navigation {
@@ -51,6 +67,7 @@ img {
         color: #5c08f2;
         width: 50%;
         display: inline-block;
+        font-size: 60px;
     }
 
     button {
@@ -178,5 +195,16 @@ img {
         display: inline-block;
         width: 20%;
         margin: 0 5%;
+    }
+}
+
+//Filter Area
+
+.filterBar {
+    text-align: center;
+
+    button {
+        display: inline-block;
+        margin: 3%;
     }
 }

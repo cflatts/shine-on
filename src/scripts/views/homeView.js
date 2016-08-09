@@ -6,6 +6,9 @@ const HomeView = React.createClass ({
         return (
             <div className = 'home'>
                 <Header />
+                <h2>SHINE THEORY</h2>
+                <h3>I don't shine if you don't shine</h3>
+                <p>Aminatou Sow (founder of Tech Ladymafia, among other accomplishments)</p>
                 <img className  = 'homeImage' src = 'http://images.smh.com.au/2012/03/12/3118352/female-bosses-wide-620x349.jpg' />
             </div>
         )
@@ -13,3 +16,5 @@ const HomeView = React.createClass ({
 })
 
 export default HomeView
+
+// <img className  = 'homeImage' src = 'http://images.smh.com.au/2012/03/12/3118352/female-bosses-wide-620x349.jpg' />

@@ -59,12 +59,11 @@ const QuestionBody = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.model.get('createdAt')
+
         return dateString
     },
 
     render: function() {
-        console.log(this._getPostedOn())
-        console.log(this._getAnsweredStatus())
         return (
             <div className = 'dashboardBody'>
                 <div className = 'left'>
