@@ -1,5 +1,6 @@
 import React from 'react'
 import ACTIONS from '../actions'
+import DashboardView from './dashboardView'
 
 const SearchBar = React.createClass ({
 
