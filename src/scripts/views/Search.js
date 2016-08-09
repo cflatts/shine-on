@@ -4,7 +4,8 @@ import ACTIONS from '../actions'
 const SearchBar = React.createClass ({
 
     _handleSearchQuestions: function(evt) {
-        if(evt.keycode ===13) {
+        console.log('search handler')
+        if(evt.keyCode === 13) {
             ACTIONS._searchQuestions(evt.target.value)
         }
     },
@@ -12,7 +13,7 @@ const SearchBar = React.createClass ({
     render: function() {
         return (
             <div className = 'search'>
-                <input type = 'text' placeholder = 'Find a question by keyword! (i.e JavaScript!)' onKeyDown = {this._searchQuestions}></input>
+                <input type = 'text' placeholder = 'Find a question by keyword! (i.e JavaScript!)' onKeyDown = {this._handleSearchQuestions}></input>
             </div>
         )
     }

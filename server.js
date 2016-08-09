@@ -49,7 +49,7 @@ app.set('view engine', 'html');
 connectToDB(global.PROJECT_NAME)
 
 // =========
-// APPLICATION MIDDLEWARE 
+// APPLICATION MIDDLEWARE
 // =========
 app.use( express.static( __dirname + '/dist/assets') );
 app.use( bodyParser.json() );
@@ -60,8 +60,9 @@ app.use( passport.initialize() );
 app.use( passport.session() );
 appAuthentication(User)
 app.use( appMiddleWare.cookifyUser )
+app.use( appMiddleWare.handleRegEx )
 
-// 
+//
 // =========
 // ROUTERS
 // =========

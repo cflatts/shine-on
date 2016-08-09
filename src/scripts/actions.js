@@ -67,7 +67,15 @@ const ACTIONS = {
     },
 
     _searchQuestions: function(searchValue) {
-
+        console.log('_searchQuestions')
+        let qc = new QuestionCollection()
+        qc.fetch({
+            data: {
+                regex__question: searchValue
+            }
+        }).then(() => {
+            STORE._set('collection',qc)
+        })
     },
 
     //ANSWER ACTIONS

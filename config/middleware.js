@@ -9,7 +9,7 @@ const errorHandler = function(err, req, res, next) {
   console.log(err)
   res.render(err);
   return
-} 
+}
 
 const cookifyUser = function(req,res,next) {
   if (req.user) {
@@ -25,8 +25,25 @@ const cookifyUser = function(req,res,next) {
   }
 }
 
+const handleRegEx = function(req,res,next) {
+    if (req.query) {
+        for (let key in req.query) {
+            let keyParts = key.split('__')
+            if (keyParts.length > 1 && keyParts[0] === 'regex') {
+                var targetKey = key
+                var val = req.query[key]
+                req.query[keyParts[1]] = new RegExp(val,'gi')
+            }
+        }
+        delete req.query[targetKey]
+    }
+    console.log(req.query)
+    next()
+}
+
 module.exports = {
   checkAuth: checkAuth,
   errorHandler: errorHandler,
-  cookifyUser: cookifyUser
+  cookifyUser: cookifyUser,
+  handleRegEx: handleRegEx
 }
