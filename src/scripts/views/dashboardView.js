@@ -4,7 +4,7 @@ import STORE from '../store'
 import ACTIONS from '../actions'
 import {User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection} from '../models/models'
 import FilterBar from './Filter'
-import Moment from 'moment'
+import SearchBar from './Search'
 
 const DashboardView = React.createClass ({
 
