@@ -66,6 +66,10 @@ const ACTIONS = {
         STORE._set('viewType', tagValue)
     },
 
+    _searchQuestions: function(searchValue) {
+
+    },
+
     //ANSWER ACTIONS
 
     _submitAnswer: function(answerObj) {

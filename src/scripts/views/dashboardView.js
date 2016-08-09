@@ -45,7 +45,7 @@ const DashboardView = React.createClass ({
         return (
             <div className = 'dashboard'>
                 <Header />
-                <Search />
+                <SearchBar />
                 <FilterBar />
                 <Question coll = {coll}/>
             </div>

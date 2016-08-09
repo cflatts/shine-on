@@ -151,6 +151,13 @@ img {
         text-decoration: none;
     }
 
+    .left {
+
+        p {
+            color: #7a7878;
+        }
+    }
+
     .right {
 
         p {
@@ -206,5 +213,18 @@ img {
     button {
         display: inline-block;
         margin: 3%;
+    }
+}
+
+//Search Bar
+
+.search {
+    text-align: center;
+
+    input {
+        width: 80%;
+        height: 50px;
+        margin-top: 3%;
+        border: 1px solid #5c08f2;
     }
 }
