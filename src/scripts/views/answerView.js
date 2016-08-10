@@ -120,6 +120,10 @@ const AnswerBody = React.createClass ({
 
     _handleAnswerDelete: function() {
         ACTIONS._deleteAnswer(this.props.answerModel.get('_id'))
+
+        if(this.props.answerModel.get('_id') === this.props.model.get('isAnswered')) {
+            ACTIONS._selectAnswer(this.props.model.get('isAnswered'))
+        }
     },
 
     _handleAnswerSelect: function() {
@@ -160,7 +164,7 @@ const AnswerBody = React.createClass ({
     },
 
     render: function() {
-        // console.log('question>>', this.props.model.get('isAnswered'), 'answer >>', this.props.answerModel.get('_id'))
+        console.log('question>>', this.props.model)
         return (
             <div className = 'dashboardBody answers'>
                 <div className = 'left'>

@@ -104,10 +104,9 @@ const ACTIONS = {
     },
 
     _selectAnswer: function(answerId) {
-        console.log('needs to equal answer>>', answerId)
         let question = STORE.data.model
-        // console.log(STORE.data.collection)
-        // console.log(question)
+        console.log(STORE.data.collection)
+        console.log(question)
         question.set('isAnswered', question.get('isAnswered') ? null: answerId)
 
         question.save().then(function(response) {
