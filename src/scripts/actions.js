@@ -105,6 +105,9 @@ const ACTIONS = {
     },
 
     _deleteAnswer: function(answerId) {
+        let question = STORE.data.model
+        question.set('numOfAnswers', question.get('numOfAnswers') - 1)
+
         let answer = STORE.data.answerCollection.get(answerId)
         answer.destroy()
     },
