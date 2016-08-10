@@ -35,8 +35,8 @@ const AnswerView = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props)
-        console.log(this.state)
+        // console.log(this.props)
+        // console.log(this.state)
         return (
             <div className = 'dashboard'>
                 <Header />
@@ -71,7 +71,7 @@ const QuestionBody = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props.model.get('createdAt'))
+        console.log(this.props.model)
         return (
             <div className = 'dashboardBody'>
                 <div className = 'left'>

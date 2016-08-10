@@ -24,11 +24,12 @@ const Respond = React.createClass ({
             authorId: User.getCurrentUser()._id,
             questionId: this.props.model.get('_id'),
             isAnswer: false
-        })
+        }, this.props.model.get('numOfAnswers'))
         evt.target.answer.value = ''
     },
 
     render: function() {
+        // console.log(this.props.model.get('numOfAnswers'))
         return (
             <div className = 'answerSubmit'>
                 <form className = 'submitAnswer' onSubmit = {this._handleAnswerSubmit}>

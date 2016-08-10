@@ -83,7 +83,10 @@ const ACTIONS = {
 
     //ANSWER ACTIONS
 
-    _submitAnswer: function(answerObj) {
+    _submitAnswer: function(answerObj, numAnswers) {
+        let question = STORE.data.model
+        question.set('numOfAnswers', question.get('numOfAnswers') + 1)
+
         var answer = new AnswerModel(answerObj)
         answer.save().then(
             (response) => {
