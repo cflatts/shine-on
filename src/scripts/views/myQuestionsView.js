@@ -43,7 +43,7 @@ const Question = React.createClass({
     _createQuestion: function(model) {
             return (
                 <div>
-                    <Dashboard model = {model} key = {model.cid} />
+                    <Dashboard model = {model}/>
                 </div>
         )
     },
@@ -90,7 +90,7 @@ const Dashboard = React.createClass ({
                     <p>posted on: {this._getPostedOn()}</p>
                     <p>tags: {this.props.model.get('tags')}</p>
                     <p>answered: {this._getAnsweredStatus()}</p>
-                    <p> # of answers:</p>
+                    <p> # of answers: {this.props.model.get('numOfAnswers')}</p>
                     <button onClick = {this._handleDelete}>Remove</button>
                 </div>
                 <hr />
