@@ -20,10 +20,6 @@ const DashboardView = React.createClass ({
 
     },
 
-    componentWillReceiveProps: function(newProps) {
-        console.log(newProps)
-    },
-
     componentWillUnmount: function() {
         STORE.off('updateContent')
     },
