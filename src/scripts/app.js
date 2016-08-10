@@ -50,7 +50,7 @@ const app = function() {
         },
 
         defaultDashboard: function() {
-            location.hash = 'question/dashboard'
+            location.hash = 'home'
         },
 
         initialize: function() {
