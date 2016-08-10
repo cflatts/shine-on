@@ -8,6 +8,7 @@ const SearchBar = React.createClass ({
         console.log('search handler')
         if(evt.keyCode === 13) {
             ACTIONS._searchQuestions(evt.target.value)
+            evt.target.value = ''
         }
     },
 
