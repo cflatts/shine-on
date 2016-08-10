@@ -122,12 +122,12 @@ const AnswerBody = React.createClass ({
         ACTIONS._deleteAnswer(this.props.answerModel.get('_id'))
 
         if(this.props.answerModel.get('_id') === this.props.model.get('isAnswered')) {
-            ACTIONS._selectAnswer(this.props.model.get('isAnswered'))
+            ACTIONS._toggleAnswer(this.props.model.get('isAnswered'))
         }
     },
 
     _handleAnswerSelect: function() {
-        ACTIONS._selectAnswer(this.props.answerModel.get('_id'))
+        ACTIONS._toggleAnswer(this.props.answerModel.get('_id'))
     },
 
     _handleButtonClass: function() {

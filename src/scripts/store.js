@@ -17,6 +17,7 @@ const STORE = _.extend( Backbone.Events, {
     },
 
     _broadcastChange: function() {
+        console.log('updating component')
         this.trigger('updateContent')
     },
 

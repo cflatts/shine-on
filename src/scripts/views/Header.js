@@ -30,7 +30,7 @@ const Navigation = React.createClass ({
         return (
             <div className = 'navigation'>
                 <a href = '#home'>Home</a>
-                <a href = '#question/dashboard'>Dash</a>
+                <a href = '#question/dashboard' onClick = { ()=> { ACTIONS._fetchQuestions({}) }}>Dash</a>
                 <a href = '#ask'>Ask!</a>
                 <a href = '#question/myQuestions'>My Questions</a>
                 <a href = '#signIn'>Sign In</a>

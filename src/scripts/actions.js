@@ -44,8 +44,11 @@ const ACTIONS = {
     },
 
     _fetchQuestions: function(inputQuery) {
-        STORE.data.collection.fetch({
+        let qCollection = new QuestionCollection()
+        qCollection.fetch({
             data: inputQuery
+        }).then((d)=>{
+            STORE._set('collection', qCollection)
         })
     },
 
@@ -103,7 +106,7 @@ const ACTIONS = {
         answer.destroy()
     },
 
-    _selectAnswer: function(answerId) {
+    _toggleAnswer: function(answerId) {
         let question = STORE.data.model
         console.log(STORE.data.collection)
         console.log(question)
