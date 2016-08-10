@@ -41,7 +41,7 @@ const DashboardView = React.createClass ({
             case 'Math':
                 coll = this.state.collection.where({tags: 'Math'})
         }
-        console.log(coll)
+        // console.log(coll)
         return (
             <div className = 'dashboard'>
                 <Header />
@@ -58,13 +58,12 @@ const Question = React.createClass({
     _createQuestion: function(model) {
         return (
             <div>
-                <Dashboard model = {model} key = {model.cid} />
+                <Dashboard model = {model} />
             </div>
             )
     },
 
     render: function() {
-        // console.log(this.props)
         return(
             <div>
                 {this.props.coll.map(this._createQuestion)}
@@ -101,7 +100,7 @@ const Dashboard = React.createClass ({
                     <p>posted on: {this._getPostedOn()} </p>
                     <p>tags: {this.props.model.get('tags')}</p>
                     <p>answered: {this._getAnsweredStatus()}</p>
-                    <p> # of answers:</p>
+                    <p> # of answers: </p>
                 </div>
                 <hr />
             </div>
