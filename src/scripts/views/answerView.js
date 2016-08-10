@@ -120,6 +120,7 @@ const AnswerBody = React.createClass ({
 
     _handleAnswerDelete: function() {
         ACTIONS._deleteAnswer(this.props.answerModel.get('_id'), this.props.model.get('numOfAnswers'))
+        ACTIONS._minusAnswerNum()
 
         if(this.props.answerModel.get('_id') === this.props.model.get('isAnswered')) {
             ACTIONS._toggleAnswer(this.props.model.get('isAnswered'))

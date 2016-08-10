@@ -24,7 +24,8 @@ const Respond = React.createClass ({
             authorId: User.getCurrentUser()._id,
             questionId: this.props.model.get('_id'),
             isAnswer: false
-        }, this.props.model.get('numOfAnswers'))
+        })
+        ACTIONS._addAnswerNum(this.props.model.get('numOfAnswers'))
         evt.target.answer.value = ''
     },
 

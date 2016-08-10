@@ -47,7 +47,7 @@ const ACTIONS = {
         let qCollection = new QuestionCollection()
         qCollection.fetch({
             data: inputQuery
-        }).then((d)=>{
+        }).then((d) => {
             STORE._set('collection', qCollection)
         })
     },
@@ -65,7 +65,7 @@ const ACTIONS = {
         let modelCopy = new QuestionModel(question.toJSON())
         let collectionCopy = new QuestionCollection(collectionMods)
 
-        question.destroy().then((serverRes)=>{
+        question.destroy().then((serverRes) => {
             collectionCopy.remove(modelCopy)
             STORE._set('collection', collectionCopy)
         })
@@ -91,21 +91,39 @@ const ACTIONS = {
 
     //ANSWER ACTIONS
 
-    _submitAnswer: function(answerObj, numAnswers) {
-        let question = STORE.data.model
-
-
+    _submitAnswer: function(answerObj) {
         var answer = new AnswerModel(answerObj)
         answer.save().then(
             (response) => {
                 STORE._addAnswer(response)
-                question.set('numOfAnswers', question.get('numOfAnswers') + 1 )
-
             },
             (error) => {
                 console.log(error)
             }
         )
+    },
+
+    _addAnswerNum: function() {
+        let question = STORE.data.model
+
+        question.set('numOfAnswers', question.get('numOfAnswers') + 1 )
+
+        question.save().then(function(response) {
+            console.log(response)
+        })
+        STORE._broadcastChange()
+
+    },
+
+    _minusAnswerNum: function() {
+        let question = STORE.data.model
+
+        question.set('numOfAnswers', question.get('numOfAnswers') - 1 )
+
+        question.save().then(function(response) {
+            console.log(response)
+        })
+        STORE._broadcastChange()
     },
 
     _fetchAnswers: function(inputQuery) {
@@ -115,17 +133,14 @@ const ACTIONS = {
     },
 
     _deleteAnswer: function(answerId) {
-        let question = STORE.data.model
-        question.set('numOfAnswers', question.get('numOfAnswers') - 1)
-
         let answer = STORE.data.answerCollection.get(answerId)
         answer.destroy().then()
     },
 
     _toggleAnswer: function(answerId) {
         let question = STORE.data.model
-        console.log(STORE.data.collection)
-        console.log(question)
+        // console.log(STORE.data.collection)
+        // console.log(question)
         question.set('isAnswered', question.get('isAnswered') ? null: answerId)
 
         question.save().then(function(response) {
