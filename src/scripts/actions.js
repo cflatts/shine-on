@@ -60,7 +60,15 @@ const ACTIONS = {
 
     _deleteQuestion: function(questionId) {
         let question = STORE.data.collection.get(questionId)
-        question.destroy()
+        let collectionMods = STORE.data.collection.toJSON()
+
+        let modelCopy = new QuestionModel(question.toJSON())
+        let collectionCopy = new QuestionCollection(collectionMods)
+
+        question.destroy().then((serverRes)=>{
+            collectionCopy.remove(modelCopy)
+            STORE._set('collection', collectionCopy)
+        })
     },
 
     _filterQuestions:function(tagValue) {
@@ -85,12 +93,14 @@ const ACTIONS = {
 
     _submitAnswer: function(answerObj, numAnswers) {
         let question = STORE.data.model
-        question.set('numOfAnswers', question.get('numOfAnswers') + 1)
+
 
         var answer = new AnswerModel(answerObj)
         answer.save().then(
             (response) => {
                 STORE._addAnswer(response)
+                question.set('numOfAnswers', question.get('numOfAnswers') + 1 )
+
             },
             (error) => {
                 console.log(error)
@@ -109,7 +119,7 @@ const ACTIONS = {
         question.set('numOfAnswers', question.get('numOfAnswers') - 1)
 
         let answer = STORE.data.answerCollection.get(answerId)
-        answer.destroy()
+        answer.destroy().then()
     },
 
     _toggleAnswer: function(answerId) {
