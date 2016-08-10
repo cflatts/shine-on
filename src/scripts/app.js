@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
-import {QuestionModel, QuestionCollection, AnswerModel, AnswerCollection} from './models/models'
+import {User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection} from './models/models'
 import HomeView from './views/homeView'
 import AskView from './views/askView'
 import DashboardView from './views/dashboardView'
@@ -30,15 +30,32 @@ const app = function() {
         },
 
         goToAsk: function() {
-            ReactDOM.render(<AskView />, document.querySelector('.container'))
+
+            if(!User.getCurrentUser()) {
+                location.hash  = 'home'
+            }
+            else {
+                ReactDOM.render(<AskView />, document.querySelector('.container'))
+            }
         },
 
         goToDashboard: function() {
-            ReactDOM.render(<DashboardView/>, document.querySelector('.container'))
+
+            if(!User.getCurrentUser()) {
+                location.hash = 'home'
+            }
+            else {
+                ReactDOM.render(<DashboardView/>, document.querySelector('.container'))
+            }
         },
 
         goToMyQuestions: function() {
-            ReactDOM.render(<MyQuestionsView/>, document.querySelector('.container'))
+            if(!User.getCurrentUser()) {
+                location.hash = 'home'
+            }
+            else {
+                ReactDOM.render(<MyQuestionsView/>, document.querySelector('.container'))
+            }
         },
 
         goToSignIn: function() {
