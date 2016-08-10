@@ -22,6 +22,7 @@ const questionsSchema = new Schema({
     isAnswered: {type: String, default: null},
     tags: {type: String, required: true},
     username: {type: String, required: true},
+    numOfAnswers: {type: Number, default: 0}
 },
 {
     timestamps: true

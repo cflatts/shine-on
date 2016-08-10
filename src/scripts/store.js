@@ -17,7 +17,6 @@ const STORE = _.extend( Backbone.Events, {
     },
 
     _broadcastChange: function() {
-        console.log('updating component')
         this.trigger('updateContent')
     },
 
@@ -33,7 +32,7 @@ const STORE = _.extend( Backbone.Events, {
     },
 
     _set: function(prop, value) {
-        console.log(prop, value)
+        // console.log(prop, value)
         if(this.data[prop] === undefined) {
             console.log('does not exist')
         }
