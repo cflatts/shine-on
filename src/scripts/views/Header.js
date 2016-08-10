@@ -2,6 +2,7 @@ import React from 'react'
 import ACTIONS from '../actions'
 
 const Header = React.createClass({
+
     render: function() {
         return (
             <div className = 'header'>

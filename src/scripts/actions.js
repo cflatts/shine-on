@@ -68,13 +68,13 @@ const ACTIONS = {
 
     _searchQuestions: function(searchValue) {
         console.log('_searchQuestions')
-        let qc = new QuestionCollection()
-        qc.fetch({
+        let questionCollection = new QuestionCollection()
+        questionCollection.fetch({
             data: {
                 regex__question: searchValue
             }
         }).then(() => {
-            STORE._set('collection',qc)
+            STORE._set('collection',questionCollection)
         })
     },
 

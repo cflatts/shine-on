@@ -35,6 +35,8 @@ const AnswerView = React.createClass ({
     },
 
     render: function() {
+        console.log(this.props)
+        console.log(this.state)
         return (
             <div className = 'dashboard'>
                 <Header />
@@ -59,11 +61,17 @@ const QuestionBody = React.createClass ({
 
     _getPostedOn: function() {
         var dateString = this.props.model.get('createdAt')
-
-        return dateString
+        if (!dateString) {
+            return ''
+        }
+        else {
+            let date = new Date(dateString)
+            return date.toLocaleString()
+        }
     },
 
     render: function() {
+        console.log(this.props.model.get('createdAt'))
         return (
             <div className = 'dashboardBody'>
                 <div className = 'left'>
