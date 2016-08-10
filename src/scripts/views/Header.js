@@ -1,12 +1,23 @@
 import React from 'react'
 import ACTIONS from '../actions'
+import {User} from '../models/models'
 
 const Header = React.createClass({
+
+    _displayUsername: function() {
+        if(!User.getCurrentUser()) {
+            return ''
+        }
+        else {
+            return User.getCurrentUser().username
+        }
+    },
 
     render: function() {
         return (
             <div className = 'header'>
                 <h1>Shine On!</h1>
+                <p> Welcome {this._displayUsername()}</p>
                 <button onClick = {ACTIONS._logOut}>Log out</button>
                 <Navigation />
             </div>
