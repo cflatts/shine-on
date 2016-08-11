@@ -19,16 +19,22 @@ const Ask = React.createClass ({
     _handleSubmit:function(evt) {
         evt.preventDefault()
 
-        ACTIONS._submitQuestion({
-            question: evt.target.question.value,
-            content: evt.target.content.value,
-            tags: document.getElementById('tags').value,
-            answered:false,
-            authorId: User.getCurrentUser()._id,
-            username: User.getCurrentUser().username,
+        if(document.getElementById('tags').value === '-Tags-') {
+            alert('Select a tag!')
+        }
+        else {
+            ACTIONS._submitQuestion({
+                question: evt.target.question.value,
+                content: evt.target.content.value,
+                tags: document.getElementById('tags').value,
+                answered:false,
+                authorId: User.getCurrentUser()._id,
+                username: User.getCurrentUser().username
 
-        })
+            })
+        }
     },
+
 
     render: function() {
         return (
