@@ -17,9 +17,13 @@ const Header = React.createClass({
         return (
             <div className = 'header'>
                 <div className = 'welcome'>
-                    <h1>Shine On!</h1>
-                    <p> Welcome {this._displayUsername()}</p>
-                    <button onClick = {ACTIONS._logOut}>Log out</button>
+                    <div className = 'left'>
+                        <h1>Shine On!</h1>
+                        <p> Welcome {this._displayUsername()}</p>
+                    </div>
+                    <div className = 'right'>
+                        <button onClick = {ACTIONS._logOut}>Log out</button>
+                    </div>
                 </div>
                 <Navigation />
             </div>

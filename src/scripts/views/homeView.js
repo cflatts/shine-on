@@ -7,7 +7,7 @@ const HomeView = React.createClass ({
             <div className = 'home'>
                 <Header />
                 <div className = 'about'>
-                    <h2>SHINE THEORY</h2>
+                    <h1>SHINE THEORY</h1>
                     <h3>I don't shine if you don't shine</h3>
                     <p>Aminatou Sow (founder of Tech Ladymafia, among other accomplishments)</p>
                 </div>
