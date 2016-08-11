@@ -64,12 +64,25 @@ button {
     }
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 540px) {
     .header {
-        .right {
-            border: 1px solid black;
-            button {
-                font-size: 12px;
+        .welcome {
+            .left {
+                h1 {
+                    font-size: 48px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 435px) {
+    .header {
+        .welcome {
+            .left {
+                h1 {
+                    font-size: 36px;
+                }
             }
         }
     }
@@ -90,25 +103,90 @@ button {
     }
 }
 
+@media (max-width: 920px) {
+
+    .navigation {
+
+        a {
+            font-size: 28px;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+
+    .navigation {
+
+        a {
+            font-size: 26px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+
+    .navigation {
+
+        a {
+            font-size: 24px;
+        }
+    }
+}
+
+@media (max-width: 740px) {
+
+    .navigation {
+
+        a {
+            font-size: 22px;
+        }
+    }
+}
+
+@media (max-width: 670px) {
+
+    .navigation {
+        width: 80%;
+        margin: 5% auto;
+
+        a {
+            display: block;
+            font-size: 30px;
+        }
+    }
+}
 
 //Home
-.about {
 
-    margin-top: 5%;
+.home {
+    .about {
 
-    h1 {
-        text-align: center;
-        text-decoration: underline;
+        margin-top: 5%;
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        h3 {
+            text-align: center;
+            font-style: italic;
+            font-size: 72px;
+        }
+
+        p {
+            text-align: center;
+        }
     }
+}
 
-    h3 {
-        text-align: center;
-        font-style: italic;
-        font-size: 72px;
-    }
-
-    p {
-        text-align: center;
+@media(max-width: 435px) {
+    .home {
+        .about {
+            h3 {
+                font-size: 48px;
+            }
+        }
     }
 }
 
