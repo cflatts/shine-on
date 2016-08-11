@@ -91,7 +91,7 @@ const Dashboard = React.createClass ({
                     <p>tags: {this.props.model.get('tags')}</p>
                     <p>answered: {this._getAnsweredStatus()}</p>
                     <p> # of answers: {this.props.model.get('numOfAnswers')}</p>
-                    <button onClick = {this._handleDelete}>Remove</button>
+                    <button onClick = {this._handleDelete}>X</button>
                 </div>
                 <hr />
             </div>

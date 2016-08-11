@@ -168,15 +168,15 @@ const AnswerBody = React.createClass ({
         console.log('question>>', this.props.model)
         return (
             <div className = 'dashboardBody answers'>
+                <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>X</button>
                 <div className = 'left'>
                     <p id = 'answer'>Answer: {this.props.answerModel.get('answer')}</p>
                 </div>
                 <div className = 'right'>
                     <p>Posted By:{this.props.answerModel.get('username')}</p>
                     <p>Posted On: {this._getPostedOn()}</p>
-                    <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>Remove</button>
                     <label className = {this._handleCheckboxClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' onChange = {this._handleAnswerSelect}/>This is the answer</label>
-                    <p className = {this._handleAnswerMarkerClass()}>Answer!</p>
+                    <p className = {this._handleAnswerMarkerClass()} id = 'answerMarker'><i className = 'fa fa-check' aria-hidden = 'true'></i></p>
                 </div>
                 <hr/>
             </div>
