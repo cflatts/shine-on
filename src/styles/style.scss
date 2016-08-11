@@ -171,14 +171,20 @@ button:hover {
     .about {
 
         margin-top: 5%;
+        text-align: center;
 
         h1 {
-            text-align: center;
             font-size: 72px;
 
             i {
                 color: #FF9419;
             }
+        }
+
+        p {
+            color: #FF9419;
+            font-size: 24px;
+            margin-top: 5%;
         }
     }
 }
