@@ -26,6 +26,7 @@ const Header = React.createClass({
                     </div>
                 </div>
                 <Navigation />
+                <Footer />
             </div>
             )
     }
@@ -40,6 +41,15 @@ const Navigation = React.createClass ({
                 <a href = '#ask'>Ask!</a>
                 <a href = '#question/myQuestions'>My Questions</a>
                 <a href = '#signIn'>Sign In</a>
+            </div>
+        )
+    }
+})
+
+const Footer = React.createClass ({
+    render: function() {
+        return (
+            <div className = 'colorBar'>
             </div>
         )
     }

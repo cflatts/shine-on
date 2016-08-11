@@ -1,5 +1,9 @@
 //General stylings
 
+// body {
+//     position: relative;
+// }
+
 * {
 	font-family: 'Ubuntu', sans-serif;
 	box-sizing: border-box;
@@ -19,6 +23,11 @@ button {
     margin: 5px auto;
     background-color: #e6e6e6;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #5c08f2;
+    color: #e6e6e6;
 }
 
 .inactive {
@@ -432,11 +441,14 @@ button {
 //Filter Area
 
 .filterBar {
+    width: 80%;
     text-align: center;
+    margin: 0 auto;
 
     button {
         display: inline-block;
-        margin: 3%;
+        margin: 2%;
+        width: 15%;
     }
 }
 
@@ -451,4 +463,12 @@ button {
         margin-top: 3%;
         border: 1px solid #5c08f2;
     }
+}
+
+.colorBar {
+    width: 100%;
+    background-color: #5c08f2;
+    height: 20px;
+    margin-top: 10%;
+    // position:fixed;
 }
