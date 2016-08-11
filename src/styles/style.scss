@@ -56,7 +56,6 @@ button {
 @media (max-width: 1410px) {
     .header {
         .right {
-            border: 1px solid black;
             button {
                 font-size: 14px;
             }
@@ -218,6 +217,26 @@ button {
         input[type=password] {
             border: 1px solid #5c08f2;
             font-size: 18px;
+        }
+    }
+}
+
+@media(max-width: 1175px) {
+    .signin-view {
+        .signin {
+            h3 {
+                font-size: 48px;
+            }
+        }
+    }
+}
+
+@media(max-width: 800px) {
+    .signin-view {
+        .signin {
+            display: block;
+            width: 70%;
+            margin: 10% auto;
         }
     }
 }
