@@ -172,7 +172,7 @@ const AnswerBody = React.createClass ({
             <div className = 'dashboardBody answers'>
                 <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>X</button>
                 <div className = 'left'>
-                    <p id = 'answer'>Answer: {this.props.answerModel.get('answer')}</p>
+                    <p id = 'answer'>{this.props.answerModel.get('answer')}</p>
                 </div>
                 <div className = 'right'>
                     <p>Posted By:{this.props.answerModel.get('username')}</p>
