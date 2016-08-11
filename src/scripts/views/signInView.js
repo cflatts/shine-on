@@ -27,13 +27,18 @@ const SignIn = React.createClass ({
     _handleRegister: function(evt) {
         evt.preventDefault()
 
-        if(evt.target.registerPassword.value === evt.target.confirmPassword.value)
-        ACTIONS._registerUser({
-            email: evt.target.registerEmail.value,
-            password: evt.target.registerPassword.value,
-            username: evt.target.registerUsername.value,
-            confirmation: evt.target.confirmPassword.value
-        })
+        if(evt.target.registerPassword.value === evt.target.confirmPassword.value) {
+            ACTIONS._registerUser({
+                email: evt.target.registerEmail.value,
+                password: evt.target.registerPassword.value,
+                username: evt.target.registerUsername.value,
+                confirmation: evt.target.confirmPassword.value
+            })
+        }
+        else {
+            alert("Invalid information. Check to make sure the passwords match")
+            evt.target.value = ''
+        }
     },
 
     render: function() {
