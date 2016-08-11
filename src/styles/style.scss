@@ -27,20 +27,14 @@ button {
 
 //Header
 
-.home {
+.welcome {
 
-    h2 {
-        text-align: center;
-    }
-
-    h3 {
-        text-align: center;
-    }
-
-    p {
-        text-align: center;
+    button {
+        margin-left: 35%;
+        display: inline-block;
     }
 }
+
 
 //Navigation Bar
 .navigation {
@@ -61,18 +55,20 @@ img {
     height: 80%;
 }
 
-.header {
 
-    h1 {
-        color: #5c08f2;
-        width: 50%;
-        display: inline-block;
-        font-size: 60px;
+//Home
+.about {
+
+    h2 {
+        text-align: center;
     }
 
-    button {
-        display: inline-block;
-        margin-left: 35%;
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
     }
 }
 

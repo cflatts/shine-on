@@ -6,9 +6,11 @@ const HomeView = React.createClass ({
         return (
             <div className = 'home'>
                 <Header />
-                <h2>SHINE THEORY</h2>
-                <h3>I don't shine if you don't shine</h3>
-                <p>Aminatou Sow (founder of Tech Ladymafia, among other accomplishments)</p>
+                <div className = 'about'>
+                    <h2>SHINE THEORY</h2>
+                    <h3>I don't shine if you don't shine</h3>
+                    <p>Aminatou Sow (founder of Tech Ladymafia, among other accomplishments)</p>
+                </div>
             </div>
         )
     }

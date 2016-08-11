@@ -6,7 +6,7 @@ const Header = React.createClass({
 
     _displayUsername: function() {
         if(!User.getCurrentUser()) {
-            return ''
+            return <a href = '#signIn'>Sign In</a>
         }
         else {
             return User.getCurrentUser().username
@@ -16,9 +16,11 @@ const Header = React.createClass({
     render: function() {
         return (
             <div className = 'header'>
-                <h1>Shine On!</h1>
-                <p> Welcome {this._displayUsername()}</p>
-                <button onClick = {ACTIONS._logOut}>Log out</button>
+                <div className = 'welcome'>
+                    <h1>Shine On!</h1>
+                    <p> Welcome {this._displayUsername()}</p>
+                    <button onClick = {ACTIONS._logOut}>Log out</button>
+                </div>
                 <Navigation />
             </div>
             )
