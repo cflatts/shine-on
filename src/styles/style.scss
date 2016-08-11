@@ -252,6 +252,7 @@ button {
         width: 65%;
         margin: 5% 0 2% 2%;
         height: 50px;
+        font-size: 24px;
     }
 
     textarea {
@@ -259,6 +260,7 @@ button {
         width: 65%;
         margin: 0 0 2% 2%;
         height: 100px;
+        font-size: 18px;
     }
 
     select {
@@ -267,11 +269,18 @@ button {
         font-size: 18px;
         color: #5c08f2;
         margin: 5px auto;
-        background-color: white;
+        background-color: #e6e6e6;
         cursor: pointer;
     }
 }
 
+@media(max-width: 420px) {
+    .composeBody {
+        input {
+            font-size: 18px;
+        }
+    }
+}
 //All Questions and My Questions and Answer
 
 
