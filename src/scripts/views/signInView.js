@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import ACTIONS from '../actions'
+import Footer from './Footer'
 
 
 const SignInView = React.createClass ({
@@ -9,6 +10,7 @@ const SignInView = React.createClass ({
             <div className='loginView'>
                 <Header />
                 <SignIn />
+                <Footer />
             </div>
         )
     }

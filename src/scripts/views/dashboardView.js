@@ -5,6 +5,7 @@ import ACTIONS from '../actions'
 import {User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection} from '../models/models'
 import FilterBar from './Filter'
 import SearchBar from './Search'
+import Footer from './Footer'
 
 const DashboardView = React.createClass ({
 
@@ -52,6 +53,7 @@ const DashboardView = React.createClass ({
                 <SearchBar />
                 <FilterBar />
                 <Question coll = {coll}/>
+                <Footer />
             </div>
         )
     }

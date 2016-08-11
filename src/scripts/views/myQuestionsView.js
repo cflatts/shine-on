@@ -3,6 +3,7 @@ import Header from './Header'
 import STORE from '../store'
 import ACTIONS from '../actions'
 import {User, QuestionModel, QuestionCollection} from '../models/models'
+import Footer from './Footer'
 
 const MyQuestionView = React.createClass ({
 
@@ -33,6 +34,7 @@ const MyQuestionView = React.createClass ({
             <div className = 'dashboard'>
                 <Header />
                 <Question coll = {this.state.collection}/>
+                <Footer />
             </div>
         )
     }

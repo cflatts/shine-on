@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header'
+import Footer from './Footer'
 
 const HomeView = React.createClass ({
     render:function() {
@@ -7,9 +8,9 @@ const HomeView = React.createClass ({
             <div className = 'home'>
                 <Header />
                 <div className = 'about'>
-                    <h1>SHINE THEORY</h1>
-                    <h3>I don't shine if you don't shine</h3>
-                    <p>Aminatou Sow (founder of Tech Ladymafia, among other accomplishments)</p>
+                    <h1>Ladies</h1>
+                    <h1>let's get In<i>Formation</i></h1>
+                    <Footer />
                 </div>
             </div>
         )
@@ -17,5 +18,3 @@ const HomeView = React.createClass ({
 })
 
 export default HomeView
-
-// <img className  = 'homeImage' src = 'http://images.smh.com.au/2012/03/12/3118352/female-bosses-wide-620x349.jpg' />

@@ -4,6 +4,7 @@ import STORE from '../store'
 import ACTIONS from '../actions'
 import ResponseView from './Response'
 import {User, QuestionModel, QuestionCollection, AnswerCollection, AnswerModel} from '../models/models'
+import Footer from './Footer'
 
 const AnswerView = React.createClass ({
 
@@ -43,6 +44,7 @@ const AnswerView = React.createClass ({
                 <QuestionBody answerColl = {this.state.answerCollection}  model = {this.state.model} />
                 <ResponseView model = {this.state.model}/>
                 <Answer model = {this.state.model} answerColl = {this.state.answerCollection} />
+                <Footer />
             </div>
         )
     }

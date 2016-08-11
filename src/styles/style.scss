@@ -1,14 +1,14 @@
 //General stylings
 
-// body {
-//     position: relative;
-// }
-
 * {
 	font-family: 'Ubuntu', sans-serif;
 	box-sizing: border-box;
     color: #5c08f2;
     background-color: #e6e6e6;
+}
+
+.container {
+    position: relative;
 }
 
 *:focus {
@@ -42,8 +42,9 @@ button:hover {
     .welcome {
 
         .left {
-            width: 50%;
+            width: 45%;
             display: inline-block;
+            margin-left: 5%;
 
             h1 {
                 font-size: 60px;
@@ -55,7 +56,7 @@ button:hover {
             display: inline-block;
 
             button {
-                margin-left: 89%;
+                margin-left: 85%;
                 display: block;
             }
         }
@@ -173,17 +174,11 @@ button:hover {
 
         h1 {
             text-align: center;
-            text-decoration: underline;
-        }
-
-        h3 {
-            text-align: center;
-            font-style: italic;
             font-size: 72px;
-        }
 
-        p {
-            text-align: center;
+            i {
+                color: #FF9419;
+            }
         }
     }
 }
@@ -467,8 +462,11 @@ button:hover {
 
 .colorBar {
     width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
     background-color: #5c08f2;
     height: 20px;
     margin-top: 10%;
-    // position:fixed;
+    position:fixed;
 }
