@@ -39,6 +39,7 @@ const handleRegEx = function(req,res,next) {
     }
     console.log(req.query)
     next()
+}
 
 const parseQuery = function(req,res,next) {
   if (req.query) {
