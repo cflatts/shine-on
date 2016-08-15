@@ -73,7 +73,7 @@ const QuestionBody = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props.model)
+        // console.log(this.props.model)
         return (
             <div className = 'dashboardBody'>
                 <div className = 'left'>
@@ -167,7 +167,7 @@ const AnswerBody = React.createClass ({
     },
 
     render: function() {
-        console.log('question>>', this.props.model)
+        // console.log('question>>', this.props.model)
         return (
             <div className = 'dashboardBody answers'>
                 <button className = {this._handleButtonClass()} type= 'button' onClick = {this._handleAnswerDelete}>X</button>

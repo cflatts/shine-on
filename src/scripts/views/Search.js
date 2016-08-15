@@ -5,7 +5,7 @@ import DashboardView from './dashboardView'
 const SearchBar = React.createClass ({
 
     _handleSearchQuestions: function(evt) {
-        console.log('search handler')
+        // console.log('search handler')
         if(evt.keyCode === 13) {
             ACTIONS._searchQuestions(evt.target.value)
             evt.target.value = ''

@@ -23,15 +23,20 @@ let AnswerModel = require('../db/schema.js').Answer
       })
     })
     .put('/users/:_id', function(req, res){
-      User.findById(req.params._id, "-password",function(err, record){
-        if(err || !record) return res.json(err)
-        let recordWithUpdates = helpers.updateFields(record, req.body)
-        recordWithUpdates.save(function(err){
-          if(err) return res.json(err)
-          res.json(recordWithUpdates)
-        })
+
+      User.findByIdAndUpdate(req.params._id, req.body, function(err, record){
+          if (err) {
+            res.status(500).send(err)
+          }
+          else if (!record) {
+            res.status(400).send('no record found with that id')
+          }
+          else {
+            res.json(Object.assign({},req.body,record))
+          }
       })
     })
+
     .delete('/users/:_id', function(req, res){
       User.remove({ _id: req.params._id}, (err) => {
         if(err) return res.json(err)

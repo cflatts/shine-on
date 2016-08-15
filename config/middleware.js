@@ -39,11 +39,24 @@ const handleRegEx = function(req,res,next) {
     }
     console.log(req.query)
     next()
+
+const parseQuery = function(req,res,next) {
+  if (req.query) {
+    for (var prop in req.query) {
+      if (prop[0] === '$') {
+        let val = req.query[prop]
+        req.query[prop] = JSON.parse(val)
+      }
+    }
+  }
+  next()
 }
 
 module.exports = {
   checkAuth: checkAuth,
   errorHandler: errorHandler,
   cookifyUser: cookifyUser,
-  handleRegEx: handleRegEx
+  handleRegEx: handleRegEx,
+  parseQuery: parseQuery
 }
+

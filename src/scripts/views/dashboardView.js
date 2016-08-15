@@ -22,7 +22,7 @@ const DashboardView = React.createClass ({
     },
 
     componentWillReceiveProps: function(newProps) {
-        console.log(newProps)
+        // console.log(newProps)
     },
 
     componentWillUnmount: function() {
@@ -95,7 +95,7 @@ const Dashboard = React.createClass ({
     },
 
     render: function() {
-        console.log(this.props.model)
+        // console.log(this.props.model)
         return (
             <div className = 'dashboardBody'>
                 <div className = 'left'>
