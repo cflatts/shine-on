@@ -60,14 +60,9 @@ app.use( passport.initialize() );
 app.use( passport.session() );
 appAuthentication(User)
 app.use( appMiddleWare.cookifyUser )
-<<<<<<< HEAD
 app.use( appMiddleWare.handleRegEx )
-
-//
-=======
 app.use( appMiddleWare.parseQuery )
-// 
->>>>>>> 97bd58edc197e086ddc674ffa8d8d4f5eb720b78
+
 // =========
 // ROUTERS
 // =========
