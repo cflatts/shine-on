@@ -5,7 +5,7 @@ let helpers = require('../config/helpers.js')
 let User = require('../db/schema.js').User
 let QuestionModel = require('../db/schema.js').Question
 let AnswerModel = require('../db/schema.js').Answer
-
+let MessageMode = require('../db/schema.js').Message
 
   apiRouter
     .get('/users', function(req, res){
@@ -180,6 +180,9 @@ apiRouter.delete('/answer/:_id', function(request, response) {
         }
     })
 })
+
+//MESSAGE ROUTES
+
 
 
 module.exports = apiRouter
