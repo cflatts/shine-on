@@ -97,4 +97,4 @@ export const MessageCollection = Backbone.Collection.extend ({
 })
 
 
-export { User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection }
+export { User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection, MessageModel, MessageCollection }
