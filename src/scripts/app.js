@@ -22,6 +22,7 @@ const app = function() {
             'question/myQuestions': 'goToMyQuestions',
             'signIn': 'goToSignIn',
             'question/:questionId': 'goToAnswer',
+            'message': 'goToMessages',
             '*catchall': 'defaultDashboard'
         },
 
@@ -64,6 +65,10 @@ const app = function() {
 
         goToAnswer: function(questionId) {
             ReactDOM.render(<AnswerView questionId = {questionId}/>, document.querySelector('.container'))
+        },
+
+        goToMessages: function() {
+            ReactDOM.render(<MessageView />, document.querySelector('.container'))
         },
 
         defaultDashboard: function() {
