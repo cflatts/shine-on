@@ -5,7 +5,7 @@ let helpers = require('../config/helpers.js')
 let User = require('../db/schema.js').User
 let QuestionModel = require('../db/schema.js').Question
 let AnswerModel = require('../db/schema.js').Answer
-let MessageMode = require('../db/schema.js').Message
+let MessageModel = require('../db/schema.js').Message
 
   apiRouter
     .get('/users', function(req, res){
@@ -205,4 +205,27 @@ apiRouter.get('/message', function(request, response) {
         }
     })
 })
+
+// apiRouter.get('/question/:_id', function(request, response) {
+//     QuestionModel.findById(request.params._id, function(error, records) {
+//         if(error) {
+//             response.send(error)
+//         }
+//         else {
+//             response.json(records)
+//         }
+//     })
+// })
+
+apiRouter.get('/message/:_id', function(request, response) {
+    MessageModel.findById(request.param._id, function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
+        }
+    })
+})
+
 module.exports = apiRouter
