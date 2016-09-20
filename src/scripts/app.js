@@ -9,6 +9,7 @@ import DashboardView from './views/dashboardView'
 import MyQuestionsView from './views/myQuestionsView'
 import SignInView from './views/signInView'
 import AnswerView from './views/answerView'
+import MessageView from './views/MessageView'
 
 
 const app = function() {
