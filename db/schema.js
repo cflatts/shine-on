@@ -38,6 +38,16 @@ const answerSchema = new Schema ({
     timestamps:true
 })
 
+const messageSchema = new Schema ({
+    content: {type: String, required: true},
+    senderId: {type: String, required: true},
+    receiverId: {type: String, required: true},
+    isRead: {type: Boolean, default: false}
+},
+{
+    timestamps: true
+})
+
 module.exports = {
   User: createModel('User', usersSchema),
   Question: createModel('Question', questionsSchema),
