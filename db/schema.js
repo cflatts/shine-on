@@ -51,7 +51,8 @@ const messageSchema = new Schema ({
 module.exports = {
   User: createModel('User', usersSchema),
   Question: createModel('Question', questionsSchema),
-  Answer: createModel('Answer', answerSchema)
+  Answer: createModel('Answer', answerSchema),
+  Message: createModel('Message', messageSchema)
 }
 
 
