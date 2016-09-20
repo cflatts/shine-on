@@ -228,4 +228,20 @@ apiRouter.put('/message/:_id', function(request, response) {
         }
     })
 })
+
+apiRouter.delete('/message/:_id', function(request, response) {
+    let messageId = request.params._id
+    MessageModel.remove({_id: messageId}, function(error) {
+        if(error) {
+            response.json({
+                error: error
+            })
+        }
+        else {
+            response.status(200).json ({
+                msg: 'successfully deleted'
+            })
+        }
+    })
+})
 module.exports = apiRouter
