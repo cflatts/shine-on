@@ -91,5 +91,10 @@ export const MessageModel = Backbone.Model.extend ({
     url: '/api/message'
 })
 
+export const MessageCollection = Backbone.Collection.extend ({
+    model: MessageModel,
+    url: '/api/message'
+})
+
 
 export { User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection }
