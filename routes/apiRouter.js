@@ -194,4 +194,15 @@ apiRouter.post('/message', function(request, response) {
         }
     })
 })
+
+apiRouter.get('/message', function(request, response) {
+    MessageModel.find(request.query, function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
+        }
+    })
+})
 module.exports = apiRouter
