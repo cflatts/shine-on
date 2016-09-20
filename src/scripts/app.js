@@ -68,7 +68,12 @@ const app = function() {
         },
 
         goToMessages: function() {
-            ReactDOM.render(<MessageView />, document.querySelector('.container'))
+            if(!User.getCurrentUser()) {
+                location.hash = 'home'
+            }
+            else {
+                ReactDOM.render(<MessageView />, document.querySelector('.container'))
+            }
         },
 
         defaultDashboard: function() {
