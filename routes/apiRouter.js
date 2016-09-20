@@ -206,17 +206,6 @@ apiRouter.get('/message', function(request, response) {
     })
 })
 
-// apiRouter.get('/question/:_id', function(request, response) {
-//     QuestionModel.findById(request.params._id, function(error, records) {
-//         if(error) {
-//             response.send(error)
-//         }
-//         else {
-//             response.json(records)
-//         }
-//     })
-// })
-
 apiRouter.get('/message/:_id', function(request, response) {
     MessageModel.findById(request.param._id, function(error, records) {
         if(error) {
@@ -228,4 +217,15 @@ apiRouter.get('/message/:_id', function(request, response) {
     })
 })
 
+apiRouter.put('/message/:_id', function(request, response) {
+    let messageId = request.params._id
+    MessageMode.findByIdAndUpdate({_id: messageId}, request.body, {new: true}, function(error, records) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(records)
+        }
+    })
+})
 module.exports = apiRouter
