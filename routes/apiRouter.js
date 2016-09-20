@@ -183,6 +183,15 @@ apiRouter.delete('/answer/:_id', function(request, response) {
 
 //MESSAGE ROUTES
 
-
-
+apiRouter.post('/message', function(request, response) {
+    let message = new MessageModel(request.body)
+    message.save(function(error) {
+        if(error) {
+            response.send(error)
+        }
+        else {
+            response.json(answer)
+        }
+    })
+})
 module.exports = apiRouter
