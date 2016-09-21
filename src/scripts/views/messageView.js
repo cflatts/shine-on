@@ -6,6 +6,11 @@ import {User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection, 
 import Footer from './Footer'
 
 const MessageView = React.createClass ({
+
+    getInitialState: function() {
+        return STORE._getData()
+    },
+
     render: function() {
         return (
             <div className = 'inboxView'>
@@ -17,7 +22,7 @@ const MessageView = React.createClass ({
     }
 })
 
-const InboxView = React.createclassName ({
+const InboxView = React.createClass ({
     render: function() {
         return (
             <div className = 'inbox'>
