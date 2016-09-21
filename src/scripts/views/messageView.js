@@ -8,9 +8,20 @@ import Footer from './Footer'
 const MessageView = React.createClass ({
     render: function() {
         return (
-            <div>
+            <div class = ''>
                 <Header />
+                <InboxView />
                 <Footer />
+            </div>
+        )
+    }
+})
+
+const InboxView = React.createClass ({
+    render: function() {
+        return (
+            <div class = 'inbox'>
+                <div class = 'messages'></div>
             </div>
             )
     }
