@@ -6,7 +6,11 @@ import {User, QuestionModel, QuestionCollection, AnswerModel, AnswerCollection, 
 import Footer from './Footer'
 
 const MessageView = React.createClass ({
-
+    render: function() {
+        return (
+            <div>Hi</div>
+            )
+    }
 })
 
 export default MessageView
