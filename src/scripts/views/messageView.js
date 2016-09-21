@@ -8,7 +8,7 @@ import Footer from './Footer'
 const MessageView = React.createClass ({
     render: function() {
         return (
-            <div class = ''>
+            <div className = 'inboxView'>
                 <Header />
                 <InboxView />
                 <Footer />
@@ -17,11 +17,11 @@ const MessageView = React.createClass ({
     }
 })
 
-const InboxView = React.createClass ({
+const InboxView = React.createclassName ({
     render: function() {
         return (
-            <div class = 'inbox'>
-                <div class = 'messages'></div>
+            <div className = 'inbox'>
+                <div className = 'messages'></div>
             </div>
             )
     }
