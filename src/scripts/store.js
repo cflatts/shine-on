@@ -1,6 +1,6 @@
 import _ from 'underscore'
 import Backbone from 'backbone'
-import {QuestionCollection, QuestionModel, AnswerModel, AnswerCollection} from './models/models'
+import {QuestionCollection, QuestionModel, AnswerModel, AnswerCollection, MessageModel, MessageCollection} from './models/models'
 
 const STORE = _.extend( Backbone.Events, {
 
