@@ -9,6 +9,8 @@ const STORE = _.extend( Backbone.Events, {
         model: new QuestionModel(),
         answerCollection: new AnswerCollection(),
         answerModel: new AnswerModel()
+        messageModel: new MessageModel(),
+        messageCollection: new MessageCollection()
     },
 
     _getData: function() {
