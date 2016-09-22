@@ -72,13 +72,13 @@ const ACTIONS = {
     },
 
     _filterQuestions:function(tagValue) {
-        console.log(tagValue)
+        // console.log(tagValue)
 
         STORE._set('viewType', tagValue)
     },
 
     _searchQuestions: function(searchValue) {
-        console.log('_searchQuestions')
+        // console.log('_searchQuestions')
         let questionCollection = new QuestionCollection()
         questionCollection.fetch({
             data: {
@@ -109,7 +109,6 @@ const ACTIONS = {
         question.set('numOfAnswers', question.get('numOfAnswers') + 1 )
 
         question.save().then(function(response) {
-            console.log(response)
         })
         STORE._broadcastChange()
 
