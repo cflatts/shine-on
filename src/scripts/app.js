@@ -23,7 +23,8 @@ const app = function() {
             'question/myQuestions': 'goToMyQuestions',
             'signIn': 'goToSignIn',
             'question/:questionId': 'goToAnswer',
-            'message': 'goToMessages',
+            'inbox': 'goToMessages',
+            'messageCompose': 'goToMessageCompose',
             '*catchall': 'defaultDashboard'
         },
 
@@ -75,6 +76,10 @@ const app = function() {
             else {
                 ReactDOM.render(<MessageView />, document.querySelector('.container'))
             }
+        },
+
+        goToMessageCompose: function() {
+            ReactDOM.render(<MessageComposeView />, document.querySelector('.container'))
         },
 
         defaultDashboard: function() {
