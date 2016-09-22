@@ -81,10 +81,10 @@ const QuestionBody = React.createClass ({
                     <p>{this.props.model.get('content')}</p>
                 </div>
                 <div className = 'right'>
-                    <div className = 'sendMessage'>
-                        <button>Message</button>
-                    </div>
                     <p className = 'username'>posted by: {this.props.model.get('username')}</p>
+                        <div className = 'sendMessage'>
+                            <button>Message</button>
+                        </div>
                     <p>posted on: {this._getPostedOn()} </p>
                     <p>tags: {this.props.model.get('tags')}</p>
                     <p>answered: {this._getAnsweredStatus()}</p>
@@ -178,10 +178,10 @@ const AnswerBody = React.createClass ({
                     <p id = 'answer'>{this.props.answerModel.get('answer')}</p>
                 </div>
                 <div className = 'right'>
-                    <div className = 'sendMessage'>
-                        <button>Message</button>
-                    </div>
                     <p className = 'username'>Posted By:{this.props.answerModel.get('username')}</p>
+                        <div className = 'sendMessage'>
+                            <button>Message</button>
+                        </div>
                     <p>Posted On: {this._getPostedOn()}</p>
                     <label className = {this._handleCheckboxClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' onChange = {this._handleAnswerSelect}/>This is the answer</label>
                     <p className = {this._handleAnswerMarkerClass()} id = 'answerMarker'><i className = 'fa fa-check' aria-hidden = 'true'></i></p>

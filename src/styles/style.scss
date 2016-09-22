@@ -437,6 +437,11 @@ button:hover {
         color: #e6e6e6;
         background-color: red;
     }
+
+    .sendMessage {
+        display: none;
+        // opacity: 0;
+    }
 }
 
 //Filter Area
@@ -484,6 +489,12 @@ button:hover {
 }
 
 //Send message button
+
+.sendMessage {
+    display: none;
+    // opacity: 0;
+}
+
 .username:hover {
     color: red;
 }
