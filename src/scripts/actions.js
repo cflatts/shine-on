@@ -1,4 +1,4 @@
-import {User, QuestionCollection, QuestionModel, AnswerModel, AnswerCollection} from './models/models'
+import {User, QuestionCollection, QuestionModel, AnswerModel, AnswerCollection, MessageModel, MessageCollection} from './models/models'
 import STORE from './store'
 
 const ACTIONS = {
@@ -148,6 +148,21 @@ const ACTIONS = {
         STORE._broadcastChange()
     }
 
+}
+
+//MESSAGE ACTIONS
+
+_submitMessage = function(messageObj) {
+    var message = new MessageModel(messageObj)
+
+    message.save().then(
+        (response) => {
+            STORE._addMessage(response)
+        },
+        (error) => {
+            console.log(error)
+        }
+    )
 }
 
 export default ACTIONS

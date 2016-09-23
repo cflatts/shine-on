@@ -10,6 +10,7 @@ import MyQuestionsView from './views/myQuestionsView'
 import SignInView from './views/signInView'
 import AnswerView from './views/answerView'
 import MessageView from './views/MessageView'
+import MessageComposeView from'./views/MessageComposeView'
 
 
 const app = function() {
