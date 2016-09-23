@@ -17,7 +17,7 @@ const MessageComposeView = React.createClass ({
 
 const MessageComposeForm = React.createClass ({
 
-    _handleMessageSubmit = function(evt) {
+    _handleMessageSubmit: function(evt) {
         evt.preventDefault()
 
         ACTIONS._submitMessage ({

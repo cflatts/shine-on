@@ -146,23 +146,23 @@ const ACTIONS = {
             console.log(response)
         })
         STORE._broadcastChange()
+    },
+
+    //MESSAGE ACTIONS
+
+    _submitMessage: function(messageObj) {
+        var message = new MessageModel(messageObj)
+
+        message.save().then(
+            (response) => {
+                location.hash = 'question/dashboard'
+            },
+            (error) => {
+                console.log(error)
+            }
+        )
     }
 
-}
-
-//MESSAGE ACTIONS
-
-_submitMessage = function(messageObj) {
-    var message = new MessageModel(messageObj)
-
-    message.save().then(
-        (response) => {
-            STORE._addMessage(response)
-        },
-        (error) => {
-            console.log(error)
-        }
-    )
 }
 
 export default ACTIONS
