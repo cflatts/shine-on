@@ -7,7 +7,7 @@ const MessageComposeView = React.createClass ({
 
     render: function() {
         return (
-            <div>
+            <div className= 'messageCompose'>
                 <Header />
                 <MessageComposeForm />
             </div>
@@ -19,8 +19,8 @@ const MessageComposeForm = React.createClass ({
 
     render: function() {
         return (
-            <div className = 'messageCompose'>
-                <form className = 'messageComposeBody'>
+            <div className = 'messageComposeBody'>
+                <form className = 'messageComposeForm'>
                     <p>To:</p>
                     <p>From: {User.getCurrentUser().username}</p>
                     <textarea placeholder = 'Send a message!'></textarea>
