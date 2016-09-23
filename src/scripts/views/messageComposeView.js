@@ -1,7 +1,21 @@
 import React from 'react'
 import {User, MessageModel, MessageCollection} from '../models/models'
+import Header from './Header'
+import ACTIONS from '../actions'
 
 const MessageComposeView = React.createClass ({
+
+    render: function() {
+        return (
+            <div>
+                <Header />
+                <MessageComposeForm />
+            </div>
+        )
+    }
+})
+
+const MessageComposeForm = React.createClass ({
 
     render: function() {
         return (
