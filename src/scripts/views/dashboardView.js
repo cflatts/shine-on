@@ -105,7 +105,7 @@ const Dashboard = React.createClass ({
                 <div className = 'right'>
                     <p className = 'username'>posted by: {this.props.model.get('username')}</p>
                         <div className = 'sendMessage'>
-                            <button>Message</button>
+                            <a href = '#messageCompose'>Message</a>
                         </div>
                     <p>posted on: {this._getPostedOn()} </p>
                     <p>tags: {this.props.model.get('tags')}</p>

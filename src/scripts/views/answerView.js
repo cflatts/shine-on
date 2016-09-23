@@ -169,6 +169,10 @@ const AnswerBody = React.createClass ({
         return answerMarkerClass
     },
 
+    _goToMessageCompose: function() {
+        location.hash = 'messageCompose'
+    },
+
     render: function() {
         // console.log('question>>', this.props.model)
         return (
@@ -180,7 +184,7 @@ const AnswerBody = React.createClass ({
                 <div className = 'right'>
                     <p className = 'username'>Posted By:{this.props.answerModel.get('username')}</p>
                         <div className = 'sendMessage'>
-                            <button>Message</button>
+                            <a href = '#messageCompose'>Message</a>
                         </div>
                     <p>Posted On: {this._getPostedOn()}</p>
                     <label className = {this._handleCheckboxClass()}><input type = 'checkbox' value = 'answer' name = 'answerCheck' onChange = {this._handleAnswerSelect}/>This is the answer</label>
