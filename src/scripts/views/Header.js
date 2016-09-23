@@ -40,7 +40,7 @@ const Navigation = React.createClass ({
                 <a href = '#ask'>Ask!</a>
                 <a href = '#question/myQuestions'>My Questions</a>
                 <a href = '#signIn'>Sign In</a>
-                <a href = '#message'>Inbox</a>
+                <a href = '#inbox'>Inbox</a>
             </div>
         )
     }
