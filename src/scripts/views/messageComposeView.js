@@ -17,13 +17,23 @@ const MessageComposeView = React.createClass ({
 
 const MessageComposeForm = React.createClass ({
 
+    _handleMessageSubmit = function(evt) {
+        evt.preventDefault()
+
+        ACTIONS._submitMessage ({
+            to: evt.target.to.value,
+            from: evt.target.from.value,
+            message: evt.target.message.value
+        })
+    },
+
     render: function() {
         return (
             <div className = 'messageComposeBody'>
-                <form className = 'messageComposeForm'>
-                    <p>To:</p>
-                    <p>From: {User.getCurrentUser().username}</p>
-                    <textarea placeholder = 'Send a message!'></textarea>
+                <form className = 'messageComposeForm' onSubmit = {this._handleMessageSubmit}>
+                    <p name = 'to'>To:</p>
+                    <p name = 'from'>From: {User.getCurrentUser().username}</p>
+                    <textarea placeholder = 'Send a message!' name = 'message' id = 'message'></textarea>
                     <button type = 'submit'>Send</button>
                 </form>
             </div>
