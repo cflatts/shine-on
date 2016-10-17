@@ -3,36 +3,36 @@
 * {
 	font-family: 'Ubuntu', sans-serif;
 	box-sizing: border-box;
-    color: #5c08f2;
-    background-color: #e6e6e6;
+	color: #5c08f2;
+	background-color: #e6e6e6;
 }
 
 .container {
-    position: relative;
+	position: relative;
 }
 
 *:focus {
-    outline: none;
+	outline: none;
 }
 
 button {
-    display: block;
-    border: 1px solid #5c08f2;
-    font-size: 18px;
-    color: #5c08f2;
-    margin: 5px auto;
-    background-color: #e6e6e6;
-    cursor: pointer;
+	display: block;
+	border: 1px solid #5c08f2;
+	font-size: 18px;
+	color: #5c08f2;
+	margin: 5px auto;
+	background-color: #e6e6e6;
+	cursor: pointer;
 }
 
 button:hover {
-    background-color: #5c08f2;
-    color: #e6e6e6;
+	background-color: #5c08f2;
+	color: #e6e6e6;
 }
 
 .inactive {
-    opacity: 0;
-    display: none;
+	opacity: 0;
+	display: none;
 }
 
 //Header
@@ -99,9 +99,9 @@ button:hover {
 
 //Navigation Bar
 .navigation {
-    background-color: #5c08f2;
-    text-align: center;
-    padding: 1%;
+	background-color: #5c08f2;
+	text-align: center;
+	padding: 1%;
 
     a {
         color: #e6e6e6;
@@ -155,8 +155,8 @@ button:hover {
 @media (max-width: 670px) {
 
     .navigation {
-        width: 80%;
-        margin: 5% auto;
+	    width: 80%;
+	    margin: 5% auto;
 
         a {
             display: block;
@@ -291,9 +291,8 @@ button:hover {
         }
     }
 }
+
 //All Questions and My Questions and Answer
-
-
 .dashboardBody {
     margin: 3% auto 0 auto;
     width: 80%;
